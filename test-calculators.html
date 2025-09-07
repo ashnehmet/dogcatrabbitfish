@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test Dog Calculators</title>
+    <link rel="stylesheet" href="src/assets/css/main.css">
+    <link rel="stylesheet" href="src/assets/css/dog-sections.css">
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; }
+        .test-section { margin: 30px 0; padding: 20px; border: 1px solid #ddd; border-radius: 8px; }
+        h2 { color: #333; }
+    </style>
+</head>
+<body>
+    <h1>Dog Calculator Tests</h1>
+
+    <!-- Age Calculator Test -->
+    <div class="test-section">
+        <h2>1. Dog Age Calculator Test</h2>
+        <div class="widget age-calculator">
+            <h3>Dog Age Calculator</h3>
+            <div class="calculator-form">
+                <label for="dog-age">Dog's age (years):</label>
+                <input type="number" id="dog-age" placeholder="Enter age" min="0" max="30">
+                <label for="dog-size">Size:</label>
+                <select id="dog-size">
+                    <option value="small">Small (under 25 lbs)</option>
+                    <option value="medium">Medium (25-60 lbs)</option>
+                    <option value="large">Large (over 60 lbs)</option>
+                </select>
+                <button onclick="calculateDogAge()">Calculate</button>
+                <div id="age-result" class="calculator-result"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Food Calculator Test -->
+    <div class="test-section">
+        <h2>2. Food Calculator Test</h2>
+        <div class="widget food-calculator">
+            <h3>Daily Food Calculator</h3>
+            <div class="calculator-form">
+                <label for="dog-weight">Weight (lbs):</label>
+                <input type="number" id="dog-weight" placeholder="Enter weight" min="1" max="200">
+                
+                <label for="activity-level">Activity Level:</label>
+                <select id="activity-level">
+                    <option value="low">Low - Couch potato</option>
+                    <option value="moderate">Moderate - Daily walks</option>
+                    <option value="high">High - Very active</option>
+                </select>
+                
+                <button onclick="calculateFood()">Calculate</button>
+                <div id="food-result" class="calculator-result"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Training Calculator Test -->
+    <div class="test-section">
+        <h2>3. Training Plan Calculator Test</h2>
+        <div class="widget training-calculator">
+            <h3>Personalized Training Planner</h3>
+            <div class="calculator-form">
+                <label for="dog-age-months">Dog's age (months):</label>
+                <input type="number" id="dog-age-months" placeholder="Enter age" min="1" max="180">
+                
+                <label for="training-experience">Your training experience:</label>
+                <select id="training-experience">
+                    <option value="beginner">First-time owner</option>
+                    <option value="some">Some experience</option>
+                    <option value="experienced">Very experienced</option>
+                </select>
+                
+                <label for="dog-temperament">Dog's temperament:</label>
+                <select id="dog-temperament">
+                    <option value="calm">Calm and focused</option>
+                    <option value="energetic">Energetic and playful</option>
+                    <option value="anxious">Anxious or nervous</option>
+                    <option value="stubborn">Independent/stubborn</option>
+                </select>
+                
+                <button onclick="calculateTrainingPlan()">Create Training Plan</button>
+                <div id="training-result" class="calculator-result"></div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Dog Age Calculator
+        function calculateDogAge() {
+            const age = document.getElementById('dog-age').value;
+            const size = document.getElementById('dog-size').value;
+            const resultDiv = document.getElementById('age-result');
+            
+            resultDiv.innerHTML = '';
+            
+            if (!age || age < 0 || age > 30) {
+                resultDiv.innerHTML = `
+                    <div class="result-content error">
+                        <strong>Please enter a valid age between 0 and 30 years</strong>
+                    </div>
+                `;
+                return;
+            }
+            
+            const dogAge = parseFloat(age);
+            let humanAge;
+            let lifeStage = '';
+            
+            if (dogAge < 1) {
+                humanAge = dogAge * 15;
+                lifeStage = 'Puppy';
+            } else if (dogAge === 1) {
+                humanAge = size === 'large' ? 14 : 15;
+                lifeStage = 'Young Adult';
+            } else if (dogAge === 2) {
+                humanAge = size === 'large' ? 22 : 24;
+                lifeStage = 'Adult';
+            } else {
+                const baseAge = size === 'large' ? 22 : 24;
+                const additionalYears = dogAge - 2;
+                let yearMultiplier;
+                
+                switch(size) {
+                    case 'small': yearMultiplier = 4; break;
+                    case 'medium': yearMultiplier = 4.5; break;
+                    case 'large': yearMultiplier = 5; break;
+                    default: yearMultiplier = 4.5;
+                }
+                
+                humanAge = baseAge + (additionalYears * yearMultiplier);
+                
+                if (dogAge < 7) lifeStage = 'Adult';
+                else if (dogAge < 10) lifeStage = 'Mature Adult';
+                else lifeStage = 'Senior';
+            }
+            
+            let recommendations = [];
+            if (dogAge < 1) {
+                recommendations = ['Puppy vaccinations', 'Frequent vet checkups', 'Socialization training'];
+            } else if (dogAge < 7) {
+                recommendations = ['Annual vet checkups', 'Regular exercise', 'Dental care'];
+            } else {
+                recommendations = ['Bi-annual vet visits', 'Joint health monitoring', 'Senior diet consideration'];
+            }
+            
+            resultDiv.innerHTML = `
+                <div class="result-content success">
+                    <div class="age-result">
+                        <strong>Human Age Equivalent:</strong><br>
+                        <span class="age-number">${Math.round(humanAge)}</span> years old
+                    </div>
+                    <div class="life-stage">
+                        <strong>Life Stage:</strong> ${lifeStage}
+                    </div>
+                    <div class="recommendations">
+                        <strong>Health Recommendations:</strong>
+                        <ul>
+                            ${recommendations.map(rec => `<li>${rec}</li>`).join('')}
+                        </ul>
+                    </div>
+                </div>
+            `;
+        }
+
+        // Food Calculator
+        function calculateFood() {
+            const weight = document.getElementById('dog-weight').value;
+            const activity = document.getElementById('activity-level').value;
+            const resultDiv = document.getElementById('food-result');
+            
+            resultDiv.innerHTML = '';
+            
+            if (!weight || weight < 1 || weight > 200) {
+                resultDiv.innerHTML = `
+                    <div class="result-content error">
+                        <strong>Please enter a valid weight between 1 and 200 pounds</strong>
+                    </div>
+                `;
+                return;
+            }
+            
+            const weightLbs = parseFloat(weight);
+            const weightKg = weightLbs / 2.2;
+            let baseCalories = Math.round(70 * Math.pow(weightKg, 0.75));
+            
+            let activityMultiplier, activityDescription;
+            switch(activity) {
+                case 'low': activityMultiplier = 1.2; activityDescription = 'Inactive/Senior dogs'; break;
+                case 'moderate': activityMultiplier = 1.6; activityDescription = 'Average adult dogs'; break;
+                case 'high': activityMultiplier = 2.0; activityDescription = 'Very active/working dogs'; break;
+                default: activityMultiplier = 1.6; activityDescription = 'Average adult dogs';
+            }
+            
+            const dailyCalories = Math.round(baseCalories * activityMultiplier);
+            const dryFoodCups = Math.round((dailyCalories / 350) * 10) / 10;
+            const wetFoodCans = Math.round((dailyCalories / 250) * 10) / 10;
+            const rawFoodOz = Math.round((dailyCalories / 40) * 10) / 10;
+            
+            let weightCategory, feedingTips;
+            if (weightLbs < 25) {
+                weightCategory = 'Small Dog';
+                feedingTips = ['2-3 small meals per day', 'Avoid overfeeding', 'Watch for hypoglycemia in tiny breeds'];
+            } else if (weightLbs < 60) {
+                weightCategory = 'Medium Dog';
+                feedingTips = ['2 meals per day', 'Monitor body condition', 'Adjust for spay/neuter status'];
+            } else {
+                weightCategory = 'Large Dog';
+                feedingTips = ['2 meals per day', 'Prevent bloat with elevated bowls', 'Consider joint-supporting nutrients'];
+            }
+            
+            resultDiv.innerHTML = `
+                <div class="result-content success">
+                    <div class="calories-section">
+                        <strong>Daily Caloric Needs:</strong><br>
+                        <span class="calorie-number">${dailyCalories}</span> calories/day
+                        <div class="activity-note">${activityDescription}</div>
+                    </div>
+                    
+                    <div class="food-amounts">
+                        <strong>Food Amount Options:</strong>
+                        <div class="food-type"><strong>Dry Food:</strong> ${dryFoodCups} cups/day</div>
+                        <div class="food-type"><strong>Wet Food:</strong> ${wetFoodCans} cans/day</div>
+                        <div class="food-type"><strong>Raw Food:</strong> ${rawFoodOz} oz/day</div>
+                    </div>
+                    
+                    <div class="dog-info"><strong>Dog Category:</strong> ${weightCategory}</div>
+                    
+                    <div class="feeding-tips">
+                        <strong>Feeding Tips:</strong>
+                        <ul>${feedingTips.map(tip => `<li>${tip}</li>`).join('')}</ul>
+                    </div>
+                </div>
+            `;
+        }
+
+        // Training Plan Calculator
+        function calculateTrainingPlan() {
+            const ageMonths = document.getElementById('dog-age-months').value;
+            const experience = document.getElementById('training-experience').value;
+            const temperament = document.getElementById('dog-temperament').value;
+            const resultDiv = document.getElementById('training-result');
+            
+            resultDiv.innerHTML = '';
+            
+            if (!ageMonths || ageMonths < 1 || ageMonths > 180) {
+                resultDiv.innerHTML = `
+                    <div class="result-content error">
+                        <strong>Please enter a valid age between 1 and 180 months</strong>
+                    </div>
+                `;
+                return;
+            }
+            
+            const age = parseInt(ageMonths);
+            let sessionTime, sessionsPerDay, weeklyGoals, trainingPriorities;
+            
+            if (age < 4) {
+                sessionTime = 5; sessionsPerDay = 3;
+                weeklyGoals = ['Basic name recognition', 'House training routine', 'Gentle handling exercises'];
+                trainingPriorities = ['Socialization', 'House training', 'Basic handling'];
+            } else if (age < 6) {
+                sessionTime = 8; sessionsPerDay = 3;
+                weeklyGoals = ['Sit and stay commands', 'Leash introduction', 'Puppy socialization'];
+                trainingPriorities = ['Basic commands', 'Leash training', 'Continued socialization'];
+            } else if (age < 12) {
+                sessionTime = 10; sessionsPerDay = 2;
+                weeklyGoals = ['Reliable recall', 'Down and stay', 'Polite greetings'];
+                trainingPriorities = ['Command reliability', 'Impulse control', 'Social skills'];
+            } else if (age < 24) {
+                sessionTime = 15; sessionsPerDay = 2;
+                weeklyGoals = ['Advanced commands', 'Distraction training', 'Problem-solving skills'];
+                trainingPriorities = ['Advanced obedience', 'Real-world application', 'Mental stimulation'];
+            } else {
+                sessionTime = 12; sessionsPerDay = 2;
+                weeklyGoals = ['Maintenance training', 'New tricks', 'Behavior refinement'];
+                trainingPriorities = ['Skill maintenance', 'Enrichment activities', 'Problem prevention'];
+            }
+            
+            if (experience === 'beginner') {
+                sessionTime = Math.max(5, sessionTime - 3);
+                weeklyGoals.unshift('Focus on consistency over complexity');
+            } else if (experience === 'experienced') {
+                sessionTime += 3;
+                weeklyGoals.push('Challenge with advanced techniques');
+            }
+            
+            let temperamentTips;
+            switch(temperament) {
+                case 'calm': temperamentTips = ['Excellent for longer sessions', 'Can handle more complex training', 'Focus on precision']; break;
+                case 'energetic': 
+                    sessionTime = Math.max(5, sessionTime - 2); sessionsPerDay += 1;
+                    temperamentTips = ['Keep sessions short and fun', 'Include physical activity', 'Use high-value rewards']; break;
+                case 'anxious': 
+                    sessionTime = Math.max(3, sessionTime - 3);
+                    temperamentTips = ['Create positive associations', 'Go at your dog\'s pace', 'Use gentle encouragement']; break;
+                case 'stubborn': temperamentTips = ['Be patient and consistent', 'Find what motivates your dog', 'Make training rewarding']; break;
+                default: temperamentTips = ['Adapt techniques to your dog\'s needs'];
+            }
+            
+            let lifeStage;
+            if (age < 4) lifeStage = 'Young Puppy';
+            else if (age < 12) lifeStage = 'Puppy/Adolescent';
+            else if (age < 24) lifeStage = 'Young Adult';
+            else lifeStage = 'Adult Dog';
+            
+            resultDiv.innerHTML = `
+                <div class="result-content success">
+                    <div class="training-schedule">
+                        <strong>Your Training Schedule:</strong><br>
+                        <span class="session-time">${sessionTime}</span> minutes per session<br>
+                        <span class="sessions-per-day">${sessionsPerDay}</span> sessions per day
+                    </div>
+                    <div class="life-stage"><strong>Life Stage:</strong> ${lifeStage}</div>
+                    <div class="training-priorities">
+                        <strong>Current Training Focus:</strong>
+                        <ul>${trainingPriorities.map(priority => `<li>${priority}</li>`).join('')}</ul>
+                    </div>
+                    <div class="weekly-goals">
+                        <strong>This Week's Goals:</strong>
+                        <ul>${weeklyGoals.map(goal => `<li>${goal}</li>`).join('')}</ul>
+                    </div>
+                    <div class="temperament-tips">
+                        <strong>Tips for Your Dog's Temperament:</strong>
+                        <ul>${temperamentTips.map(tip => `<li>${tip}</li>`).join('')}</ul>
+                    </div>
+                </div>
+            `;
+        }
+    </script>
+</body>
+</html>
