@@ -1,42 +1,286 @@
 ---
-title: "Your Ultimate Guide to Dogs"
+title: "Dog Care Guide - Complete Resource for Dog Owners"
 layout: "layouts/base.njk"
+permalink: "/dog/"
 seo_description: "The complete resource for dog owners. Find answers to thousands of questions, read our expert blog, and use our helpful dog age calculator."
 ---
 
-<div class="container">
-
-    <div style="text-align: center; padding: 50px 0; border-bottom: 1px solid var(--border-color); margin-bottom: 40px;">
-        <h1 style="font-family: var(--font-heading); font-size: 3rem; color: var(--heading-color);">Can my dog eat...?</h1>
-        <p style="font-size: 1.2rem;">Get instant answers to over 45,000 dog questions.</p>
-        
-        <input type="search" placeholder="e.g., 'apple', 'chocolate', 'flea treatment'" style="width: 80%; max-width: 600px; padding: 15px; font-size: 1rem; border: 1px solid var(--border-color); border-radius: 8px;">
-        <button style="padding: 15px 30px; font-size: 1rem; background-color: var(--primary-color); color: white; border: none; border-radius: 8px; cursor: pointer; margin-left: 10px;">Search</button>
-    </div>
-
-    <h2 style="text-align: center; font-family: var(--font-heading);">Latest Articles & Guides</h2>
-    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; margin-top: 30px;">
-        <div style="border: 1px solid var(--border-color); border-radius: 8px; background: white; overflow: hidden;">
-            <div style="height: 200px; background-color: var(--border-color);"></div> <div style="padding: 20px;">
-                <h3 style="font-family: var(--font-heading); margin-top: 0;">How to Choose the Right Dog Food</h3>
-                <p>A deep dive into kibble, wet food, and raw diets.</p>
-                <a href="#" style="text-decoration: none; color: var(--primary-color); font-weight: bold;">Read More &rarr;</a>
+<div class="animal-page dog-page dog-overview-page">
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1 class="hero-title">Complete Dog Care Guide</h1>
+                <p class="hero-subtitle">Everything you need to raise a happy, healthy dog</p>
+                
+                <!-- Search Box -->
+                <div class="search-container">
+                    <form class="search-form" role="search">
+                        <div class="search-input-group">
+                            <input 
+                                type="search" 
+                                id="dog-search" 
+                                placeholder="Ask anything about dogs: 'can dogs eat apples', 'house training'..."
+                                aria-label="Search dog questions and answers"
+                                autocomplete="off"
+                            >
+                            <button type="submit" aria-label="Search">🔍</button>
+                        </div>
+                    </form>
+                    <div id="dog-search-results" class="search-results" aria-live="polite"></div>
+                </div>
             </div>
         </div>
-        <div style="border: 1px solid var(--border-color); border-radius: 8px; background: white; overflow: hidden;">
-            <div style="height: 200px; background-color: var(--border-color);"></div> <div style="padding: 20px;">
-                <h3 style="font-family: var(--font-heading); margin-top: 0;">5 Common Training Mistakes</h3>
-                <p>Are you accidentally teaching your pup bad habits?</p>
-                <a href="#" style="text-decoration: none; color: var(--primary-color); font-weight: bold;">Read More &rarr;</a>
-            </div>
-        </div>
-        <div style="border: 1px solid var(--border-color); border-radius: 8px; background: white; overflow: hidden;">
-            <div style="height: 200px; background-color: var(--border-color);"></div> <div style="padding: 20px;">
-                <h3 style="font-family: var(--font-heading); margin-top: 0;">Understanding Dog Body Language</h3>
-                <p>What is your dog *really* trying to tell you?</p>
-                <a href="#" style="text-decoration: none; color: var(--primary-color); font-weight: bold;">Read More &rarr;</a>
-            </div>
-        </div>
-    </div>
+    </section>
 
+    <!-- Navigation Tabs -->
+    <section class="dog-navigation">
+        <div class="container">
+            <nav class="dog-nav-tabs">
+                <a href="/dog/" class="nav-tab active">Overview</a>
+                <a href="/dog/training/" class="nav-tab">Training</a>
+                <a href="/dog/health/" class="nav-tab">Health</a>
+                <a href="/dog/nutrition/" class="nav-tab">Nutrition</a>
+                <a href="/dog/breeds/" class="nav-tab">Breeds</a>
+            </nav>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <section class="main-section">
+        <div class="container">
+            <div class="content-grid">
+                <!-- Main Content -->
+                <div class="main-content">
+                    <!-- Featured Sections -->
+                    <div class="featured-sections">
+                        <div class="section-cards">
+                            <div class="section-card featured">
+                                <div class="card-image">
+                                    <img src="https://images.pexels.com/photos/1108099/pexels-photo-1108099.jpeg?auto=compress&cs=tinysrgb&w=400" alt="Happy dog with owner" loading="lazy">
+                                </div>
+                                <div class="card-content">
+                                    <span class="card-tag">Most Popular</span>
+                                    <h2><a href="/dog/nutrition/">Dog Nutrition & Food Safety</a></h2>
+                                    <p>Complete feeding guide covering safe foods, toxic substances, portion sizes, and nutrition by life stage.</p>
+                                    <div class="card-stats">
+                                        <span>45,000+ food questions answered</span>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="section-card">
+                                <div class="card-image">
+                                    <img src="https://images.pexels.com/photos/551628/pexels-photo-551628.jpeg?auto=compress&cs=tinysrgb&w=300" alt="Dog training" loading="lazy">
+                                </div>
+                                <div class="card-content">
+                                    <h3><a href="/dog/training/">Training & Behavior</a></h3>
+                                    <p>House training, commands, socialization, and solving behavioral issues with positive methods.</p>
+                                    <span class="read-time">Essential guides</span>
+                                </div>
+                            </div>
+                            
+                            <div class="section-card">
+                                <div class="card-image">
+                                    <img src="https://images.pexels.com/photos/4681107/pexels-photo-4681107.jpeg?auto=compress&cs=tinysrgb&w=300" alt="Dog health check" loading="lazy">
+                                </div>
+                                <div class="card-content">
+                                    <h3><a href="/dog/health/">Health & Wellness</a></h3>
+                                    <p>Symptoms, preventive care, vaccinations, and when to see your veterinarian.</p>
+                                    <span class="read-time">Expert advice</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Quick Access Grid -->
+                    <div class="quick-access">
+                        <h2>Quick Access</h2>
+                        <div class="access-grid">
+                            <div class="access-card">
+                                <div class="access-icon">🍎</div>
+                                <h4>Food Safety Checker</h4>
+                                <p>Instantly check if a food is safe for dogs</p>
+                                <a href="/dog/nutrition/#food-checker" class="access-link">Check Now →</a>
+                            </div>
+                            
+                            <div class="access-card">
+                                <div class="access-icon">📚</div>
+                                <h4>Training Guides</h4>
+                                <p>Step-by-step training instructions</p>
+                                <a href="/dog/training/" class="access-link">Start Training →</a>
+                            </div>
+                            
+                            <div class="access-card">
+                                <div class="access-icon">🏥</div>
+                                <h4>Symptom Guide</h4>
+                                <p>Understand when to see a vet</p>
+                                <a href="/dog/health/#symptoms" class="access-link">Check Symptoms →</a>
+                            </div>
+                            
+                            <div class="access-card">
+                                <div class="access-icon">🐕</div>
+                                <h4>Breed Selector</h4>
+                                <p>Find the perfect dog breed for you</p>
+                                <a href="/dog/breeds/#quiz" class="access-link">Take Quiz →</a>
+                            </div>
+                            
+                            <div class="access-card">
+                                <div class="access-icon">📊</div>
+                                <h4>Age Calculator</h4>
+                                <p>Convert dog years to human years</p>
+                                <a href="#age-calculator" class="access-link">Calculate →</a>
+                            </div>
+                            
+                            <div class="access-card">
+                                <div class="access-icon">📅</div>
+                                <h4>Care Schedule</h4>
+                                <p>Never miss important care tasks</p>
+                                <a href="/dog/health/#schedule" class="access-link">View Schedule →</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Popular Questions -->
+                    <div class="popular-questions">
+                        <h2>Most Asked Questions</h2>
+                        <div class="questions-grid">
+                            <div class="question-card">
+                                <h4>Can dogs eat chocolate?</h4>
+                                <p>No, chocolate is toxic to dogs and can cause serious health problems.</p>
+                                <a href="#chocolate-toxicity" class="question-link">Read More →</a>
+                            </div>
+                            <div class="question-card">
+                                <h4>How often should I walk my dog?</h4>
+                                <p>Most dogs need at least 30 minutes to 2 hours of exercise daily.</p>
+                                <a href="#exercise-needs" class="question-link">Read More →</a>
+                            </div>
+                            <div class="question-card">
+                                <h4>When should I start training my puppy?</h4>
+                                <p>Start basic training as early as 8 weeks old with positive methods.</p>
+                                <a href="#puppy-training" class="question-link">Read More →</a>
+                            </div>
+                            <div class="question-card">
+                                <h4>How do I stop my dog from barking?</h4>
+                                <p>Identify the cause and use positive training techniques consistently.</p>
+                                <a href="#barking-solutions" class="question-link">Read More →</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Sidebar -->
+                <div class="sidebar">
+                    <!-- Age Calculator Widget -->
+                    <div class="widget age-calculator" id="age-calculator">
+                        <h3>Dog Age Calculator</h3>
+                        <p>Convert your dog's age to human years</p>
+                        <div class="calculator-form">
+                            <label for="dog-age">Dog's age (years):</label>
+                            <input type="number" id="dog-age" placeholder="Enter age" min="0" max="30">
+                            <label for="dog-size">Size:</label>
+                            <select id="dog-size">
+                                <option value="small">Small (under 25 lbs)</option>
+                                <option value="medium">Medium (25-60 lbs)</option>
+                                <option value="large">Large (over 60 lbs)</option>
+                            </select>
+                            <button onclick="calculateDogAge()">Calculate</button>
+                            <div id="age-result" class="calculator-result"></div>
+                        </div>
+                    </div>
+
+                    <!-- Emergency Contacts -->
+                    <div class="widget emergency-info">
+                        <h3>Emergency Information</h3>
+                        <div class="emergency-items">
+                            <div class="emergency-item">
+                                <strong>24/7 Pet Poison Helpline:</strong>
+                                <span>(855) 764-7661</span>
+                            </div>
+                            <div class="emergency-item">
+                                <strong>ASPCA Animal Poison Control:</strong>
+                                <span>(888) 426-4435</span>
+                            </div>
+                            <div class="emergency-item">
+                                <strong>Emergency Signs:</strong>
+                                <span>Difficulty breathing, seizures, unconsciousness</span>
+                            </div>
+                        </div>
+                        <a href="/dog/health/#emergency" class="emergency-link">Full Emergency Guide →</a>
+                    </div>
+
+                    <!-- Recent Articles -->
+                    <div class="widget recent-articles">
+                        <h3>Latest Articles</h3>
+                        <div class="article-list">
+                            <article class="mini-article">
+                                <h4><a href="#">Puppy Vaccination Schedule</a></h4>
+                                <span class="read-time">5 min read</span>
+                            </article>
+                            <article class="mini-article">
+                                <h4><a href="#">Best Dog Foods for Seniors</a></h4>
+                                <span class="read-time">8 min read</span>
+                            </article>
+                            <article class="mini-article">
+                                <h4><a href="#">House Training in 7 Days</a></h4>
+                                <span class="read-time">10 min read</span>
+                            </article>
+                            <article class="mini-article">
+                                <h4><a href="#">Dog Grooming at Home</a></h4>
+                                <span class="read-time">6 min read</span>
+                            </article>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter Section -->
+    <section class="newsletter-section">
+        <div class="container">
+            <div class="newsletter-content">
+                <h2>Dog Care Weekly</h2>
+                <p>Get expert dog care tips, health alerts, and training advice delivered to your inbox</p>
+                <form class="newsletter-form">
+                    <div class="form-group">
+                        <input type="email" placeholder="Enter your email address" required>
+                        <button type="submit">Subscribe Free</button>
+                    </div>
+                    <p class="privacy-note">Join 50,000+ dog owners. No spam, unsubscribe anytime.</p>
+                </form>
+            </div>
+        </div>
+    </section>
 </div>
+
+<script>
+function calculateDogAge() {
+    const age = document.getElementById('dog-age').value;
+    const size = document.getElementById('dog-size').value;
+    const resultDiv = document.getElementById('age-result');
+    
+    if (age) {
+        let humanAge;
+        const dogAge = parseInt(age);
+        
+        if (dogAge === 1) {
+            humanAge = size === 'large' ? 14 : 15;
+        } else if (dogAge === 2) {
+            humanAge = size === 'large' ? 22 : 24;
+        } else {
+            const baseAge = size === 'large' ? 22 : 24;
+            const additionalYears = dogAge - 2;
+            const yearMultiplier = size === 'large' ? 5 : size === 'medium' ? 4.5 : 4;
+            humanAge = baseAge + (additionalYears * yearMultiplier);
+        }
+        
+        resultDiv.innerHTML = `
+            <div class="result-content">
+                <strong>Human Age Equivalent:</strong><br>
+                ${Math.round(humanAge)} years old
+            </div>
+        `;
+    }
+}
+</script>

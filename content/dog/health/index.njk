@@ -1,0 +1,333 @@
+---
+title: "Dog Health Guide - Symptoms, Prevention & Care"
+layout: "layouts/base.njk"
+permalink: "/dog/health/"
+seo_description: "Comprehensive dog health guide covering symptoms, preventive care, common diseases, and when to see your veterinarian."
+---
+
+<div class="animal-page dog-page dog-health-page">
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1 class="hero-title">Dog Health & Wellness</h1>
+                <p class="hero-subtitle">Keep your dog healthy with expert veterinary guidance</p>
+                
+                <!-- Search Box -->
+                <div class="search-container">
+                    <form class="search-form" role="search">
+                        <div class="search-input-group">
+                            <input 
+                                type="search" 
+                                id="health-search" 
+                                placeholder="Search health topics: 'vomiting', 'skin allergies'..."
+                                aria-label="Search dog health questions"
+                                autocomplete="off"
+                            >
+                            <button type="submit" aria-label="Search">🔍</button>
+                        </div>
+                    </form>
+                    <div id="health-search-results" class="search-results" aria-live="polite"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Navigation Tabs -->
+    <section class="dog-navigation">
+        <div class="container">
+            <nav class="dog-nav-tabs">
+                <a href="/dog/" class="nav-tab">Overview</a>
+                <a href="/dog/training/" class="nav-tab">Training</a>
+                <a href="/dog/health/" class="nav-tab active">Health</a>
+                <a href="/dog/nutrition/" class="nav-tab">Nutrition</a>
+                <a href="/dog/breeds/" class="nav-tab">Breeds</a>
+            </nav>
+        </div>
+    </section>
+
+    <!-- Emergency Alert -->
+    <section class="emergency-alert">
+        <div class="container">
+            <div class="alert-content">
+                <div class="alert-icon">🚨</div>
+                <div class="alert-text">
+                    <strong>Emergency Symptoms:</strong> Difficulty breathing, seizures, bloat, severe bleeding, unconsciousness
+                    <a href="#emergency-guide" class="alert-link">View Emergency Guide →</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <section class="main-section">
+        <div class="container">
+            <div class="content-grid">
+                <!-- Main Content -->
+                <div class="main-content">
+                    <!-- Health Categories -->
+                    <div class="health-categories">
+                        <h2>Common Health Concerns</h2>
+                        <div class="categories-grid">
+                            <div class="health-category-card">
+                                <div class="category-header">
+                                    <div class="category-icon">🦴</div>
+                                    <h3>Digestive Issues</h3>
+                                </div>
+                                <div class="symptoms-list">
+                                    <h4>Common Symptoms:</h4>
+                                    <ul>
+                                        <li>Vomiting or nausea</li>
+                                        <li>Diarrhea or loose stools</li>
+                                        <li>Loss of appetite</li>
+                                        <li>Excessive drooling</li>
+                                    </ul>
+                                </div>
+                                <a href="#digestive" class="category-link">Learn More →</a>
+                            </div>
+
+                            <div class="health-category-card">
+                                <div class="category-header">
+                                    <div class="category-icon">🩺</div>
+                                    <h3>Skin & Allergies</h3>
+                                </div>
+                                <div class="symptoms-list">
+                                    <h4>Common Symptoms:</h4>
+                                    <ul>
+                                        <li>Excessive scratching</li>
+                                        <li>Red, inflamed skin</li>
+                                        <li>Hair loss or bald patches</li>
+                                        <li>Hot spots</li>
+                                    </ul>
+                                </div>
+                                <a href="#skin" class="category-link">Learn More →</a>
+                            </div>
+
+                            <div class="health-category-card">
+                                <div class="category-header">
+                                    <div class="category-icon">🦷</div>
+                                    <h3>Dental Health</h3>
+                                </div>
+                                <div class="symptoms-list">
+                                    <h4>Common Symptoms:</h4>
+                                    <ul>
+                                        <li>Bad breath</li>
+                                        <li>Yellow or brown tartar</li>
+                                        <li>Difficulty chewing</li>
+                                        <li>Loose or missing teeth</li>
+                                    </ul>
+                                </div>
+                                <a href="#dental" class="category-link">Learn More →</a>
+                            </div>
+
+                            <div class="health-category-card">
+                                <div class="category-header">
+                                    <div class="category-icon">👁️</div>
+                                    <h3>Eye & Ear Issues</h3>
+                                </div>
+                                <div class="symptoms-list">
+                                    <h4>Common Symptoms:</h4>
+                                    <ul>
+                                        <li>Eye discharge or tearing</li>
+                                        <li>Ear odor or discharge</li>
+                                        <li>Head shaking</li>
+                                        <li>Squinting or pawing at eyes</li>
+                                    </ul>
+                                </div>
+                                <a href="#eyes-ears" class="category-link">Learn More →</a>
+                            </div>
+
+                            <div class="health-category-card">
+                                <div class="category-header">
+                                    <div class="category-icon">🦵</div>
+                                    <h3>Joint & Mobility</h3>
+                                </div>
+                                <div class="symptoms-list">
+                                    <h4>Common Symptoms:</h4>
+                                    <ul>
+                                        <li>Limping or favoring a leg</li>
+                                        <li>Stiffness after rest</li>
+                                        <li>Difficulty getting up</li>
+                                        <li>Reluctance to exercise</li>
+                                    </ul>
+                                </div>
+                                <a href="#joints" class="category-link">Learn More →</a>
+                            </div>
+
+                            <div class="health-category-card">
+                                <div class="category-header">
+                                    <div class="category-icon">🧬</div>
+                                    <h3>Parasites</h3>
+                                </div>
+                                <div class="symptoms-list">
+                                    <h4>Common Symptoms:</h4>
+                                    <ul>
+                                        <li>Visible fleas or ticks</li>
+                                        <li>Excessive scratching</li>
+                                        <li>Worms in stool</li>
+                                        <li>Scooting or licking rear</li>
+                                    </ul>
+                                </div>
+                                <a href="#parasites" class="category-link">Learn More →</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Preventive Care Schedule -->
+                    <div class="preventive-care">
+                        <h2>Preventive Care Schedule</h2>
+                        <div class="care-schedule">
+                            <div class="schedule-card">
+                                <h3>Puppy (0-1 Year)</h3>
+                                <div class="schedule-items">
+                                    <div class="schedule-item">
+                                        <strong>6-8 weeks:</strong> First vaccinations, deworming
+                                    </div>
+                                    <div class="schedule-item">
+                                        <strong>10-12 weeks:</strong> Second vaccinations, flea/tick prevention
+                                    </div>
+                                    <div class="schedule-item">
+                                        <strong>14-16 weeks:</strong> Final puppy shots, microchipping
+                                    </div>
+                                    <div class="schedule-item">
+                                        <strong>6 months:</strong> Spay/neuter consideration
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="schedule-card">
+                                <h3>Adult (1-7 Years)</h3>
+                                <div class="schedule-items">
+                                    <div class="schedule-item">
+                                        <strong>Annual:</strong> Wellness exam, vaccinations, heartworm test
+                                    </div>
+                                    <div class="schedule-item">
+                                        <strong>Monthly:</strong> Flea/tick and heartworm prevention
+                                    </div>
+                                    <div class="schedule-item">
+                                        <strong>Daily:</strong> Dental care, exercise, grooming
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="schedule-card">
+                                <h3>Senior (7+ Years)</h3>
+                                <div class="schedule-items">
+                                    <div class="schedule-item">
+                                        <strong>Bi-annual:</strong> Wellness exams with bloodwork
+                                    </div>
+                                    <div class="schedule-item">
+                                        <strong>Regular:</strong> Joint health monitoring
+                                    </div>
+                                    <div class="schedule-item">
+                                        <strong>Enhanced:</strong> Nutrition and exercise adjustments
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Sidebar -->
+                <div class="sidebar">
+                    <!-- Symptom Checker -->
+                    <div class="widget symptom-checker">
+                        <h3>Symptom Severity Guide</h3>
+                        <div class="severity-levels">
+                            <div class="severity-item emergency">
+                                <h4>🚨 Emergency</h4>
+                                <p>See vet immediately</p>
+                                <ul>
+                                    <li>Difficulty breathing</li>
+                                    <li>Unconscious</li>
+                                    <li>Severe bleeding</li>
+                                    <li>Seizures</li>
+                                </ul>
+                            </div>
+                            <div class="severity-item urgent">
+                                <h4>⚠️ Urgent</h4>
+                                <p>See vet within 24 hours</p>
+                                <ul>
+                                    <li>Not eating 24+ hours</li>
+                                    <li>Persistent vomiting</li>
+                                    <li>Lethargy</li>
+                                    <li>Difficulty urinating</li>
+                                </ul>
+                            </div>
+                            <div class="severity-item routine">
+                                <h4>📅 Routine</h4>
+                                <p>Schedule appointment</p>
+                                <ul>
+                                    <li>Minor skin irritation</li>
+                                    <li>Slight cough</li>
+                                    <li>Mild digestive upset</li>
+                                    <li>Routine check-ups</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Vaccination Tracker -->
+                    <div class="widget vaccination-tracker">
+                        <h3>Vaccination Tracker</h3>
+                        <div class="vaccine-checklist">
+                            <label class="checkbox-item">
+                                <input type="checkbox"> Rabies (annual)
+                            </label>
+                            <label class="checkbox-item">
+                                <input type="checkbox"> DHPP (annual)
+                            </label>
+                            <label class="checkbox-item">
+                                <input type="checkbox"> Bordetella (6 months)
+                            </label>
+                            <label class="checkbox-item">
+                                <input type="checkbox"> Lyme Disease
+                            </label>
+                        </div>
+                        <button class="track-button">Set Reminders</button>
+                    </div>
+
+                    <!-- Health Articles -->
+                    <div class="widget health-articles">
+                        <h3>Recent Health Articles</h3>
+                        <div class="article-list">
+                            <article class="mini-article">
+                                <h4><a href="#">Signs of Hip Dysplasia</a></h4>
+                                <span class="read-time">6 min read</span>
+                            </article>
+                            <article class="mini-article">
+                                <h4><a href="#">Preventing Bloat in Dogs</a></h4>
+                                <span class="read-time">8 min read</span>
+                            </article>
+                            <article class="mini-article">
+                                <h4><a href="#">Senior Dog Care Tips</a></h4>
+                                <span class="read-time">10 min read</span>
+                            </article>
+                            <article class="mini-article">
+                                <h4><a href="#">Heartworm Prevention</a></h4>
+                                <span class="read-time">5 min read</span>
+                            </article>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter Section -->
+    <section class="newsletter-section">
+        <div class="container">
+            <div class="newsletter-content">
+                <h2>Health Alerts & Tips</h2>
+                <p>Stay informed about seasonal health risks and preventive care</p>
+                <form class="newsletter-form">
+                    <div class="form-group">
+                        <input type="email" placeholder="Enter your email address" required>
+                        <button type="submit">Subscribe</button>
+                    </div>
+                    <p class="privacy-note">Veterinary-approved health tips, no spam.</p>
+                </form>
+            </div>
+        </div>
+    </section>
+</div>

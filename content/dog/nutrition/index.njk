@@ -1,0 +1,406 @@
+---
+title: "Dog Nutrition Guide - Feeding, Diet & Food Safety"
+layout: "layouts/base.njk"
+permalink: "/dog/nutrition/"
+seo_description: "Complete dog nutrition guide covering feeding schedules, food safety, dietary needs, and what dogs can and cannot eat."
+---
+
+<div class="animal-page dog-page dog-nutrition-page">
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1 class="hero-title">Dog Nutrition & Feeding</h1>
+                <p class="hero-subtitle">Feed your dog for optimal health and longevity</p>
+                
+                <!-- Search Box -->
+                <div class="search-container">
+                    <form class="search-form" role="search">
+                        <div class="search-input-group">
+                            <input 
+                                type="search" 
+                                id="nutrition-search" 
+                                placeholder="Search food topics: 'can dogs eat grapes', 'puppy feeding'..."
+                                aria-label="Search dog nutrition questions"
+                                autocomplete="off"
+                            >
+                            <button type="submit" aria-label="Search">🔍</button>
+                        </div>
+                    </form>
+                    <div id="nutrition-search-results" class="search-results" aria-live="polite"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Navigation Tabs -->
+    <section class="dog-navigation">
+        <div class="container">
+            <nav class="dog-nav-tabs">
+                <a href="/dog/" class="nav-tab">Overview</a>
+                <a href="/dog/training/" class="nav-tab">Training</a>
+                <a href="/dog/health/" class="nav-tab">Health</a>
+                <a href="/dog/nutrition/" class="nav-tab active">Nutrition</a>
+                <a href="/dog/breeds/" class="nav-tab">Breeds</a>
+            </nav>
+        </div>
+    </section>
+
+    <!-- Quick Food Safety Alert -->
+    <section class="food-safety-alert">
+        <div class="container">
+            <div class="safety-cards">
+                <div class="safety-card toxic">
+                    <h3>🚫 Toxic Foods</h3>
+                    <p>Never feed: Chocolate, grapes, onions, xylitol, alcohol</p>
+                    <a href="#toxic-foods">Full List →</a>
+                </div>
+                <div class="safety-card safe">
+                    <h3>✅ Safe Treats</h3>
+                    <p>Good options: Carrots, apples, blueberries, plain chicken</p>
+                    <a href="#safe-foods">Full List →</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <section class="main-section">
+        <div class="container">
+            <div class="content-grid">
+                <!-- Main Content -->
+                <div class="main-content">
+                    <!-- Featured Nutrition Guide -->
+                    <div class="featured-section">
+                        <div class="featured-card large">
+                            <div class="featured-image">
+                                <img src="https://images.pexels.com/photos/1108099/pexels-photo-1108099.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Dog with healthy food bowl" loading="lazy">
+                            </div>
+                            <div class="featured-content">
+                                <span class="featured-tag">Essential Guide</span>
+                                <h2>Complete Feeding Guide by Life Stage</h2>
+                                <p>From puppy to senior, learn how your dog's nutritional needs change and how to provide the best diet for every life stage.</p>
+                                <a href="#feeding-guide" class="read-more-btn">View Guide</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Food Categories -->
+                    <div class="food-categories">
+                        <h2>Food Categories & Safety</h2>
+                        <div class="food-grid">
+                            <!-- Safe Foods -->
+                            <div class="food-category safe-foods">
+                                <div class="category-header">
+                                    <div class="category-icon">✅</div>
+                                    <h3>Safe Foods</h3>
+                                    <span class="category-count">50+ foods</span>
+                                </div>
+                                <div class="food-examples">
+                                    <div class="food-item">
+                                        <img src="https://images.pexels.com/photos/161559/background-bitter-breakfast-bright-161559.jpeg?auto=compress&cs=tinysrgb&w=100" alt="Apple slices">
+                                        <span>Apples</span>
+                                    </div>
+                                    <div class="food-item">
+                                        <img src="https://images.pexels.com/photos/143133/pexels-photo-143133.jpeg?auto=compress&cs=tinysrgb&w=100" alt="Carrots">
+                                        <span>Carrots</span>
+                                    </div>
+                                    <div class="food-item">
+                                        <img src="https://images.pexels.com/photos/357808/pexels-photo-357808.jpeg?auto=compress&cs=tinysrgb&w=100" alt="Blueberries">
+                                        <span>Blueberries</span>
+                                    </div>
+                                    <div class="food-item">
+                                        <img src="https://images.pexels.com/photos/2131967/pexels-photo-2131967.jpeg?auto=compress&cs=tinysrgb&w=100" alt="Chicken">
+                                        <span>Chicken</span>
+                                    </div>
+                                </div>
+                                <a href="#safe-foods-full" class="category-link">View All Safe Foods →</a>
+                            </div>
+
+                            <!-- Toxic Foods -->
+                            <div class="food-category toxic-foods">
+                                <div class="category-header">
+                                    <div class="category-icon">🚫</div>
+                                    <h3>Toxic Foods</h3>
+                                    <span class="category-count">20+ foods</span>
+                                </div>
+                                <div class="food-examples">
+                                    <div class="food-item toxic">
+                                        <img src="https://images.pexels.com/photos/65882/chocolate-dark-coffee-confiserie-65882.jpeg?auto=compress&cs=tinysrgb&w=100" alt="Chocolate">
+                                        <span>Chocolate</span>
+                                    </div>
+                                    <div class="food-item toxic">
+                                        <img src="https://images.pexels.com/photos/23042/pexels-photo-23042.jpg?auto=compress&cs=tinysrgb&w=100" alt="Grapes">
+                                        <span>Grapes</span>
+                                    </div>
+                                    <div class="food-item toxic">
+                                        <img src="https://images.pexels.com/photos/144248/onions-food-healthy-fresh-144248.jpeg?auto=compress&cs=tinysrgb&w=100" alt="Onions">
+                                        <span>Onions</span>
+                                    </div>
+                                    <div class="food-item toxic">
+                                        <img src="https://images.pexels.com/photos/357573/pexels-photo-357573.jpeg?auto=compress&cs=tinysrgb&w=100" alt="Garlic">
+                                        <span>Garlic</span>
+                                    </div>
+                                </div>
+                                <a href="#toxic-foods-full" class="category-link">View All Toxic Foods →</a>
+                            </div>
+
+                            <!-- Moderate Foods -->
+                            <div class="food-category moderate-foods">
+                                <div class="category-header">
+                                    <div class="category-icon">⚠️</div>
+                                    <h3>In Moderation</h3>
+                                    <span class="category-count">30+ foods</span>
+                                </div>
+                                <div class="food-examples">
+                                    <div class="food-item moderate">
+                                        <img src="https://images.pexels.com/photos/918327/pexels-photo-918327.jpeg?auto=compress&cs=tinysrgb&w=100" alt="Rice">
+                                        <span>Rice</span>
+                                    </div>
+                                    <div class="food-item moderate">
+                                        <img src="https://images.pexels.com/photos/566566/pexels-photo-566566.jpeg?auto=compress&cs=tinysrgb&w=100" alt="Cheese">
+                                        <span>Cheese</span>
+                                    </div>
+                                    <div class="food-item moderate">
+                                        <img src="https://images.pexels.com/photos/4553618/pexels-photo-4553618.jpeg?auto=compress&cs=tinysrgb&w=100" alt="Banana">
+                                        <span>Bananas</span>
+                                    </div>
+                                    <div class="food-item moderate">
+                                        <img src="https://images.pexels.com/photos/209439/pexels-photo-209439.jpeg?auto=compress&cs=tinysrgb&w=100" alt="Eggs">
+                                        <span>Eggs</span>
+                                    </div>
+                                </div>
+                                <a href="#moderate-foods-full" class="category-link">View All →</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Feeding Guidelines -->
+                    <div class="feeding-guidelines">
+                        <h2>Feeding Guidelines by Life Stage</h2>
+                        <div class="guidelines-tabs">
+                            <div class="tab-buttons">
+                                <button class="tab-button active" data-tab="puppy">Puppy (0-12 months)</button>
+                                <button class="tab-button" data-tab="adult">Adult (1-7 years)</button>
+                                <button class="tab-button" data-tab="senior">Senior (7+ years)</button>
+                            </div>
+                            
+                            <div class="tab-content active" id="puppy-tab">
+                                <div class="feeding-info">
+                                    <div class="feeding-schedule">
+                                        <h4>Feeding Schedule</h4>
+                                        <ul>
+                                            <li><strong>8-12 weeks:</strong> 4 meals per day</li>
+                                            <li><strong>3-6 months:</strong> 3 meals per day</li>
+                                            <li><strong>6-12 months:</strong> 2 meals per day</li>
+                                        </ul>
+                                    </div>
+                                    <div class="portion-guide">
+                                        <h4>Portion Guidelines</h4>
+                                        <ul>
+                                            <li>Follow puppy food package instructions</li>
+                                            <li>Adjust based on body condition</li>
+                                            <li>Monitor weight weekly</li>
+                                            <li>Switch to adult food at 12 months</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="tab-content" id="adult-tab">
+                                <div class="feeding-info">
+                                    <div class="feeding-schedule">
+                                        <h4>Feeding Schedule</h4>
+                                        <ul>
+                                            <li><strong>Small breeds:</strong> 2-3 meals per day</li>
+                                            <li><strong>Medium breeds:</strong> 2 meals per day</li>
+                                            <li><strong>Large breeds:</strong> 2 meals per day</li>
+                                        </ul>
+                                    </div>
+                                    <div class="portion-guide">
+                                        <h4>Portion Guidelines</h4>
+                                        <ul>
+                                            <li>Base on ideal body weight</li>
+                                            <li>Adjust for activity level</li>
+                                            <li>Monitor body condition score</li>
+                                            <li>Consistent meal times</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="tab-content" id="senior-tab">
+                                <div class="feeding-info">
+                                    <div class="feeding-schedule">
+                                        <h4>Feeding Schedule</h4>
+                                        <ul>
+                                            <li><strong>Frequency:</strong> 2-3 smaller meals</li>
+                                            <li><strong>Timing:</strong> Consistent schedule</li>
+                                            <li><strong>Special needs:</strong> Easy-to-digest foods</li>
+                                        </ul>
+                                    </div>
+                                    <div class="portion-guide">
+                                        <h4>Special Considerations</h4>
+                                        <ul>
+                                            <li>Lower calorie senior formulas</li>
+                                            <li>Joint support supplements</li>
+                                            <li>Increased fiber for digestion</li>
+                                            <li>Regular weight monitoring</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Sidebar -->
+                <div class="sidebar">
+                    <!-- Food Calculator -->
+                    <div class="widget food-calculator">
+                        <h3>Daily Food Calculator</h3>
+                        <p>Calculate your dog's daily food needs</p>
+                        <div class="calculator-form">
+                            <label for="dog-weight">Weight (lbs):</label>
+                            <input type="number" id="dog-weight" placeholder="Enter weight" min="1" max="200">
+                            
+                            <label for="activity-level">Activity Level:</label>
+                            <select id="activity-level">
+                                <option value="low">Low - Couch potato</option>
+                                <option value="moderate">Moderate - Daily walks</option>
+                                <option value="high">High - Very active</option>
+                            </select>
+                            
+                            <button onclick="calculateFood()">Calculate</button>
+                            <div id="food-result" class="calculator-result"></div>
+                        </div>
+                    </div>
+
+                    <!-- Quick Food Checker -->
+                    <div class="widget food-checker">
+                        <h3>Quick Food Checker</h3>
+                        <div class="checker-form">
+                            <input type="text" id="food-input" placeholder="Enter food name...">
+                            <button onclick="checkFood()">Check Safety</button>
+                            <div id="food-safety-result" class="checker-result"></div>
+                        </div>
+                    </div>
+
+                    <!-- Popular Questions -->
+                    <div class="widget popular-questions">
+                        <h3>Popular Food Questions</h3>
+                        <div class="question-list">
+                            <a href="#" class="question-item">Can dogs eat chocolate? 🚫</a>
+                            <a href="#" class="question-item">Can dogs eat apples? ✅</a>
+                            <a href="#" class="question-item">Can dogs eat grapes? 🚫</a>
+                            <a href="#" class="question-item">Can dogs eat carrots? ✅</a>
+                            <a href="#" class="question-item">Can dogs eat cheese? ⚠️</a>
+                        </div>
+                    </div>
+
+                    <!-- Feeding Reminders -->
+                    <div class="widget feeding-reminders">
+                        <h3>Feeding Tips</h3>
+                        <div class="tips-list">
+                            <div class="tip-item">
+                                <strong>Fresh Water:</strong> Always available
+                            </div>
+                            <div class="tip-item">
+                                <strong>Meal Times:</strong> Consistent schedule
+                            </div>
+                            <div class="tip-item">
+                                <strong>Treats:</strong> Maximum 10% of daily calories
+                            </div>
+                            <div class="tip-item">
+                                <strong>Food Changes:</strong> Transition slowly over 7-10 days
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter Section -->
+    <section class="newsletter-section">
+        <div class="container">
+            <div class="newsletter-content">
+                <h2>Nutrition Updates</h2>
+                <p>Get the latest dog nutrition research and feeding tips</p>
+                <form class="newsletter-form">
+                    <div class="form-group">
+                        <input type="email" placeholder="Enter your email address" required>
+                        <button type="submit">Subscribe</button>
+                    </div>
+                    <p class="privacy-note">Science-based nutrition advice, delivered monthly.</p>
+                </form>
+            </div>
+        </div>
+    </section>
+</div>
+
+<script>
+function calculateFood() {
+    const weight = document.getElementById('dog-weight').value;
+    const activity = document.getElementById('activity-level').value;
+    const resultDiv = document.getElementById('food-result');
+    
+    if (weight) {
+        let baseCalories = Math.round(30 * Math.pow(parseFloat(weight) / 2.2, 0.75) + 70);
+        
+        // Adjust for activity level
+        if (activity === 'low') baseCalories *= 1.2;
+        else if (activity === 'moderate') baseCalories *= 1.6;
+        else if (activity === 'high') baseCalories *= 2.0;
+        
+        const cups = Math.round((baseCalories / 350) * 10) / 10; // Assuming 350 cal/cup
+        
+        resultDiv.innerHTML = `
+            <div class="result-content">
+                <strong>Daily Needs:</strong><br>
+                ${Math.round(baseCalories)} calories<br>
+                Approximately ${cups} cups of dry food
+            </div>
+        `;
+    }
+}
+
+function checkFood() {
+    const food = document.getElementById('food-input').value.toLowerCase();
+    const resultDiv = document.getElementById('food-safety-result');
+    
+    const safefoods = ['apple', 'carrot', 'blueberry', 'chicken', 'rice', 'pumpkin', 'sweet potato'];
+    const toxicFoods = ['chocolate', 'grape', 'raisin', 'onion', 'garlic', 'xylitol', 'alcohol'];
+    const moderateFoods = ['cheese', 'banana', 'egg', 'bread'];
+    
+    if (toxicFoods.some(toxic => food.includes(toxic))) {
+        resultDiv.innerHTML = '<div class="result toxic">🚫 TOXIC - Do not feed!</div>';
+    } else if (safefoods.some(safe => food.includes(safe))) {
+        resultDiv.innerHTML = '<div class="result safe">✅ SAFE - Good choice!</div>';
+    } else if (moderateFoods.some(mod => food.includes(mod))) {
+        resultDiv.innerHTML = '<div class="result moderate">⚠️ IN MODERATION</div>';
+    } else if (food.length > 0) {
+        resultDiv.innerHTML = '<div class="result unknown">❓ Consult your vet</div>';
+    }
+}
+
+// Tab functionality
+document.addEventListener('DOMContentLoaded', function() {
+    const tabButtons = document.querySelectorAll('.tab-button');
+    const tabContents = document.querySelectorAll('.tab-content');
+    
+    tabButtons.forEach(button => {
+        button.addEventListener('click', () => {
+            const tabName = button.getAttribute('data-tab');
+            
+            // Remove active class from all buttons and contents
+            tabButtons.forEach(btn => btn.classList.remove('active'));
+            tabContents.forEach(content => content.classList.remove('active'));
+            
+            // Add active class to clicked button and corresponding content
+            button.classList.add('active');
+            document.getElementById(tabName + '-tab').classList.add('active');
+        });
+    });
+});
+</script>

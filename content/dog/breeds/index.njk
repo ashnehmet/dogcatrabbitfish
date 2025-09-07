@@ -1,0 +1,505 @@
+---
+title: "Dog Breeds Guide - Characteristics, Care & Selection"
+layout: "layouts/base.njk"
+permalink: "/dog/breeds/"
+seo_description: "Comprehensive dog breeds guide covering characteristics, care requirements, temperament, and breed-specific health considerations."
+---
+
+<div class="animal-page dog-page dog-breeds-page">
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1 class="hero-title">Dog Breeds & Selection</h1>
+                <p class="hero-subtitle">Find the perfect breed for your lifestyle and family</p>
+                
+                <!-- Search Box -->
+                <div class="search-container">
+                    <form class="search-form" role="search">
+                        <div class="search-input-group">
+                            <input 
+                                type="search" 
+                                id="breeds-search" 
+                                placeholder="Search breeds: 'Golden Retriever', 'small dogs'..."
+                                aria-label="Search dog breeds"
+                                autocomplete="off"
+                            >
+                            <button type="submit" aria-label="Search">🔍</button>
+                        </div>
+                    </form>
+                    <div id="breeds-search-results" class="search-results" aria-live="polite"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Navigation Tabs -->
+    <section class="dog-navigation">
+        <div class="container">
+            <nav class="dog-nav-tabs">
+                <a href="/dog/" class="nav-tab">Overview</a>
+                <a href="/dog/training/" class="nav-tab">Training</a>
+                <a href="/dog/health/" class="nav-tab">Health</a>
+                <a href="/dog/nutrition/" class="nav-tab">Nutrition</a>
+                <a href="/dog/breeds/" class="nav-tab active">Breeds</a>
+            </nav>
+        </div>
+    </section>
+
+    <!-- Breed Filter -->
+    <section class="breed-filters">
+        <div class="container">
+            <div class="filter-section">
+                <h2>Find Your Perfect Match</h2>
+                <div class="filter-grid">
+                    <div class="filter-group">
+                        <label>Size:</label>
+                        <div class="filter-options">
+                            <button class="filter-btn active" data-filter="all">All Sizes</button>
+                            <button class="filter-btn" data-filter="small">Small (under 25 lbs)</button>
+                            <button class="filter-btn" data-filter="medium">Medium (25-60 lbs)</button>
+                            <button class="filter-btn" data-filter="large">Large (60+ lbs)</button>
+                        </div>
+                    </div>
+                    <div class="filter-group">
+                        <label>Activity Level:</label>
+                        <div class="filter-options">
+                            <button class="filter-btn active" data-filter="any-activity">Any Level</button>
+                            <button class="filter-btn" data-filter="low-activity">Low Energy</button>
+                            <button class="filter-btn" data-filter="moderate-activity">Moderate</button>
+                            <button class="filter-btn" data-filter="high-activity">High Energy</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <section class="main-section">
+        <div class="container">
+            <div class="content-grid">
+                <!-- Main Content -->
+                <div class="main-content">
+                    <!-- Popular Breeds -->
+                    <div class="popular-breeds">
+                        <h2>Most Popular Breeds</h2>
+                        <div class="breeds-grid">
+                            <div class="breed-card" data-size="large" data-activity="high">
+                                <div class="breed-image">
+                                    <img src="https://images.pexels.com/photos/1108099/pexels-photo-1108099.jpeg?auto=compress&cs=tinysrgb&w=300" alt="Golden Retriever" loading="lazy">
+                                </div>
+                                <div class="breed-info">
+                                    <h3>Golden Retriever</h3>
+                                    <div class="breed-stats">
+                                        <span class="size-tag large">Large</span>
+                                        <span class="activity-tag high">High Energy</span>
+                                    </div>
+                                    <p>Friendly, intelligent, and devoted. Perfect family dogs with gentle temperaments.</p>
+                                    <div class="breed-details">
+                                        <div class="detail-item">
+                                            <span class="detail-label">Weight:</span>
+                                            <span>55-75 lbs</span>
+                                        </div>
+                                        <div class="detail-item">
+                                            <span class="detail-label">Lifespan:</span>
+                                            <span>10-12 years</span>
+                                        </div>
+                                        <div class="detail-item">
+                                            <span class="detail-label">Grooming:</span>
+                                            <span>High</span>
+                                        </div>
+                                    </div>
+                                    <a href="#golden-retriever" class="breed-link">Learn More →</a>
+                                </div>
+                            </div>
+
+                            <div class="breed-card" data-size="large" data-activity="moderate">
+                                <div class="breed-image">
+                                    <img src="https://images.pexels.com/photos/1254140/pexels-photo-1254140.jpeg?auto=compress&cs=tinysrgb&w=300" alt="Labrador Retriever" loading="lazy">
+                                </div>
+                                <div class="breed-info">
+                                    <h3>Labrador Retriever</h3>
+                                    <div class="breed-stats">
+                                        <span class="size-tag large">Large</span>
+                                        <span class="activity-tag moderate">Moderate Energy</span>
+                                    </div>
+                                    <p>Outgoing, active, and loyal. America's most popular breed for good reason.</p>
+                                    <div class="breed-details">
+                                        <div class="detail-item">
+                                            <span class="detail-label">Weight:</span>
+                                            <span>55-80 lbs</span>
+                                        </div>
+                                        <div class="detail-item">
+                                            <span class="detail-label">Lifespan:</span>
+                                            <span>10-12 years</span>
+                                        </div>
+                                        <div class="detail-item">
+                                            <span class="detail-label">Grooming:</span>
+                                            <span>Moderate</span>
+                                        </div>
+                                    </div>
+                                    <a href="#labrador" class="breed-link">Learn More →</a>
+                                </div>
+                            </div>
+
+                            <div class="breed-card" data-size="large" data-activity="low">
+                                <div class="breed-image">
+                                    <img src="https://images.pexels.com/photos/551628/pexels-photo-551628.jpeg?auto=compress&cs=tinysrgb&w=300" alt="German Shepherd" loading="lazy">
+                                </div>
+                                <div class="breed-info">
+                                    <h3>German Shepherd</h3>
+                                    <div class="breed-stats">
+                                        <span class="size-tag large">Large</span>
+                                        <span class="activity-tag high">High Energy</span>
+                                    </div>
+                                    <p>Confident, courageous, and smart. Extremely versatile working dogs.</p>
+                                    <div class="breed-details">
+                                        <div class="detail-item">
+                                            <span class="detail-label">Weight:</span>
+                                            <span>50-90 lbs</span>
+                                        </div>
+                                        <div class="detail-item">
+                                            <span class="detail-label">Lifespan:</span>
+                                            <span>9-13 years</span>
+                                        </div>
+                                        <div class="detail-item">
+                                            <span class="detail-label">Grooming:</span>
+                                            <span>High</span>
+                                        </div>
+                                    </div>
+                                    <a href="#german-shepherd" class="breed-link">Learn More →</a>
+                                </div>
+                            </div>
+
+                            <div class="breed-card" data-size="small" data-activity="low">
+                                <div class="breed-image">
+                                    <img src="https://images.pexels.com/photos/4681107/pexels-photo-4681107.jpeg?auto=compress&cs=tinysrgb&w=300" alt="French Bulldog" loading="lazy">
+                                </div>
+                                <div class="breed-info">
+                                    <h3>French Bulldog</h3>
+                                    <div class="breed-stats">
+                                        <span class="size-tag small">Small</span>
+                                        <span class="activity-tag low">Low Energy</span>
+                                    </div>
+                                    <p>Adaptable, playful, and smart. Great apartment dogs with charming personalities.</p>
+                                    <div class="breed-details">
+                                        <div class="detail-item">
+                                            <span class="detail-label">Weight:</span>
+                                            <span>20-28 lbs</span>
+                                        </div>
+                                        <div class="detail-item">
+                                            <span class="detail-label">Lifespan:</span>
+                                            <span>10-12 years</span>
+                                        </div>
+                                        <div class="detail-item">
+                                            <span class="detail-label">Grooming:</span>
+                                            <span>Low</span>
+                                        </div>
+                                    </div>
+                                    <a href="#french-bulldog" class="breed-link">Learn More →</a>
+                                </div>
+                            </div>
+
+                            <div class="breed-card" data-size="medium" data-activity="moderate">
+                                <div class="breed-image">
+                                    <img src="https://images.pexels.com/photos/1390361/pexels-photo-1390361.jpeg?auto=compress&cs=tinysrgb&w=300" alt="Border Collie" loading="lazy">
+                                </div>
+                                <div class="breed-info">
+                                    <h3>Border Collie</h3>
+                                    <div class="breed-stats">
+                                        <span class="size-tag medium">Medium</span>
+                                        <span class="activity-tag high">High Energy</span>
+                                    </div>
+                                    <p>Highly intelligent and energetic. Need mental stimulation and lots of exercise.</p>
+                                    <div class="breed-details">
+                                        <div class="detail-item">
+                                            <span class="detail-label">Weight:</span>
+                                            <span>30-55 lbs</span>
+                                        </div>
+                                        <div class="detail-item">
+                                            <span class="detail-label">Lifespan:</span>
+                                            <span>12-15 years</span>
+                                        </div>
+                                        <div class="detail-item">
+                                            <span class="detail-label">Grooming:</span>
+                                            <span>Moderate</span>
+                                        </div>
+                                    </div>
+                                    <a href="#border-collie" class="breed-link">Learn More →</a>
+                                </div>
+                            </div>
+
+                            <div class="breed-card" data-size="small" data-activity="moderate">
+                                <div class="breed-image">
+                                    <img src="https://images.pexels.com/photos/825949/pexels-photo-825949.jpeg?auto=compress&cs=tinysrgb&w=300" alt="Beagle" loading="lazy">
+                                </div>
+                                <div class="breed-info">
+                                    <h3>Beagle</h3>
+                                    <div class="breed-stats">
+                                        <span class="size-tag medium">Medium</span>
+                                        <span class="activity-tag moderate">Moderate Energy</span>
+                                    </div>
+                                    <p>Friendly, curious, and merry. Great with kids and other pets.</p>
+                                    <div class="breed-details">
+                                        <div class="detail-item">
+                                            <span class="detail-label">Weight:</span>
+                                            <span>20-30 lbs</span>
+                                        </div>
+                                        <div class="detail-item">
+                                            <span class="detail-label">Lifespan:</span>
+                                            <span>10-15 years</span>
+                                        </div>
+                                        <div class="detail-item">
+                                            <span class="detail-label">Grooming:</span>
+                                            <span>Low</span>
+                                        </div>
+                                    </div>
+                                    <a href="#beagle" class="breed-link">Learn More →</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Breed Groups -->
+                    <div class="breed-groups">
+                        <h2>Browse by Breed Group</h2>
+                        <div class="groups-grid">
+                            <div class="group-card">
+                                <div class="group-icon">🏃</div>
+                                <h3>Sporting Group</h3>
+                                <p>Bred for hunting and retrieving. Active, alert, and even-tempered.</p>
+                                <div class="group-examples">
+                                    <span>Golden Retriever</span>
+                                    <span>Labrador Retriever</span>
+                                    <span>English Springer Spaniel</span>
+                                </div>
+                                <a href="#sporting" class="group-link">View Breeds →</a>
+                            </div>
+
+                            <div class="group-card">
+                                <div class="group-icon">🛡️</div>
+                                <h3>Working Group</h3>
+                                <p>Dogs bred to perform jobs like guarding, rescue, and pulling sleds.</p>
+                                <div class="group-examples">
+                                    <span>German Shepherd</span>
+                                    <span>Rottweiler</span>
+                                    <span>Siberian Husky</span>
+                                </div>
+                                <a href="#working" class="group-link">View Breeds →</a>
+                            </div>
+
+                            <div class="group-card">
+                                <div class="group-icon">🐕</div>
+                                <h3>Herding Group</h3>
+                                <p>Intelligent breeds developed to control livestock movement.</p>
+                                <div class="group-examples">
+                                    <span>Border Collie</span>
+                                    <span>Australian Shepherd</span>
+                                    <span>Belgian Malinois</span>
+                                </div>
+                                <a href="#herding" class="group-link">View Breeds →</a>
+                            </div>
+
+                            <div class="group-card">
+                                <div class="group-icon">🏠</div>
+                                <h3>Toy Group</h3>
+                                <p>Small companion dogs bred specifically for human companionship.</p>
+                                <div class="group-examples">
+                                    <span>Chihuahua</span>
+                                    <span>Pug</span>
+                                    <span>Yorkshire Terrier</span>
+                                </div>
+                                <a href="#toy" class="group-link">View Breeds →</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Sidebar -->
+                <div class="sidebar">
+                    <!-- Breed Selector Quiz -->
+                    <div class="widget breed-quiz">
+                        <h3>Find Your Perfect Breed</h3>
+                        <p>Take our quick quiz to find breeds that match your lifestyle</p>
+                        <div class="quiz-form">
+                            <div class="quiz-question">
+                                <label>Living situation:</label>
+                                <select id="living-situation">
+                                    <option value="">Select...</option>
+                                    <option value="apartment">Apartment</option>
+                                    <option value="house-small-yard">House with small yard</option>
+                                    <option value="house-large-yard">House with large yard</option>
+                                    <option value="farm">Farm/Rural area</option>
+                                </select>
+                            </div>
+                            
+                            <div class="quiz-question">
+                                <label>Experience level:</label>
+                                <select id="experience">
+                                    <option value="">Select...</option>
+                                    <option value="first-time">First-time owner</option>
+                                    <option value="some-experience">Some experience</option>
+                                    <option value="very-experienced">Very experienced</option>
+                                </select>
+                            </div>
+                            
+                            <div class="quiz-question">
+                                <label>Time for exercise:</label>
+                                <select id="exercise-time">
+                                    <option value="">Select...</option>
+                                    <option value="minimal">Less than 30 min/day</option>
+                                    <option value="moderate">30-60 min/day</option>
+                                    <option value="lots">60+ min/day</option>
+                                </select>
+                            </div>
+                            
+                            <button onclick="findBreeds()">Find My Breeds</button>
+                            <div id="breed-quiz-result" class="quiz-result"></div>
+                        </div>
+                    </div>
+
+                    <!-- Breed Comparison -->
+                    <div class="widget breed-comparison">
+                        <h3>Breed Comparison</h3>
+                        <div class="comparison-form">
+                            <select id="breed1">
+                                <option value="">Select Breed 1</option>
+                                <option value="golden-retriever">Golden Retriever</option>
+                                <option value="labrador">Labrador Retriever</option>
+                                <option value="german-shepherd">German Shepherd</option>
+                                <option value="french-bulldog">French Bulldog</option>
+                            </select>
+                            
+                            <select id="breed2">
+                                <option value="">Select Breed 2</option>
+                                <option value="golden-retriever">Golden Retriever</option>
+                                <option value="labrador">Labrador Retriever</option>
+                                <option value="german-shepherd">German Shepherd</option>
+                                <option value="french-bulldog">French Bulldog</option>
+                            </select>
+                            
+                            <button onclick="compareBreeds()">Compare</button>
+                            <div id="comparison-result" class="comparison-result"></div>
+                        </div>
+                    </div>
+
+                    <!-- Popular Breed Articles -->
+                    <div class="widget breed-articles">
+                        <h3>Breed Guides</h3>
+                        <div class="article-list">
+                            <article class="mini-article">
+                                <h4><a href="#">First-Time Owner Breeds</a></h4>
+                                <span class="read-time">7 min read</span>
+                            </article>
+                            <article class="mini-article">
+                                <h4><a href="#">Best Family Dogs</a></h4>
+                                <span class="read-time">9 min read</span>
+                            </article>
+                            <article class="mini-article">
+                                <h4><a href="#">Low-Maintenance Breeds</a></h4>
+                                <span class="read-time">6 min read</span>
+                            </article>
+                            <article class="mini-article">
+                                <h4><a href="#">Apartment-Friendly Dogs</a></h4>
+                                <span class="read-time">8 min read</span>
+                            </article>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter Section -->
+    <section class="newsletter-section">
+        <div class="container">
+            <div class="newsletter-content">
+                <h2>Breed Spotlights</h2>
+                <p>Discover new breeds and get expert breed-specific advice</p>
+                <form class="newsletter-form">
+                    <div class="form-group">
+                        <input type="email" placeholder="Enter your email address" required>
+                        <button type="submit">Subscribe</button>
+                    </div>
+                    <p class="privacy-note">Weekly breed features and care guides.</p>
+                </form>
+            </div>
+        </div>
+    </section>
+</div>
+
+<script>
+// Filter functionality
+document.addEventListener('DOMContentLoaded', function() {
+    const filterBtns = document.querySelectorAll('.filter-btn');
+    const breedCards = document.querySelectorAll('.breed-card');
+    
+    filterBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+            const filter = btn.getAttribute('data-filter');
+            
+            // Remove active class from siblings
+            btn.parentElement.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+            
+            // Filter breed cards
+            breedCards.forEach(card => {
+                if (filter.includes('all') || filter.includes('any')) {
+                    card.style.display = 'block';
+                } else if (filter.includes('small') || filter.includes('medium') || filter.includes('large')) {
+                    const size = card.getAttribute('data-size');
+                    card.style.display = filter.includes(size) ? 'block' : 'none';
+                } else if (filter.includes('activity')) {
+                    const activity = card.getAttribute('data-activity');
+                    const activityLevel = filter.replace('-activity', '');
+                    card.style.display = activity === activityLevel ? 'block' : 'none';
+                }
+            });
+        });
+    });
+});
+
+function findBreeds() {
+    const living = document.getElementById('living-situation').value;
+    const experience = document.getElementById('experience').value;
+    const exercise = document.getElementById('exercise-time').value;
+    const resultDiv = document.getElementById('breed-quiz-result');
+    
+    if (living && experience && exercise) {
+        let recommendations = [];
+        
+        if (living === 'apartment' && exercise === 'minimal') {
+            recommendations = ['French Bulldog', 'Pug', 'Cavalier King Charles Spaniel'];
+        } else if (exercise === 'lots' && experience === 'very-experienced') {
+            recommendations = ['Border Collie', 'German Shepherd', 'Belgian Malinois'];
+        } else if (experience === 'first-time') {
+            recommendations = ['Golden Retriever', 'Labrador Retriever', 'Beagle'];
+        } else {
+            recommendations = ['Labrador Retriever', 'Golden Retriever', 'Beagle'];
+        }
+        
+        resultDiv.innerHTML = `
+            <div class="result-content">
+                <strong>Recommended breeds:</strong><br>
+                ${recommendations.map(breed => `<span class="breed-tag">${breed}</span>`).join('')}
+            </div>
+        `;
+    }
+}
+
+function compareBreeds() {
+    const breed1 = document.getElementById('breed1').value;
+    const breed2 = document.getElementById('breed2').value;
+    const resultDiv = document.getElementById('comparison-result');
+    
+    if (breed1 && breed2 && breed1 !== breed2) {
+        resultDiv.innerHTML = `
+            <div class="comparison-content">
+                <p>Comparing ${breed1.replace('-', ' ')} vs ${breed2.replace('-', ' ')}</p>
+                <a href="#compare-${breed1}-${breed2}">View Detailed Comparison →</a>
+            </div>
+        `;
+    }
+}
+</script>
