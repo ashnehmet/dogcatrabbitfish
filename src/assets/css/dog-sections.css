@@ -366,6 +366,109 @@
     border-left: 4px solid #28a745;
 }
 
+.calculator-result .error {
+    border-left-color: #dc3545;
+    background: #fff5f5;
+    color: #721c24;
+}
+
+.calculator-result .success {
+    border-left-color: #28a745;
+    background: #f8fff9;
+}
+
+.age-result .age-number {
+    font-size: 2rem;
+    color: #007bff;
+    font-weight: bold;
+}
+
+.calorie-number {
+    font-size: 1.5rem;
+    color: #28a745;
+    font-weight: bold;
+}
+
+.life-stage, .dog-info {
+    margin: 10px 0;
+    padding: 8px;
+    background: #e3f2fd;
+    border-radius: 4px;
+}
+
+.activity-note {
+    font-size: 0.9rem;
+    color: #666;
+    font-style: italic;
+    margin-top: 5px;
+}
+
+.food-amounts {
+    margin: 15px 0;
+    padding: 10px;
+    background: #f0f8f4;
+    border-radius: 6px;
+}
+
+.food-type {
+    margin: 5px 0;
+    padding: 5px 0;
+    border-bottom: 1px solid #e9ecef;
+}
+
+.food-type:last-child {
+    border-bottom: none;
+}
+
+.recommendations, .feeding-tips {
+    margin: 15px 0;
+}
+
+.recommendations ul, .feeding-tips ul {
+    margin: 8px 0;
+    padding-left: 20px;
+}
+
+.recommendations li, .feeding-tips li {
+    margin: 5px 0;
+    color: #495057;
+}
+
+.disclaimer {
+    margin-top: 15px;
+    padding: 10px;
+    background: #fff3cd;
+    border-radius: 4px;
+    font-size: 0.9rem;
+    color: #856404;
+}
+
+.session-time, .sessions-per-day {
+    font-size: 1.2rem;
+    color: #007bff;
+    font-weight: bold;
+}
+
+.training-schedule {
+    margin-bottom: 15px;
+    padding: 12px;
+    background: #f0f8ff;
+    border-radius: 6px;
+    border-left: 4px solid #007bff;
+}
+
+.training-priorities, .weekly-goals, .temperament-tips {
+    margin: 15px 0;
+    padding: 10px;
+    background: #f8f9fa;
+    border-radius: 6px;
+}
+
+.training-priorities h4, .weekly-goals h4, .temperament-tips h4 {
+    margin: 0 0 10px 0;
+    color: #495057;
+}
+
 /* Training Page Specific */
 .training-categories .categories-grid {
     display: grid;

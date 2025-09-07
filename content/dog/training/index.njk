@@ -166,12 +166,28 @@ seo_description: "Master dog training with expert techniques. House training, co
                 <div class="sidebar">
                     <!-- Training Calculator -->
                     <div class="widget training-calculator">
-                        <h3>Training Session Planner</h3>
-                        <p>Calculate optimal training duration for your dog's age</p>
+                        <h3>Personalized Training Planner</h3>
+                        <p>Get a custom training schedule based on your dog's profile</p>
                         <div class="calculator-form">
                             <label for="dog-age-months">Dog's age (months):</label>
-                            <input type="number" id="dog-age-months" placeholder="Enter age" min="1" max="120">
-                            <button onclick="calculateTrainingTime()">Get Schedule</button>
+                            <input type="number" id="dog-age-months" placeholder="Enter age" min="1" max="180">
+                            
+                            <label for="training-experience">Your training experience:</label>
+                            <select id="training-experience">
+                                <option value="beginner">First-time owner</option>
+                                <option value="some">Some experience</option>
+                                <option value="experienced">Very experienced</option>
+                            </select>
+                            
+                            <label for="dog-temperament">Dog's temperament:</label>
+                            <select id="dog-temperament">
+                                <option value="calm">Calm and focused</option>
+                                <option value="energetic">Energetic and playful</option>
+                                <option value="anxious">Anxious or nervous</option>
+                                <option value="stubborn">Independent/stubborn</option>
+                            </select>
+                            
+                            <button onclick="calculateTrainingPlan()">Create Training Plan</button>
                             <div id="training-result" class="calculator-result"></div>
                         </div>
                     </div>
@@ -244,31 +260,135 @@ seo_description: "Master dog training with expert techniques. House training, co
 </div>
 
 <script>
-function calculateTrainingTime() {
+function calculateTrainingPlan() {
     const ageMonths = document.getElementById('dog-age-months').value;
+    const experience = document.getElementById('training-experience').value;
+    const temperament = document.getElementById('dog-temperament').value;
     const resultDiv = document.getElementById('training-result');
     
-    if (ageMonths) {
-        let sessionTime, sessionsPerDay;
-        
-        if (ageMonths < 4) {
-            sessionTime = 5;
-            sessionsPerDay = 3;
-        } else if (ageMonths < 12) {
-            sessionTime = 10;
-            sessionsPerDay = 2;
-        } else {
-            sessionTime = 15;
-            sessionsPerDay = 2;
-        }
-        
+    // Clear previous results and validate input
+    resultDiv.innerHTML = '';
+    
+    if (!ageMonths || ageMonths < 1 || ageMonths > 180) {
         resultDiv.innerHTML = `
-            <div class="result-content">
-                <strong>Recommended:</strong><br>
-                ${sessionTime} minutes per session<br>
-                ${sessionsPerDay} sessions per day
+            <div class="result-content error">
+                <strong>Please enter a valid age between 1 and 180 months</strong>
             </div>
         `;
+        return;
     }
+    
+    const age = parseInt(ageMonths);
+    let sessionTime, sessionsPerDay, weeklyGoals, trainingPriorities;
+    
+    // Base recommendations by age
+    if (age < 4) {
+        sessionTime = 5;
+        sessionsPerDay = 3;
+        weeklyGoals = ['Basic name recognition', 'House training routine', 'Gentle handling exercises'];
+        trainingPriorities = ['Socialization', 'House training', 'Basic handling'];
+    } else if (age < 6) {
+        sessionTime = 8;
+        sessionsPerDay = 3;
+        weeklyGoals = ['Sit and stay commands', 'Leash introduction', 'Puppy socialization'];
+        trainingPriorities = ['Basic commands', 'Leash training', 'Continued socialization'];
+    } else if (age < 12) {
+        sessionTime = 10;
+        sessionsPerDay = 2;
+        weeklyGoals = ['Reliable recall', 'Down and stay', 'Polite greetings'];
+        trainingPriorities = ['Command reliability', 'Impulse control', 'Social skills'];
+    } else if (age < 24) {
+        sessionTime = 15;
+        sessionsPerDay = 2;
+        weeklyGoals = ['Advanced commands', 'Distraction training', 'Problem-solving skills'];
+        trainingPriorities = ['Advanced obedience', 'Real-world application', 'Mental stimulation'];
+    } else {
+        sessionTime = 12;
+        sessionsPerDay = 2;
+        weeklyGoals = ['Maintenance training', 'New tricks', 'Behavior refinement'];
+        trainingPriorities = ['Skill maintenance', 'Enrichment activities', 'Problem prevention'];
+    }
+    
+    // Adjust for experience level
+    if (experience === 'beginner') {
+        sessionTime = Math.max(5, sessionTime - 3);
+        weeklyGoals.unshift('Focus on consistency over complexity');
+    } else if (experience === 'experienced') {
+        sessionTime += 3;
+        weeklyGoals.push('Challenge with advanced techniques');
+    }
+    
+    // Adjust for temperament
+    let temperamentTips;
+    switch(temperament) {
+        case 'calm':
+            temperamentTips = ['Excellent for longer sessions', 'Can handle more complex training', 'Focus on precision'];
+            break;
+        case 'energetic':
+            sessionTime = Math.max(5, sessionTime - 2);
+            sessionsPerDay += 1;
+            temperamentTips = ['Keep sessions short and fun', 'Include physical activity', 'Use high-value rewards'];
+            break;
+        case 'anxious':
+            sessionTime = Math.max(3, sessionTime - 3);
+            temperamentTips = ['Create positive associations', 'Go at your dog\'s pace', 'Use gentle encouragement'];
+            break;
+        case 'stubborn':
+            temperamentTips = ['Be patient and consistent', 'Find what motivates your dog', 'Make training rewarding'];
+            break;
+        default:
+            temperamentTips = ['Adapt techniques to your dog\'s needs'];
+    }
+    
+    // Life stage category
+    let lifeStage;
+    if (age < 4) lifeStage = 'Young Puppy';
+    else if (age < 12) lifeStage = 'Puppy/Adolescent';
+    else if (age < 24) lifeStage = 'Young Adult';
+    else lifeStage = 'Adult Dog';
+    
+    resultDiv.innerHTML = `
+        <div class="result-content success">
+            <div class="training-schedule">
+                <strong>Your Training Schedule:</strong><br>
+                <span class="session-time">${sessionTime}</span> minutes per session<br>
+                <span class="sessions-per-day">${sessionsPerDay}</span> sessions per day
+            </div>
+            
+            <div class="life-stage">
+                <strong>Life Stage:</strong> ${lifeStage}
+            </div>
+            
+            <div class="training-priorities">
+                <strong>Current Training Focus:</strong>
+                <ul>
+                    ${trainingPriorities.map(priority => `<li>${priority}</li>`).join('')}
+                </ul>
+            </div>
+            
+            <div class="weekly-goals">
+                <strong>This Week's Goals:</strong>
+                <ul>
+                    ${weeklyGoals.map(goal => `<li>${goal}</li>`).join('')}
+                </ul>
+            </div>
+            
+            <div class="temperament-tips">
+                <strong>Tips for Your Dog's Temperament:</strong>
+                <ul>
+                    ${temperamentTips.map(tip => `<li>${tip}</li>`).join('')}
+                </ul>
+            </div>
+            
+            <div class="disclaimer">
+                <em>Remember: Every dog learns at their own pace. Adjust this schedule based on your dog's progress and energy level.</em>
+            </div>
+        </div>
+    `;
+}
+
+// Legacy function for backward compatibility
+function calculateTrainingTime() {
+    calculateTrainingPlan();
 }
 </script>

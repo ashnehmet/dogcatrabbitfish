@@ -57,7 +57,7 @@ seo_description: "The complete resource for dog owners. Find answers to thousand
                         <div class="section-cards">
                             <div class="section-card featured">
                                 <div class="card-image">
-                                    <img src="https://images.pexels.com/photos/1108099/pexels-photo-1108099.jpeg?auto=compress&cs=tinysrgb&w=400" alt="Happy dog with owner" loading="lazy">
+                                    <img src="https://images.pexels.com/photos/1108099/pexels-photo-1108099.jpeg?auto=compress&cs=tinysrgb&w=400" alt="Golden Retriever eating healthy food bowl" loading="lazy">
                                 </div>
                                 <div class="card-content">
                                     <span class="card-tag">Most Popular</span>
@@ -260,27 +260,102 @@ function calculateDogAge() {
     const size = document.getElementById('dog-size').value;
     const resultDiv = document.getElementById('age-result');
     
-    if (age) {
-        let humanAge;
-        const dogAge = parseInt(age);
-        
-        if (dogAge === 1) {
-            humanAge = size === 'large' ? 14 : 15;
-        } else if (dogAge === 2) {
-            humanAge = size === 'large' ? 22 : 24;
-        } else {
-            const baseAge = size === 'large' ? 22 : 24;
-            const additionalYears = dogAge - 2;
-            const yearMultiplier = size === 'large' ? 5 : size === 'medium' ? 4.5 : 4;
-            humanAge = baseAge + (additionalYears * yearMultiplier);
-        }
-        
+    // Clear previous results and validate input
+    resultDiv.innerHTML = '';
+    
+    if (!age || age < 0 || age > 30) {
         resultDiv.innerHTML = `
-            <div class="result-content">
-                <strong>Human Age Equivalent:</strong><br>
-                ${Math.round(humanAge)} years old
+            <div class="result-content error">
+                <strong>Please enter a valid age between 0 and 30 years</strong>
             </div>
         `;
+        return;
     }
+    
+    const dogAge = parseFloat(age);
+    let humanAge;
+    let lifeStage = '';
+    
+    // More accurate age calculation based on latest veterinary research
+    if (dogAge < 1) {
+        humanAge = dogAge * 15;
+        lifeStage = 'Puppy';
+    } else if (dogAge === 1) {
+        humanAge = size === 'large' ? 14 : 15;
+        lifeStage = 'Young Adult';
+    } else if (dogAge === 2) {
+        humanAge = size === 'large' ? 22 : 24;
+        lifeStage = 'Adult';
+    } else {
+        const baseAge = size === 'large' ? 22 : 24;
+        const additionalYears = dogAge - 2;
+        let yearMultiplier;
+        
+        // Size-based aging rates
+        switch(size) {
+            case 'small':
+                yearMultiplier = 4;
+                break;
+            case 'medium':  
+                yearMultiplier = 4.5;
+                break;
+            case 'large':
+                yearMultiplier = 5;
+                break;
+            default:
+                yearMultiplier = 4.5;
+        }
+        
+        humanAge = baseAge + (additionalYears * yearMultiplier);
+        
+        // Determine life stage
+        if (dogAge < 7) {
+            lifeStage = 'Adult';
+        } else if (dogAge < 10) {
+            lifeStage = 'Mature Adult';
+        } else {
+            lifeStage = 'Senior';
+        }
+    }
+    
+    // Health recommendations based on age
+    let recommendations = [];
+    if (dogAge < 1) {
+        recommendations = ['Puppy vaccinations', 'Frequent vet checkups', 'Socialization training'];
+    } else if (dogAge < 7) {
+        recommendations = ['Annual vet checkups', 'Regular exercise', 'Dental care'];
+    } else {
+        recommendations = ['Bi-annual vet visits', 'Joint health monitoring', 'Senior diet consideration'];
+    }
+    
+    resultDiv.innerHTML = `
+        <div class="result-content success">
+            <div class="age-result">
+                <strong>Human Age Equivalent:</strong><br>
+                <span class="age-number">${Math.round(humanAge)}</span> years old
+            </div>
+            <div class="life-stage">
+                <strong>Life Stage:</strong> ${lifeStage}
+            </div>
+            <div class="recommendations">
+                <strong>Health Recommendations:</strong>
+                <ul>
+                    ${recommendations.map(rec => `<li>${rec}</li>`).join('')}
+                </ul>
+            </div>
+        </div>
+    `;
 }
+
+// Add input validation on keyup
+document.addEventListener('DOMContentLoaded', function() {
+    const dogAgeInput = document.getElementById('dog-age');
+    if (dogAgeInput) {
+        dogAgeInput.addEventListener('keyup', function(e) {
+            if (e.key === 'Enter') {
+                calculateDogAge();
+            }
+        });
+    }
+});
 </script>
