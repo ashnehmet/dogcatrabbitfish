@@ -40,7 +40,9 @@
       "Bash(git checkout:*)",
       "Bash(start test-calculators.html)",
       "Bash(git merge:*)",
-      "Bash(dir C:dogv2)"
+      "Bash(dir C:dogv2)",
+      "Bash(timeout 30 sleep 30)",
+      "Bash(gh repo view:*)"
     ],
     "deny": []
   }
