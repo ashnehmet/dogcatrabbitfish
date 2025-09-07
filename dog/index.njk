@@ -1,0 +1,127 @@
+---
+layout: layouts/base.njk
+title: "Dog Care & Health - Expert Dog Information"
+description: "Complete dog care guide with health tips, training advice, nutrition information, and answers to common dog questions."
+animal: "dog"
+---
+
+<div class="animal-page dog-page">
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1 class="hero-title">Dog Care & Health</h1>
+                <p class="hero-subtitle">Expert advice for keeping your dog happy and healthy</p>
+                
+                <!-- Search Box -->
+                <div class="search-container">
+                    <form class="search-form" role="search">
+                        <div class="search-input-group">
+                            <input 
+                                type="search" 
+                                id="dog-search" 
+                                placeholder="Search dog questions: 'can dogs eat apples'..."
+                                aria-label="Search dog questions and answers"
+                                autocomplete="off"
+                            >
+                            <button type="submit" aria-label="Search">
+                                🔍
+                            </button>
+                        </div>
+                    </form>
+                    <div id="dog-search-results" class="search-results" aria-live="polite"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <section class="main-section">
+        <div class="container">
+            <div class="content-grid">
+                <div class="main-content">
+                    <div class="articles-grid">
+                        <div class="article-card">
+                            <div class="article-image">
+                                <img src="https://images.pexels.com/photos/1108099/pexels-photo-1108099.jpeg?auto=compress&cs=tinysrgb&w=300" alt="Happy golden retriever" loading="lazy">
+                            </div>
+                            <div class="article-content">
+                                <h3><a href="/dog/nutrition/">Dog Nutrition Guide</a></h3>
+                                <p>Essential feeding guidelines and portion sizes for optimal canine health and wellbeing.</p>
+                                <div class="article-meta">
+                                    <span class="read-time">8 min read</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="article-card">
+                            <div class="article-image">
+                                <img src="https://images.pexels.com/photos/551628/pexels-photo-551628.jpeg?auto=compress&cs=tinysrgb&w=300" alt="Dog training session" loading="lazy">
+                            </div>
+                            <div class="article-content">
+                                <h3><a href="/dog/training/">Dog Training Basics</a></h3>
+                                <p>Step-by-step guide to house training, basic commands, and socialization techniques.</p>
+                                <div class="article-meta">
+                                    <span class="read-time">6 min read</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="article-card">
+                            <div class="article-image">
+                                <img src="https://images.pexels.com/photos/4681107/pexels-photo-4681107.jpeg?auto=compress&cs=tinysrgb&w=300" alt="Dog at veterinarian" loading="lazy">
+                            </div>
+                            <div class="article-content">
+                                <h3><a href="/dog/health/">Dog Health Issues</a></h3>
+                                <p>Recognize symptoms and know when to contact your veterinarian for proper care.</p>
+                                <div class="article-meta">
+                                    <span class="read-time">10 min read</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="article-card">
+                            <div class="article-image">
+                                <img src="https://images.pexels.com/photos/1254140/pexels-photo-1254140.jpeg?auto=compress&cs=tinysrgb&w=300" alt="Dog grooming session" loading="lazy">
+                            </div>
+                            <div class="article-content">
+                                <h3><a href="/dog/grooming/">Dog Grooming Guide</a></h3>
+                                <p>Complete grooming guide from brushing to nail care and bathing techniques.</p>
+                                <div class="article-meta">
+                                    <span class="read-time">7 min read</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="calculator-widget">
+                    <h3>Dog Age Calculator</h3>
+                    <p>Convert your dog's age to human years</p>
+                    <div class="calculator-form">
+                        <input type="number" id="dog-age" placeholder="Dog's age in years" min="0" max="30">
+                        <button onclick="calculateDogAge()">Calculate</button>
+                        <div id="dog-age-result" class="calculator-result"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter Section -->
+    <section class="newsletter-section">
+        <div class="container">
+            <div class="newsletter-content">
+                <h2>Stay Informed</h2>
+                <p>Get weekly dog care tips delivered to your inbox</p>
+                <form class="newsletter-form" method="POST" action="#" data-newsletter-form>
+                    <div class="form-group">
+                        <input type="email" name="email" placeholder="Enter your email address" required>
+                        <button type="submit">Subscribe</button>
+                    </div>
+                    <p class="privacy-note">We respect your privacy. Unsubscribe at any time.</p>
+                </form>
+            </div>
+        </div>
+    </section>
+</div>

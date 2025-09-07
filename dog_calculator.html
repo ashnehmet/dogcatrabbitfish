@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Dog Age Calculator - Convert Dog Years to Human Years | Pet Info - Dogs, Cats, Rabbits & Fish Care</title>
+    <meta name="description" content="Calculate your dog&#39;s age in human years with our accurate calculator. Takes into account breed size for precise age conversion.">
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content="Dog Age Calculator - Convert Dog Years to Human Years">
+    <meta property="og:description" content="Calculate your dog&#39;s age in human years with our accurate calculator. Takes into account breed size for precise age conversion.">
+    <meta property="og:image" content="/images/default-og.jpg">
+    <meta property="og:url" content="/dog/calculator/">
+    <meta property="og:type" content="website">
+    
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Dog Age Calculator - Convert Dog Years to Human Years">
+    <meta name="twitter:description" content="Calculate your dog&#39;s age in human years with our accurate calculator. Takes into account breed size for precise age conversion.">
+    <meta name="twitter:image" content="/images/default-og.jpg">
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="/dog/calculator/">
+    
+    <!-- Favicon -->
+    <link rel="icon" href="/images/favicon.ico" type="image/x-icon">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@700&family=Nunito:wght@400;600&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/src/assets/css/main.css">
+    <link rel="stylesheet" href="/src/assets/css/homepage.css">
+    
+    <!-- Schema.org structured data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "name": "Pet Info",
+        "description": "Expert pet care information for dogs, cats, rabbits, and fish",
+        "url": "https://petinfo.example.com",
+        "potentialAction": {
+            "@type": "SearchAction",
+            "target": "https://petinfo.example.com/search?q={search_term_string}",
+            "query-input": "required name=search_term_string"
+        }
+    }
+    </script>
+</head>
+<body class="dog-section">
+    <header class="site-header">
+        <nav class="main-navigation" role="navigation" aria-label="Main Navigation">
+            <div class="nav-container">
+                <div class="nav-logo">
+                    <a href="/" aria-label="Pet Info Home">
+                        <img src="/images/logo.png" alt="Pet Info Logo" width="120" height="40">
+                    </a>
+                </div>
+                
+                <ul class="nav-menu" role="menubar">
+                    <li class="nav-item" role="none">
+                        <a href="/dog/" class="nav-link active" role="menuitem">
+                            <span class="nav-icon">🐕</span>
+                            Dogs
+                        </a>
+                    </li>
+                    <li class="nav-item" role="none">
+                        <a href="/cat/" class="nav-link " role="menuitem">
+                            <span class="nav-icon">🐱</span>
+                            Cats
+                        </a>
+                    </li>
+                    <li class="nav-item" role="none">
+                        <a href="/rabbit/" class="nav-link " role="menuitem">
+                            <span class="nav-icon">🐰</span>
+                            Rabbits
+                        </a>
+                    </li>
+                    <li class="nav-item" role="none">
+                        <a href="/fish/" class="nav-link " role="menuitem">
+                            <span class="nav-icon">🐠</span>
+                            Fish
+                        </a>
+                    </li>
+                </ul>
+                
+                <button class="mobile-menu-toggle" aria-label="Toggle mobile menu" aria-expanded="false">
+                    <span class="hamburger-line"></span>
+                    <span class="hamburger-line"></span>
+                    <span class="hamburger-line"></span>
+                </button>
+            </div>
+        </nav>
+    </header>
+
+    <main class="site-main" role="main">
+        
+            
+<div class="calculator-page">
+    <header class="page-header">
+        <div class="container">
+            <h1>Dog Age Calculator - Convert Dog Years to Human Years</h1>
+            <p class="page-description">Calculate your dog&#39;s age in human years with our accurate calculator. Takes into account breed size for precise age conversion.</p>
+        </div>
+    </header>
+
+    <main class="calculator-content">
+        <div class="container">
+            <div class="calculator-wrapper">
+                <div class="calculator-form">
+                    
+                </div>
+                
+                <div class="calculator-result" id="calculator-result" style="display: none;">
+                    <h3>Result:</h3>
+                    <div id="result-content"></div>
+                </div>
+            </div>
+
+            <div class="calculator-info">
+                <div class="info-section">
+                    <h2>How This Calculator Works</h2>
+                    
+                </div>
+
+                <div class="info-section">
+                    <h2>Important Notes</h2>
+                    <ul>
+                        <li>Age calculations are estimates based on average development rates</li>
+                        <li>Individual pets may age differently based on breed, health, and lifestyle</li>
+                        <li>Consult your veterinarian for specific health and age-related questions</li>
+                        <li>These calculators are for informational purposes only</li>
+                    </ul>
+                </div>
+
+                
+            </div>
+        </div>
+    </main>
+
+    <!-- AdSense placeholder -->
+    <div class="ad-container">
+        <div class="container">
+            <ins class="adsbygoogle calculator-ad"
+                 style="display:block"
+                 data-ad-client="ca-pub-XXXXXXXXX"
+                 data-ad-slot="XXXXXXXXX"
+                 data-ad-format="auto"
+                 data-full-width-responsive="true"></ins>
+            <script>
+                 (adsbygoogle = window.adsbygoogle || []).push({});
+            </script>
+        </div>
+    </div>
+</div>
+
+<style>
+.calculator-wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    margin-bottom: 3rem;
+}
+
+.calculator-form {
+    background: white;
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.calculator-result {
+    background: #f8f9fa;
+    padding: 2rem;
+    border-radius: 12px;
+    border-left: 4px solid #007bff;
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+    color: #333;
+}
+
+.form-group input,
+.form-group select {
+    width: 100%;
+    padding: 0.75rem;
+    border: 2px solid #e1e5e9;
+    border-radius: 6px;
+    font-size: 1rem;
+    transition: border-color 0.3s ease;
+}
+
+.form-group input:focus,
+.form-group select:focus {
+    outline: none;
+    border-color: #007bff;
+}
+
+.calculate-btn {
+    background: #007bff;
+    color: white;
+    padding: 1rem 2rem;
+    border: none;
+    border-radius: 6px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    width: 100%;
+}
+
+.calculate-btn:hover {
+    background: #0056b3;
+}
+
+.info-section {
+    background: white;
+    padding: 2rem;
+    margin-bottom: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.05);
+}
+
+@media (max-width: 768px) {
+    .calculator-wrapper {
+        grid-template-columns: 1fr;
+    }
+}
+</style>
+        
+    </main>
+
+    <footer class="site-footer">
+        <div class="footer-container">
+            <div class="footer-sections">
+                <div class="footer-section">
+                    <h3>Pet Sections</h3>
+                    <ul>
+                        <li><a href="/dog/">Dog Care</a></li>
+                        <li><a href="/cat/">Cat Care</a></li>
+                        <li><a href="/rabbit/">Rabbit Care</a></li>
+                        <li><a href="/fish/">Fish Care</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Resources</h3>
+                    <ul>
+                        <li><a href="/calculators/">Pet Calculators</a></li>
+                        <li><a href="/health/">Health Guides</a></li>
+                        <li><a href="/books/">Recommended Books</a></li>
+                        <li><a href="/newsletter/">Newsletter</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Contact</h3>
+                    <ul>
+                        <li><a href="/contact/">Contact Us</a></li>
+                        <li><a href="/privacy/">Privacy Policy</a></li>
+                        <li><a href="/terms/">Terms of Service</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 Pet Info. All rights reserved.</p>
+                <p class="disclaimer">Always consult with a veterinarian for professional pet health advice.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="/src/assets/js/search.js"></script>
+    <script src="/src/assets/js/main.js"></script>
+    
+    <!-- AdSense placeholder -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXX" crossorigin="anonymous"></script>
+</body>
+</html>

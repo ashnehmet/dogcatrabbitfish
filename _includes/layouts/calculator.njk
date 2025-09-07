@@ -1,0 +1,167 @@
+---
+layout: layouts/base.njk
+---
+
+<div class="calculator-page">
+    <header class="page-header">
+        <div class="container">
+            <h1>{{ title }}</h1>
+            <p class="page-description">{{ description }}</p>
+        </div>
+    </header>
+
+    <main class="calculator-content">
+        <div class="container">
+            <div class="calculator-wrapper">
+                <div class="calculator-content-area">
+                    <div class="calculator-result" id="calculator-result" style="display: none;">
+                        <h3>Result:</h3>
+                        <div id="result-content"></div>
+                    </div>
+                </div>
+                
+                <div class="calculator-sidebar">
+                    <div class="calculator-form">
+                        {% block calculatorForm %}{% endblock %}
+                    </div>
+                </div>
+            </div>
+
+            <div class="calculator-info">
+                <div class="info-section">
+                    <h2>How This Calculator Works</h2>
+                    {% block howItWorks %}{% endblock %}
+                </div>
+
+                <div class="info-section">
+                    <h2>Important Notes</h2>
+                    <ul>
+                        <li>Age calculations are estimates based on average development rates</li>
+                        <li>Individual pets may age differently based on breed, health, and lifestyle</li>
+                        <li>Consult your veterinarian for specific health and age-related questions</li>
+                        <li>These calculators are for informational purposes only</li>
+                    </ul>
+                </div>
+
+                {% if relatedInfo %}
+                <div class="info-section">
+                    <h2>Related Information</h2>
+                    {% for info in relatedInfo %}
+                    <p><a href="{{ info.url }}">{{ info.title }}</a> - {{ info.description }}</p>
+                    {% endfor %}
+                </div>
+                {% endif %}
+            </div>
+        </div>
+    </main>
+
+    <!-- AdSense placeholder -->
+    <div class="ad-container">
+        <div class="container">
+            <ins class="adsbygoogle calculator-ad"
+                 style="display:block"
+                 data-ad-client="ca-pub-XXXXXXXXX"
+                 data-ad-slot="XXXXXXXXX"
+                 data-ad-format="auto"
+                 data-full-width-responsive="true"></ins>
+            <script>
+                 (adsbygoogle = window.adsbygoogle || []).push({});
+            </script>
+        </div>
+    </div>
+</div>
+
+<style>
+.calculator-wrapper {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 2rem;
+    margin-bottom: 3rem;
+}
+
+.calculator-content-area {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.calculator-sidebar {
+    position: sticky;
+    top: 2rem;
+    height: fit-content;
+}
+
+.calculator-form {
+    background: white;
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    border: 1px solid #e1e5e9;
+}
+
+.calculator-result {
+    background: #f8f9fa;
+    padding: 2rem;
+    border-radius: 12px;
+    border-left: 4px solid #007bff;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.05);
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+    color: #333;
+}
+
+.form-group input,
+.form-group select {
+    width: 100%;
+    padding: 0.75rem;
+    border: 2px solid #e1e5e9;
+    border-radius: 6px;
+    font-size: 1rem;
+    transition: border-color 0.3s ease;
+}
+
+.form-group input:focus,
+.form-group select:focus {
+    outline: none;
+    border-color: #007bff;
+}
+
+.calculate-btn {
+    background: #007bff;
+    color: white;
+    padding: 1rem 2rem;
+    border: none;
+    border-radius: 6px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    width: 100%;
+}
+
+.calculate-btn:hover {
+    background: #0056b3;
+}
+
+.info-section {
+    background: white;
+    padding: 2rem;
+    margin-bottom: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.05);
+}
+
+@media (max-width: 768px) {
+    .calculator-wrapper {
+        grid-template-columns: 1fr;
+    }
+}
+</style>

@@ -1,0 +1,120 @@
+---
+layout: layouts/base.njk
+---
+
+<div class="blog-list-page">
+    <header class="page-header">
+        <div class="container">
+            <h1>{{ title or (animal | title) + " Blog" }}</h1>
+            <p class="page-description">{{ description or "Latest articles and tips for " + animal + " care" }}</p>
+            
+            {% if categories %}
+            <div class="category-filter">
+                <h3>Filter by Category:</h3>
+                <div class="category-buttons">
+                    <a href="{{ animal }}/blog/" class="category-btn {% if not currentCategory %}active{% endif %}">All</a>
+                    {% for category in categories %}
+                    <a href="{{ animal }}/blog/{{ category | slug }}/" class="category-btn {% if currentCategory == category %}active{% endif %}">{{ category }}</a>
+                    {% endfor %}
+                </div>
+            </div>
+            {% endif %}
+        </div>
+    </header>
+
+    <main class="blog-content">
+        <div class="container">
+            <div class="blog-grid">
+                {% if pagination.items %}
+                    {% for post in pagination.items %}
+                    <article class="blog-card">
+                        {% if post.data.image %}
+                        <div class="blog-image">
+                            <a href="{{ post.url }}">
+                                <img src="{{ post.data.image }}" alt="{{ post.data.title }}" loading="lazy">
+                            </a>
+                        </div>
+                        {% endif %}
+                        
+                        <div class="blog-content-wrapper">
+                            <div class="blog-meta">
+                                <time datetime="{{ post.data.date }}">{{ post.data.date | dateFormat }}</time>
+                                {% if post.data.category %}
+                                <span class="blog-category">{{ post.data.category }}</span>
+                                {% endif %}
+                            </div>
+                            
+                            <h2 class="blog-title">
+                                <a href="{{ post.url }}">{{ post.data.title }}</a>
+                            </h2>
+                            
+                            <div class="blog-excerpt">
+                                {% if post.data.excerpt %}
+                                    {{ post.data.excerpt }}
+                                {% else %}
+                                    {{ post.content | excerpt }}
+                                {% endif %}
+                            </div>
+                            
+                            <a href="{{ post.url }}" class="read-more-btn">Read More</a>
+                        </div>
+                    </article>
+                    {% endfor %}
+                {% else %}
+                    <div class="no-posts">
+                        <h3>No blog posts found</h3>
+                        <p>Check back soon for new content!</p>
+                    </div>
+                {% endif %}
+            </div>
+
+            {% if pagination.pages.length > 1 %}
+            <nav class="pagination" aria-label="Blog pagination">
+                <div class="pagination-info">
+                    Page {{ pagination.pageNumber + 1 }} of {{ pagination.pages.length }}
+                </div>
+                
+                <div class="pagination-controls">
+                    {% if pagination.previousPageHref %}
+                    <a href="{{ pagination.previousPageHref }}" class="pagination-btn prev" aria-label="Previous page">
+                        ← Previous
+                    </a>
+                    {% endif %}
+                    
+                    <div class="pagination-numbers">
+                        {% for pageEntry in pagination.pages %}
+                        {% set pageNumber = loop.index0 %}
+                        {% if pageNumber == pagination.pageNumber %}
+                        <span class="pagination-number current" aria-current="page">{{ pageNumber + 1 }}</span>
+                        {% else %}
+                        <a href="{{ pagination.hrefs[pageNumber] }}" class="pagination-number">{{ pageNumber + 1 }}</a>
+                        {% endif %}
+                        {% endfor %}
+                    </div>
+                    
+                    {% if pagination.nextPageHref %}
+                    <a href="{{ pagination.nextPageHref }}" class="pagination-btn next" aria-label="Next page">
+                        Next →
+                    </a>
+                    {% endif %}
+                </div>
+            </nav>
+            {% endif %}
+        </div>
+    </main>
+
+    <!-- AdSense placeholder -->
+    <div class="ad-container">
+        <div class="container">
+            <ins class="adsbygoogle blog-ad"
+                 style="display:block"
+                 data-ad-client="ca-pub-XXXXXXXXX"
+                 data-ad-slot="XXXXXXXXX"
+                 data-ad-format="auto"
+                 data-full-width-responsive="true"></ins>
+            <script>
+                 (adsbygoogle = window.adsbygoogle || []).push({});
+            </script>
+        </div>
+    </div>
+</div>

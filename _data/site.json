@@ -1,0 +1,26 @@
+{
+  "title": "Pet Info - Expert Care for Dogs, Cats, Rabbits & Fish",
+  "description": "The ultimate resource for pet owners. Find answers to thousands of questions about dog, cat, rabbit, and fish care. Health guides, calculators, and expert advice.",
+  "url": "https://petinfo.example.com",
+  "author": "Pet Info Team",
+  "email": "contact@petinfo.example.com",
+  "social": {
+    "facebook": "",
+    "twitter": "",
+    "instagram": ""
+  },
+  "analytics": {
+    "google_analytics": "",
+    "adsense_client": "ca-pub-XXXXXXXXX"
+  },
+  "features": {
+    "search": true,
+    "newsletter": true,
+    "comments": false
+  },
+  "seo": {
+    "default_image": "/images/default-og.jpg",
+    "keywords": ["pet care", "dog care", "cat care", "rabbit care", "fish care", "veterinary advice", "pet health"],
+    "language": "en-US"
+  }
+}

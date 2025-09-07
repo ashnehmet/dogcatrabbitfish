@@ -1,0 +1,205 @@
+backend:
+  name: git-gateway
+  branch: main
+
+# Media files configuration
+media_folder: "images"
+public_folder: "/images"
+
+# Site URL (will be set during deployment)
+site_url: https://petinfo.example.com
+
+# Editorial workflow for content review
+publish_mode: editorial_workflow
+
+# CMS Configuration
+collections:
+  # Dog Blog Posts
+  - name: "dog-blogs"
+    label: "Dog Blog Posts"
+    folder: "content/dog/blogs"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    fields:
+      - { label: "Layout", name: "layout", widget: "hidden", default: "layouts/blog-single.njk" }
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Date", name: "date", widget: "datetime" }
+      - { label: "Animal", name: "animal", widget: "hidden", default: "dog" }
+      - { label: "Category", name: "category", widget: "select", options: ["Training", "Health", "Nutrition", "Behavior", "Grooming", "Exercise", "Products", "General"] }
+      - { label: "Description", name: "description", widget: "text", hint: "Brief description for SEO" }
+      - { label: "Featured Image", name: "image", widget: "image", required: false }
+      - { label: "Tags", name: "tags", widget: "list", default: ["dog"] }
+      - { label: "Body", name: "body", widget: "markdown" }
+
+  # Dog Health Articles
+  - name: "dog-health"
+    label: "Dog Health Articles"
+    folder: "content/dog/health"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    fields:
+      - { label: "Layout", name: "layout", widget: "hidden", default: "layouts/blog-single.njk" }
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Date", name: "date", widget: "datetime" }
+      - { label: "Animal", name: "animal", widget: "hidden", default: "dog" }
+      - { label: "Category", name: "category", widget: "hidden", default: "Health" }
+      - { label: "Type", name: "type", widget: "hidden", default: "health" }
+      - { label: "Description", name: "description", widget: "text", hint: "Brief description for SEO" }
+      - { label: "Featured Image", name: "image", widget: "image", required: false }
+      - { label: "Tags", name: "tags", widget: "list", default: ["dog", "health"] }
+      - { label: "Body", name: "body", widget: "markdown" }
+
+  # Cat Blog Posts
+  - name: "cat-blogs"
+    label: "Cat Blog Posts"
+    folder: "content/cat/blogs"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    fields:
+      - { label: "Layout", name: "layout", widget: "hidden", default: "layouts/blog-single.njk" }
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Date", name: "date", widget: "datetime" }
+      - { label: "Animal", name: "animal", widget: "hidden", default: "cat" }
+      - { label: "Category", name: "category", widget: "select", options: ["Behavior", "Health", "Nutrition", "Care", "Grooming", "Environment", "Products", "General"] }
+      - { label: "Description", name: "description", widget: "text", hint: "Brief description for SEO" }
+      - { label: "Featured Image", name: "image", widget: "image", required: false }
+      - { label: "Tags", name: "tags", widget: "list", default: ["cat"] }
+      - { label: "Body", name: "body", widget: "markdown" }
+
+  # Cat Health Articles
+  - name: "cat-health"
+    label: "Cat Health Articles"
+    folder: "content/cat/health"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    fields:
+      - { label: "Layout", name: "layout", widget: "hidden", default: "layouts/blog-single.njk" }
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Date", name: "date", widget: "datetime" }
+      - { label: "Animal", name: "animal", widget: "hidden", default: "cat" }
+      - { label: "Category", name: "category", widget: "hidden", default: "Health" }
+      - { label: "Type", name: "type", widget: "hidden", default: "health" }
+      - { label: "Description", name: "description", widget: "text", hint: "Brief description for SEO" }
+      - { label: "Featured Image", name: "image", widget: "image", required: false }
+      - { label: "Tags", name: "tags", widget: "list", default: ["cat", "health"] }
+      - { label: "Body", name: "body", widget: "markdown" }
+
+  # Rabbit Blog Posts
+  - name: "rabbit-blogs"
+    label: "Rabbit Blog Posts"
+    folder: "content/rabbit/blogs"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    fields:
+      - { label: "Layout", name: "layout", widget: "hidden", default: "layouts/blog-single.njk" }
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Date", name: "date", widget: "datetime" }
+      - { label: "Animal", name: "animal", widget: "hidden", default: "rabbit" }
+      - { label: "Category", name: "category", widget: "select", options: ["Housing", "Nutrition", "Health", "Behavior", "Grooming", "Exercise", "Handling", "Care", "General"] }
+      - { label: "Description", name: "description", widget: "text", hint: "Brief description for SEO" }
+      - { label: "Featured Image", name: "image", widget: "image", required: false }
+      - { label: "Tags", name: "tags", widget: "list", default: ["rabbit"] }
+      - { label: "Body", name: "body", widget: "markdown" }
+
+  # Rabbit Health Articles
+  - name: "rabbit-health"
+    label: "Rabbit Health Articles"
+    folder: "content/rabbit/health"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    fields:
+      - { label: "Layout", name: "layout", widget: "hidden", default: "layouts/blog-single.njk" }
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Date", name: "date", widget: "datetime" }
+      - { label: "Animal", name: "animal", widget: "hidden", default: "rabbit" }
+      - { label: "Category", name: "category", widget: "hidden", default: "Health" }
+      - { label: "Type", name: "type", widget: "hidden", default: "health" }
+      - { label: "Description", name: "description", widget: "text", hint: "Brief description for SEO" }
+      - { label: "Featured Image", name: "image", widget: "image", required: false }
+      - { label: "Tags", name: "tags", widget: "list", default: ["rabbit", "health"] }
+      - { label: "Body", name: "body", widget: "markdown" }
+
+  # Fish Blog Posts
+  - name: "fish-blogs"
+    label: "Fish Blog Posts"
+    folder: "content/fish/blogs"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    fields:
+      - { label: "Layout", name: "layout", widget: "hidden", default: "layouts/blog-single.njk" }
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Date", name: "date", widget: "datetime" }
+      - { label: "Animal", name: "animal", widget: "hidden", default: "fish" }
+      - { label: "Category", name: "category", widget: "select", options: ["Setup", "Water", "Feeding", "Health", "Equipment", "Plants", "Maintenance", "Fish Selection", "General"] }
+      - { label: "Description", name: "description", widget: "text", hint: "Brief description for SEO" }
+      - { label: "Featured Image", name: "image", widget: "image", required: false }
+      - { label: "Tags", name: "tags", widget: "list", default: ["fish"] }
+      - { label: "Body", name: "body", widget: "markdown" }
+
+  # Fish Health Articles
+  - name: "fish-health"
+    label: "Fish Health Articles"
+    folder: "content/fish/health"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    fields:
+      - { label: "Layout", name: "layout", widget: "hidden", default: "layouts/blog-single.njk" }
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Date", name: "date", widget: "datetime" }
+      - { label: "Animal", name: "animal", widget: "hidden", default: "fish" }
+      - { label: "Category", name: "category", widget: "hidden", default: "Health" }
+      - { label: "Type", name: "type", widget: "hidden", default: "health" }
+      - { label: "Description", name: "description", widget: "text", hint: "Brief description for SEO" }
+      - { label: "Featured Image", name: "image", widget: "image", required: false }
+      - { label: "Tags", name: "tags", widget: "list", default: ["fish", "health"] }
+      - { label: "Body", name: "body", widget: "markdown" }
+
+  # Q&A Content
+  - name: "questions"
+    label: "Q&A Content"
+    folder: "content/questions"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Question", name: "question", widget: "string" }
+      - { label: "Answer", name: "answer", widget: "text" }
+      - { label: "Animal", name: "animal", widget: "select", options: ["dog", "cat", "rabbit", "fish"] }
+      - { label: "Category", name: "category", widget: "select", options: ["food", "health", "behavior", "care", "training", "general"] }
+      - { label: "Tags", name: "tags", widget: "list", required: false }
+
+  # Book Recommendations
+  - name: "books"
+    label: "Book Recommendations"
+    folder: "content/books"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Author", name: "author", widget: "string" }
+      - { label: "Animal", name: "animal", widget: "select", options: ["dog", "cat", "rabbit", "fish", "general"] }
+      - { label: "Category", name: "category", widget: "select", options: ["training", "health", "care", "behavior", "general"] }
+      - { label: "Description", name: "description", widget: "text" }
+      - { label: "Amazon Link", name: "amazon_link", widget: "string", hint: "Affiliate link to Amazon" }
+      - { label: "Cover Image", name: "cover_image", widget: "image", required: false }
+      - { label: "Rating", name: "rating", widget: "number", min: 1, max: 5, step: 0.1 }
+      - { label: "Review", name: "body", widget: "markdown", required: false }
+
+  # Settings
+  - name: "settings"
+    label: "Site Settings"
+    files:
+      - name: "general"
+        label: "General Settings"
+        file: "_data/site.json"
+        fields:
+          - { label: "Site Title", name: "title", widget: "string", default: "Pet Info" }
+          - { label: "Site Description", name: "description", widget: "text" }
+          - { label: "Site URL", name: "url", widget: "string" }
+          - { label: "Google Analytics ID", name: "google_analytics", widget: "string", required: false }
+          - { label: "AdSense Client ID", name: "adsense_client", widget: "string", required: false }
+
+# Show preview for all collections
+show_preview_links: true
+
+# Logo for CMS interface
+logo_url: /images/logo.png

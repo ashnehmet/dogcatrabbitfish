@@ -1,0 +1,143 @@
+---
+layout: layouts/base.njk
+---
+
+<article class="blog-post">
+    <header class="post-header">
+        <div class="container">
+            <div class="post-meta">
+                <time datetime="{{ date }}">{{ date | dateFormat }}</time>
+                {% if category %}
+                <span class="post-category">{{ category }}</span>
+                {% endif %}
+            </div>
+            
+            <h1 class="post-title">{{ title }}</h1>
+            
+            {% if description %}
+            <p class="post-description">{{ description }}</p>
+            {% endif %}
+            
+            {% if image %}
+            <div class="post-image">
+                <img src="{{ image }}" alt="{{ title }}" loading="eager">
+            </div>
+            {% endif %}
+        </div>
+    </header>
+
+    <div class="post-content">
+        <div class="container">
+            <div class="content-wrapper">
+                <div class="post-body">
+                    {{ content | safe }}
+                </div>
+                
+                {% if tags and tags.length > 0 %}
+                <div class="post-tags">
+                    <h3>Tags:</h3>
+                    <div class="tag-list">
+                        {% for tag in tags %}
+                        <span class="tag">{{ tag }}</span>
+                        {% endfor %}
+                    </div>
+                </div>
+                {% endif %}
+                
+                <!-- Disclaimer -->
+                <div class="post-disclaimer">
+                    <strong>Disclaimer:</strong> This article is for informational purposes only and should not replace professional veterinary advice. Always consult with a qualified veterinarian for specific questions about your pet's health and wellbeing.
+                </div>
+                
+                <!-- AdSense placeholder -->
+                <div class="ad-container in-content">
+                    <ins class="adsbygoogle"
+                         style="display:block; text-align:center;"
+                         data-ad-layout="in-article"
+                         data-ad-format="fluid"
+                         data-ad-client="ca-pub-XXXXXXXXX"
+                         data-ad-slot="XXXXXXXXX"></ins>
+                    <script>
+                         (adsbygoogle = window.adsbygoogle || []).push({});
+                    </script>
+                </div>
+            </div>
+        </div>
+    </div>
+</article>
+
+<!-- Related Posts -->
+{% if collections[animal + 'Blogs'] %}
+<section class="related-posts">
+    <div class="container">
+        <h2>Related Articles</h2>
+        <div class="related-grid">
+            {% set relatedPosts = collections[animal + 'Blogs'] | reverse | limit(3) %}
+            {% for post in relatedPosts %}
+            {% if post.url != page.url %}
+            <article class="related-card">
+                {% if post.data.image %}
+                <div class="related-image">
+                    <a href="{{ post.url }}">
+                        <img src="{{ post.data.image }}" alt="{{ post.data.title }}" loading="lazy">
+                    </a>
+                </div>
+                {% endif %}
+                
+                <div class="related-content">
+                    <h3><a href="{{ post.url }}">{{ post.data.title }}</a></h3>
+                    <time datetime="{{ post.data.date }}">{{ post.data.date | dateFormat }}</time>
+                </div>
+            </article>
+            {% endif %}
+            {% endfor %}
+        </div>
+    </div>
+</section>
+{% endif %}
+
+<!-- Newsletter signup -->
+<section class="newsletter-signup">
+    <div class="container">
+        <div class="newsletter-content">
+            <h2>Stay Updated!</h2>
+            <p>Get the latest pet care tips and advice delivered to your inbox.</p>
+            <form class="newsletter-form" method="POST" action="#" data-newsletter-form>
+                <div class="form-group">
+                    <input type="email" name="email" placeholder="Enter your email address" required>
+                    <button type="submit">Subscribe</button>
+                </div>
+                <p class="privacy-note">We respect your privacy. Unsubscribe at any time.</p>
+            </form>
+        </div>
+    </div>
+</section>
+
+<!-- Schema.org structured data for blog post -->
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "headline": "{{ title }}",
+    "description": "{{ description or (content | excerpt) }}",
+    "image": "{{ image }}",
+    "author": {
+        "@type": "Organization",
+        "name": "Pet Info"
+    },
+    "publisher": {
+        "@type": "Organization",
+        "name": "Pet Info",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "{{ site.url }}/images/logo.png"
+        }
+    },
+    "datePublished": "{{ date }}",
+    "dateModified": "{{ date }}",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "{{ page.url }}"
+    }
+}
+</script>

@@ -1,0 +1,179 @@
+---
+layout: layouts/base.njk
+title: "Pet Health Guides - Expert Health Information"
+description: "Comprehensive health guides for dogs, cats, rabbits, and fish. Expert veterinary advice on common health issues, prevention, and care."
+---
+
+<div class="health-hub-page">
+    <header class="page-header">
+        <div class="container">
+            <h1>Pet Health Guides</h1>
+            <p class="page-description">Expert veterinary advice and health information for your pets.</p>
+        </div>
+    </header>
+
+    <main class="health-content">
+        <div class="container">
+            <div class="health-sections">
+                <div class="health-card">
+                    <div class="health-icon">🐕</div>
+                    <h3><a href="/dog/">Dog Health</a></h3>
+                    <p>Comprehensive health information for dogs including common conditions, preventive care, and wellness tips.</p>
+                    <ul>
+                        <li>Common health issues</li>
+                        <li>Vaccination schedules</li>
+                        <li>Nutrition and diet</li>
+                        <li>Exercise requirements</li>
+                    </ul>
+                </div>
+                
+                <div class="health-card">
+                    <div class="health-icon">🐱</div>
+                    <h3><a href="/cat/">Cat Health</a></h3>
+                    <p>Essential health guidance for cats covering preventive care, common diseases, and behavioral health.</p>
+                    <ul>
+                        <li>Feline health basics</li>
+                        <li>Litter box health</li>
+                        <li>Indoor vs outdoor health</li>
+                        <li>Senior cat care</li>
+                    </ul>
+                </div>
+                
+                <div class="health-card">
+                    <div class="health-icon">🐰</div>
+                    <h3><a href="/rabbit/">Rabbit Health</a></h3>
+                    <p>Important health information for rabbits including diet, housing, and common health concerns.</p>
+                    <ul>
+                        <li>Digestive health</li>
+                        <li>Dental care</li>
+                        <li>Housing requirements</li>
+                        <li>Exercise needs</li>
+                    </ul>
+                </div>
+                
+                <div class="health-card">
+                    <div class="health-icon">🐠</div>
+                    <h3><a href="/fish/">Fish Health</a></h3>
+                    <p>Aquatic health guides for maintaining healthy fish and aquarium environments.</p>
+                    <ul>
+                        <li>Water quality management</li>
+                        <li>Disease prevention</li>
+                        <li>Feeding guidelines</li>
+                        <li>Tank maintenance</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="health-resources">
+                <h2>Health Emergency Resources</h2>
+                <div class="emergency-info">
+                    <div class="emergency-card">
+                        <h3>When to See a Vet</h3>
+                        <p>Learn the warning signs that require immediate veterinary attention for your pet.</p>
+                    </div>
+                    <div class="emergency-card">
+                        <h3>First Aid Tips</h3>
+                        <p>Basic first aid information that every pet owner should know in case of emergencies.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="health-disclaimer">
+                <h3>Medical Disclaimer</h3>
+                <p>The information provided here is for educational purposes only and is not intended to replace professional veterinary advice. Always consult with a qualified veterinarian for specific health concerns about your pet.</p>
+            </div>
+        </div>
+    </main>
+</div>
+
+<style>
+.health-hub-page {
+    padding: 2rem 0;
+}
+
+.page-header {
+    background: linear-gradient(135deg, #28a745 0%, #20c997 100%);
+    color: white;
+    padding: 4rem 0 2rem;
+    text-align: center;
+}
+
+.page-header h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+.health-sections {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin: 3rem 0;
+}
+
+.health-card {
+    background: white;
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+}
+
+.health-card:hover {
+    transform: translateY(-5px);
+}
+
+.health-icon {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+.health-card ul {
+    list-style-type: none;
+    padding: 0;
+    margin-top: 1rem;
+}
+
+.health-card li {
+    padding: 0.25rem 0;
+    padding-left: 1rem;
+    position: relative;
+}
+
+.health-card li:before {
+    content: "✓";
+    color: #28a745;
+    position: absolute;
+    left: 0;
+}
+
+.health-resources {
+    background: white;
+    padding: 3rem;
+    border-radius: 12px;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.05);
+    margin: 3rem 0;
+}
+
+.emergency-info {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.emergency-card {
+    background: #fff3cd;
+    padding: 2rem;
+    border-radius: 8px;
+    border-left: 4px solid #ffc107;
+}
+
+.health-disclaimer {
+    background: #f8f9fa;
+    padding: 2rem;
+    border-radius: 8px;
+    border-left: 4px solid #dc3545;
+    margin-top: 2rem;
+}
+</style>

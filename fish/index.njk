@@ -1,0 +1,132 @@
+---
+layout: layouts/base.njk
+title: "Fish & Aquarium Care - Expert Fish Information"
+description: "Complete fish care guide with aquarium setup, water quality, feeding advice, and answers to common fish questions."
+animal: "fish"
+---
+
+<div class="animal-page fish-page">
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1 class="hero-title">Fish & Aquarium Care</h1>
+                <p class="hero-subtitle">Create and maintain the perfect aquatic environment</p>
+                
+                <!-- Search Box -->
+                <div class="search-container">
+                    <form class="search-form" role="search">
+                        <div class="search-input-group">
+                            <input 
+                                type="search" 
+                                id="fish-search" 
+                                placeholder="Search fish questions: 'aquarium water quality'..."
+                                aria-label="Search fish questions and answers"
+                                autocomplete="off"
+                            >
+                            <button type="submit" aria-label="Search">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <circle cx="11" cy="11" r="8" stroke="currentColor" stroke-width="2"/>
+                                    <path d="21 21L16.65 16.65" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                                </svg>
+                            </button>
+                        </div>
+                    </form>
+                    <div id="fish-search-results" class="search-results" aria-live="polite"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <section class="main-section">
+        <div class="container">
+            <div class="content-grid">
+                <div class="main-content">
+                    <div class="articles-grid">
+                        <div class="article-card">
+                            <div class="article-image">
+                                <img src="https://images.pexels.com/photos/1076758/pexels-photo-1076758.jpeg?auto=compress&cs=tinysrgb&w=300" alt="Beautiful tropical aquarium" loading="lazy">
+                            </div>
+                            <div class="article-content">
+                                <h3><a href="/fish/aquarium-setup/">Aquarium Setup</a></h3>
+                                <p>Complete guide to setting up your first aquarium with proper equipment and filtration.</p>
+                                <div class="article-meta">
+                                    <span class="read-time">12 min read</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="article-card">
+                            <div class="article-image">
+                                <img src="https://images.pexels.com/photos/1152077/pexels-photo-1152077.jpeg?auto=compress&cs=tinysrgb&w=300" alt="Colorful tropical fish" loading="lazy">
+                            </div>
+                            <div class="article-content">
+                                <h3><a href="/fish/feeding/">Fish Feeding Guidelines</a></h3>
+                                <p>Proper feeding schedules and food types for different fish species and aquarium setups.</p>
+                                <div class="article-meta">
+                                    <span class="read-time">7 min read</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="article-card">
+                            <div class="article-image">
+                                <img src="https://images.pexels.com/photos/3693111/pexels-photo-3693111.jpeg?auto=compress&cs=tinysrgb&w=300" alt="Water testing kit" loading="lazy">
+                            </div>
+                            <div class="article-content">
+                                <h3><a href="/fish/water-quality/">Water Quality Management</a></h3>
+                                <p>Test and maintain optimal water conditions for healthy fish in your aquarium.</p>
+                                <div class="article-meta">
+                                    <span class="read-time">10 min read</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="article-card">
+                            <div class="article-image">
+                                <img src="https://images.pexels.com/photos/1076758/pexels-photo-1076758.jpeg?auto=compress&cs=tinysrgb&w=300" alt="Aquarium maintenance" loading="lazy">
+                            </div>
+                            <div class="article-content">
+                                <h3><a href="/fish/diseases/">Fish Health & Diseases</a></h3>
+                                <p>Identify and treat common aquarium fish health problems and diseases effectively.</p>
+                                <div class="article-meta">
+                                    <span class="read-time">8 min read</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="calculator-widget">
+                    <h3>Tank Volume Calculator</h3>
+                    <p>Calculate your aquarium's water volume</p>
+                    <div class="calculator-form">
+                        <input type="number" id="tank-length" placeholder="Length (inches)" min="1">
+                        <input type="number" id="tank-width" placeholder="Width (inches)" min="1">
+                        <input type="number" id="tank-height" placeholder="Height (inches)" min="1">
+                        <button onclick="calculateTankVolume()">Calculate</button>
+                        <div id="tank-volume-result" class="calculator-result"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter Section -->
+    <section class="newsletter-section">
+        <div class="container">
+            <div class="newsletter-content">
+                <h2>Stay Informed</h2>
+                <p>Get weekly fish care tips delivered to your inbox</p>
+                <form class="newsletter-form" method="POST" action="#" data-newsletter-form>
+                    <div class="form-group">
+                        <input type="email" name="email" placeholder="Enter your email address" required>
+                        <button type="submit">Subscribe</button>
+                    </div>
+                    <p class="privacy-note">We respect your privacy. Unsubscribe at any time.</p>
+                </form>
+            </div>
+        </div>
+    </section>
+</div>

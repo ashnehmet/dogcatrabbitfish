@@ -1,0 +1,123 @@
+/* --- Global Styles & Variables --- */
+:root {
+    --primary-color: #3b82f6; /* A friendly blue */
+    --secondary-color: #1e40af; /* A darker blue for hover */
+    --background-color: #f8fafc; /* A very light grey */
+    --text-color: #1f2937; /* Dark grey for text */
+    --heading-color: #111827; /* Almost black for headings */
+    --border-color: #e5e7eb; /* Light border color */
+    --white-color: #ffffff;
+
+    --font-heading: 'Poppins', sans-serif;
+    --font-body: 'Nunito', sans-serif;
+}
+
+body {
+    font-family: var(--font-body);
+    background-color: var(--background-color);
+    color: var(--text-color);
+    margin: 0;
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* --- Header & Navigation --- */
+.site-header {
+    background-color: var(--white-color);
+    border-bottom: 1px solid var(--border-color);
+    padding: 1rem 0;
+}
+
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.site-title {
+    font-family: var(--font-heading);
+    font-size: 1.8rem;
+    color: var(--heading-color);
+    text-decoration: none;
+    font-weight: 700;
+}
+
+.main-nav ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: flex;
+    gap: 1.5rem;
+}
+
+.main-nav a {
+    text-decoration: none;
+    color: var(--text-color);
+    font-weight: 600;
+    padding: 5px 10px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.main-nav a:hover {
+    background-color: #eef2ff;
+    color: var(--primary-color);
+}
+
+
+/* --- Main Content --- */
+main {
+    padding: 40px 0;
+}
+
+
+/* --- Footer --- */
+.site-footer {
+    background-color: var(--heading-color);
+    color: #d1d5db;
+    padding: 40px 20px;
+    margin-top: 50px;
+}
+
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    text-align: center;
+}
+
+.site-footer h3, .site-footer h4 {
+    font-family: var(--font-heading);
+    color: var(--white-color);
+}
+
+.section-nav ul {
+    padding: 0;
+    list-style: none;
+}
+
+.section-nav a {
+    color: #9ca3af;
+    text-decoration: none;
+}
+.section-nav a:hover {
+    color: var(--white-color);
+    text-decoration: underline;
+}
+
+.copyright {
+    grid-column: 1 / -1; /* Span full width */
+    margin-top: 30px;
+    font-size: 0.9rem;
+    color: #9ca3af;
+}

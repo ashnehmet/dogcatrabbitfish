@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Dog Q&A</title>
+</head>
+<body>
+  <h1>Dog Questions & Answers</h1>
+  <ul>
+    {% for question in collections.questions %}
+      <li>
+        <a href="{{ question.url }}">{{ question.data.title }}</a>
+      </li>
+    {% endfor %}
+  </ul>
+</body>
+</html>

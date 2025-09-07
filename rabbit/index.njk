@@ -1,0 +1,127 @@
+---
+layout: layouts/base.njk
+title: "Rabbit Care & Housing - Expert Rabbit Information"
+description: "Complete rabbit care guide with health tips, diet advice, housing information, and answers to common rabbit questions."
+animal: "rabbit"
+---
+
+<div class="animal-page rabbit-page">
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1 class="hero-title">Rabbit Care & Housing</h1>
+                <p class="hero-subtitle">Complete care guide for happy and healthy rabbits</p>
+                
+                <!-- Search Box -->
+                <div class="search-container">
+                    <form class="search-form" role="search">
+                        <div class="search-input-group">
+                            <input 
+                                type="search" 
+                                id="rabbit-search" 
+                                placeholder="Search rabbit questions: 'what can rabbits eat'..."
+                                aria-label="Search rabbit questions and answers"
+                                autocomplete="off"
+                            >
+                            <button type="submit" aria-label="Search">
+                                🔍
+                            </button>
+                        </div>
+                    </form>
+                    <div id="rabbit-search-results" class="search-results" aria-live="polite"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <section class="main-section">
+        <div class="container">
+            <div class="content-grid">
+                <div class="main-content">
+                    <div class="articles-grid">
+                        <div class="article-card">
+                            <div class="article-image">
+                                <img src="https://images.pexels.com/photos/372166/pexels-photo-372166.jpeg?auto=compress&cs=tinysrgb&w=300" alt="Cute brown rabbit" loading="lazy">
+                            </div>
+                            <div class="article-content">
+                                <h3><a href="/rabbit/diet/">Rabbit Diet Guide</a></h3>
+                                <p>Proper nutrition including hay, pellets, vegetables, and safe treats for rabbits.</p>
+                                <div class="article-meta">
+                                    <span class="read-time">7 min read</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="article-card">
+                            <div class="article-image">
+                                <img src="https://images.pexels.com/photos/1123999/pexels-photo-1123999.jpeg?auto=compress&cs=tinysrgb&w=300" alt="Rabbit in hutch" loading="lazy">
+                            </div>
+                            <div class="article-content">
+                                <h3><a href="/rabbit/housing/">Rabbit Housing Setup</a></h3>
+                                <p>Create the perfect living environment for indoor and outdoor rabbits.</p>
+                                <div class="article-meta">
+                                    <span class="read-time">8 min read</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="article-card">
+                            <div class="article-image">
+                                <img src="https://images.pexels.com/photos/104373/pexels-photo-104373.jpeg?auto=compress&cs=tinysrgb&w=300" alt="Rabbit health check" loading="lazy">
+                            </div>
+                            <div class="article-content">
+                                <h3><a href="/rabbit/health/">Rabbit Health Signs</a></h3>
+                                <p>Recognize signs of illness and maintain your rabbit's health effectively.</p>
+                                <div class="article-meta">
+                                    <span class="read-time">9 min read</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="article-card">
+                            <div class="article-image">
+                                <img src="https://images.pexels.com/photos/3628100/pexels-photo-3628100.jpeg?auto=compress&cs=tinysrgb&w=300" alt="Rabbit grooming" loading="lazy">
+                            </div>
+                            <div class="article-content">
+                                <h3><a href="/rabbit/grooming/">Rabbit Grooming Guide</a></h3>
+                                <p>Essential grooming techniques for different rabbit breeds and coat types.</p>
+                                <div class="article-meta">
+                                    <span class="read-time">6 min read</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="calculator-widget">
+                    <h3>Rabbit Food Calculator</h3>
+                    <p>Calculate daily food portions for your rabbit</p>
+                    <div class="calculator-form">
+                        <input type="number" id="rabbit-weight" placeholder="Weight in lbs" min="1" max="20" step="0.5">
+                        <button onclick="calculateRabbitFood()">Calculate</button>
+                        <div id="rabbit-food-result" class="calculator-result"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter Section -->
+    <section class="newsletter-section">
+        <div class="container">
+            <div class="newsletter-content">
+                <h2>Stay Informed</h2>
+                <p>Get weekly rabbit care tips delivered to your inbox</p>
+                <form class="newsletter-form" method="POST" action="#" data-newsletter-form>
+                    <div class="form-group">
+                        <input type="email" name="email" placeholder="Enter your email address" required>
+                        <button type="submit">Subscribe</button>
+                    </div>
+                    <p class="privacy-note">We respect your privacy. Unsubscribe at any time.</p>
+                </form>
+            </div>
+        </div>
+    </section>
+</div>

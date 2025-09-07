@@ -1,0 +1,184 @@
+---
+layout: layouts/base.njk
+title: "Pet Care Newsletter - Weekly Tips & Updates"
+description: "Subscribe to our weekly pet care newsletter for expert tips, health updates, and the latest information for dog, cat, rabbit, and fish care."
+---
+
+<div class="newsletter-page">
+    <header class="page-header">
+        <div class="container">
+            <h1>Pet Care Newsletter</h1>
+            <p class="page-description">Stay informed with weekly pet care tips delivered to your inbox.</p>
+        </div>
+    </header>
+
+    <main class="newsletter-content">
+        <div class="container">
+            <div class="newsletter-signup-section">
+                <div class="signup-content">
+                    <h2>Join 10,000+ Pet Owners</h2>
+                    <p>Get expert pet care advice delivered weekly. No spam, just helpful tips!</p>
+                    
+                    <form class="newsletter-form large" method="POST" action="#" data-newsletter-form>
+                        <div class="form-group">
+                            <input type="email" name="email" placeholder="Enter your email address" required>
+                            <button type="submit">Subscribe Free</button>
+                        </div>
+                        <p class="privacy-note">We respect your privacy. Unsubscribe at any time.</p>
+                    </form>
+                </div>
+            </div>
+            
+            <div class="newsletter-benefits">
+                <h2>What You'll Receive</h2>
+                <div class="benefits-grid">
+                    <div class="benefit-card">
+                        <div class="benefit-icon">📋</div>
+                        <h3>Weekly Care Tips</h3>
+                        <p>Practical advice for keeping your pets healthy and happy throughout the year.</p>
+                    </div>
+                    <div class="benefit-card">
+                        <div class="benefit-icon">🏥</div>
+                        <h3>Health Alerts</h3>
+                        <p>Important updates about pet health issues, recalls, and seasonal care reminders.</p>
+                    </div>
+                    <div class="benefit-card">
+                        <div class="benefit-icon">🎯</div>
+                        <h3>Expert Insights</h3>
+                        <p>Direct access to veterinary advice and pet care professional recommendations.</p>
+                    </div>
+                    <div class="benefit-card">
+                        <div class="benefit-icon">📚</div>
+                        <h3>Resources</h3>
+                        <p>Exclusive guides, calculators, and tools to help you provide the best care.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="sample-content">
+                <h2>Recent Newsletter Topics</h2>
+                <div class="topics-list">
+                    <div class="topic-item">
+                        <h4>Winter Pet Safety Tips</h4>
+                        <p>Essential guidance for keeping pets safe during cold weather months.</p>
+                    </div>
+                    <div class="topic-item">
+                        <h4>Understanding Pet Nutrition Labels</h4>
+                        <p>How to read and understand what's really in your pet's food.</p>
+                    </div>
+                    <div class="topic-item">
+                        <h4>Senior Pet Care Checklist</h4>
+                        <p>Special considerations for aging pets and quality of life improvements.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+</div>
+
+<style>
+.newsletter-page {
+    padding: 2rem 0;
+}
+
+.page-header {
+    background: linear-gradient(135deg, #17a2b8 0%, #6610f2 100%);
+    color: white;
+    padding: 4rem 0 2rem;
+    text-align: center;
+}
+
+.page-header h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+.newsletter-signup-section {
+    background: white;
+    padding: 4rem 2rem;
+    border-radius: 16px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    text-align: center;
+    margin: 3rem 0;
+}
+
+.newsletter-form.large {
+    max-width: 500px;
+    margin: 2rem auto 0;
+}
+
+.newsletter-form.large .form-group {
+    display: flex;
+    gap: 1rem;
+}
+
+.newsletter-form.large input {
+    flex: 1;
+    padding: 1rem;
+    font-size: 1.1rem;
+    border: 2px solid #e1e5e9;
+    border-radius: 8px;
+}
+
+.newsletter-form.large button {
+    padding: 1rem 2rem;
+    background: #17a2b8;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.newsletter-benefits {
+    background: white;
+    padding: 3rem;
+    border-radius: 12px;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.05);
+    margin: 3rem 0;
+}
+
+.benefits-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.benefit-card {
+    text-align: center;
+    padding: 2rem;
+    background: #f8f9fa;
+    border-radius: 8px;
+}
+
+.benefit-icon {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.sample-content {
+    background: white;
+    padding: 3rem;
+    border-radius: 12px;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.05);
+}
+
+.topics-list {
+    margin-top: 2rem;
+}
+
+.topic-item {
+    padding: 1.5rem;
+    border-left: 4px solid #17a2b8;
+    background: #f8f9fa;
+    margin-bottom: 1rem;
+    border-radius: 0 8px 8px 0;
+}
+
+.topic-item h4 {
+    margin-bottom: 0.5rem;
+    color: #333;
+}
+</style>

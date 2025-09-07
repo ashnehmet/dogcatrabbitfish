@@ -1,0 +1,130 @@
+---
+layout: layouts/base.njk
+title: "Cat Care & Wellness - Expert Cat Information"
+description: "Complete cat care guide with health tips, behavior advice, nutrition information, and answers to common cat questions."
+animal: "cat"
+---
+
+<div class="animal-page cat-page">
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1 class="hero-title">Cat Care & Wellness</h1>
+                <p class="hero-subtitle">Everything you need to know about feline health and behavior</p>
+                
+                <!-- Search Box -->
+                <div class="search-container">
+                    <form class="search-form" role="search">
+                        <div class="search-input-group">
+                            <input 
+                                type="search" 
+                                id="cat-search" 
+                                placeholder="Search cat questions: 'cat litter box problems'..."
+                                aria-label="Search cat questions and answers"
+                                autocomplete="off"
+                            >
+                            <button type="submit" aria-label="Search">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <circle cx="11" cy="11" r="8" stroke="currentColor" stroke-width="2"/>
+                                    <path d="21 21L16.65 16.65" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                                </svg>
+                            </button>
+                        </div>
+                    </form>
+                    <div id="cat-search-results" class="search-results" aria-live="polite"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <section class="main-section">
+        <div class="container">
+            <div class="content-grid">
+                <div class="main-content">
+                    <div class="articles-grid">
+                        <div class="article-card">
+                            <div class="article-image">
+                                <img src="https://images.pexels.com/photos/45201/kitty-cat-kitten-pet-45201.jpeg?auto=compress&cs=tinysrgb&w=300" alt="Beautiful cat portrait" loading="lazy">
+                            </div>
+                            <div class="article-content">
+                                <h3><a href="/cat/behavior/">Cat Behavior Guide</a></h3>
+                                <p>Decode your cat's body language and vocalizations for better communication.</p>
+                                <div class="article-meta">
+                                    <span class="read-time">9 min read</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="article-card">
+                            <div class="article-image">
+                                <img src="https://images.pexels.com/photos/1170986/pexels-photo-1170986.jpeg?auto=compress&cs=tinysrgb&w=300" alt="Cat with litter box" loading="lazy">
+                            </div>
+                            <div class="article-content">
+                                <h3><a href="/cat/litter-box/">Litter Box Solutions</a></h3>
+                                <p>Troubleshoot common litter box problems and maintain cleanliness effectively.</p>
+                                <div class="article-meta">
+                                    <span class="read-time">5 min read</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="article-card">
+                            <div class="article-image">
+                                <img src="https://images.pexels.com/photos/1741205/pexels-photo-1741205.jpeg?auto=compress&cs=tinysrgb&w=300" alt="Cat eating from bowl" loading="lazy">
+                            </div>
+                            <div class="article-content">
+                                <h3><a href="/cat/nutrition/">Cat Nutrition Guide</a></h3>
+                                <p>Balanced diet recommendations for cats of all ages and activity levels.</p>
+                                <div class="article-meta">
+                                    <span class="read-time">8 min read</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="article-card">
+                            <div class="article-image">
+                                <img src="https://images.pexels.com/photos/2061057/pexels-photo-2061057.jpeg?auto=compress&cs=tinysrgb&w=300" alt="Cat playing with toy" loading="lazy">
+                            </div>
+                            <div class="article-content">
+                                <h3><a href="/cat/enrichment/">Cat Enrichment</a></h3>
+                                <p>Keep your indoor cat mentally stimulated and physically active with engaging activities.</p>
+                                <div class="article-meta">
+                                    <span class="read-time">6 min read</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="calculator-widget">
+                    <h3>Cat Age Calculator</h3>
+                    <p>Find out your cat's age in human years</p>
+                    <div class="calculator-form">
+                        <input type="number" id="cat-age" placeholder="Cat's age in years" min="0" max="25">
+                        <button onclick="calculateCatAge()">Calculate</button>
+                        <div id="cat-age-result" class="calculator-result"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter Section -->
+    <section class="newsletter-section">
+        <div class="container">
+            <div class="newsletter-content">
+                <h2>Stay Informed</h2>
+                <p>Get weekly cat care tips delivered to your inbox</p>
+                <form class="newsletter-form" method="POST" action="#" data-newsletter-form>
+                    <div class="form-group">
+                        <input type="email" name="email" placeholder="Enter your email address" required>
+                        <button type="submit">Subscribe</button>
+                    </div>
+                    <p class="privacy-note">We respect your privacy. Unsubscribe at any time.</p>
+                </form>
+            </div>
+        </div>
+    </section>
+</div>
