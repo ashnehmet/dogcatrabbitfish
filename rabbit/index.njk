@@ -95,13 +95,144 @@ animal: "rabbit"
                     </div>
                 </div>
                 
-                <div class="calculator-widget">
-                    <h3>Rabbit Food Calculator</h3>
-                    <p>Calculate daily food portions for your rabbit</p>
-                    <div class="calculator-form">
-                        <input type="number" id="rabbit-weight" placeholder="Weight in lbs" min="1" max="20" step="0.5">
-                        <button onclick="calculateRabbitFood()">Calculate</button>
-                        <div id="rabbit-food-result" class="calculator-result"></div>
+                <div class="sidebar">
+                    <!-- Enhanced Food Calculator -->
+                    <div class="widget calculator-widget">
+                        <h3>🥕 Daily Food Calculator</h3>
+                        <p>Calculate precise daily portions</p>
+                        <div class="calculator-form">
+                            <label for="rabbit-weight">Weight (lbs):</label>
+                            <input type="number" id="rabbit-weight" placeholder="Weight" min="1" max="20" step="0.5">
+                            
+                            <label for="rabbit-age">Age Category:</label>
+                            <select id="rabbit-age">
+                                <option value="baby">Baby (0-6 months)</option>
+                                <option value="juvenile">Juvenile (6-12 months)</option>
+                                <option value="adult">Adult (1-6 years)</option>
+                                <option value="senior">Senior (6+ years)</option>
+                            </select>
+
+                            <label for="rabbit-activity">Activity Level:</label>
+                            <select id="rabbit-activity">
+                                <option value="low">Low (mostly caged)</option>
+                                <option value="moderate">Moderate (some exercise)</option>
+                                <option value="high">High (lots of exercise)</option>
+                            </select>
+
+                            <button onclick="calculateRabbitFood()">Calculate Food</button>
+                            <div id="rabbit-food-result" class="calculator-result"></div>
+                        </div>
+                    </div>
+
+                    <!-- Habitat Size Calculator -->
+                    <div class="widget calculator-widget">
+                        <h3>🏠 Habitat Size Calculator</h3>
+                        <p>Calculate minimum enclosure size</p>
+                        <div class="calculator-form">
+                            <label for="habitat-rabbits">Number of Rabbits:</label>
+                            <input type="number" id="habitat-rabbits" min="1" max="10" value="1">
+
+                            <label for="habitat-size">Average Rabbit Size:</label>
+                            <select id="habitat-size">
+                                <option value="dwarf">Dwarf (2-4 lbs)</option>
+                                <option value="small">Small (4-7 lbs)</option>
+                                <option value="medium">Medium (7-10 lbs)</option>
+                                <option value="large">Large (10-15 lbs)</option>
+                                <option value="giant">Giant (15+ lbs)</option>
+                            </select>
+
+                            <label for="habitat-type">Housing Type:</label>
+                            <select id="habitat-type">
+                                <option value="indoor">Indoor Only</option>
+                                <option value="outdoor">Outdoor Hutch</option>
+                                <option value="combined">Indoor + Outdoor Run</option>
+                            </select>
+
+                            <button onclick="calculateHabitat()">Calculate Size</button>
+                            <div id="habitat-result" class="calculator-result"></div>
+                        </div>
+                    </div>
+
+                    <!-- Grooming Schedule Calculator -->
+                    <div class="widget calculator-widget">
+                        <h3>✂️ Grooming Schedule</h3>
+                        <p>Create grooming routine</p>
+                        <div class="calculator-form">
+                            <label for="coat-type">Coat Type:</label>
+                            <select id="coat-type">
+                                <option value="short">Short Hair (Rex)</option>
+                                <option value="normal">Normal Fur</option>
+                                <option value="long">Long Hair (Angora)</option>
+                                <option value="dense">Dense Fur (Flemish Giant)</option>
+                            </select>
+
+                            <label for="shedding-season">Current Season:</label>
+                            <select id="shedding-season">
+                                <option value="normal">Normal Season</option>
+                                <option value="shedding">Heavy Shedding Season</option>
+                            </select>
+
+                            <label for="rabbit-temperament">Temperament:</label>
+                            <select id="rabbit-temperament">
+                                <option value="calm">Calm & Cooperative</option>
+                                <option value="nervous">Nervous/Skittish</option>
+                                <option value="aggressive">Aggressive to Handling</option>
+                            </select>
+
+                            <button onclick="calculateGrooming()">Create Schedule</button>
+                            <div id="grooming-result" class="calculator-result"></div>
+                        </div>
+                    </div>
+
+                    <!-- Exercise Space Calculator -->
+                    <div class="widget calculator-widget">
+                        <h3>🏃 Exercise Space Calculator</h3>
+                        <p>Calculate exercise area needs</p>
+                        <div class="calculator-form">
+                            <label for="exercise-weight">Rabbit Weight (lbs):</label>
+                            <input type="number" id="exercise-weight" min="1" max="20" step="0.5">
+
+                            <label for="exercise-energy">Energy Level:</label>
+                            <select id="exercise-energy">
+                                <option value="low">Low Energy</option>
+                                <option value="moderate">Moderate Energy</option>
+                                <option value="high">High Energy</option>
+                                <option value="very-high">Very High Energy</option>
+                            </select>
+
+                            <label for="exercise-time">Daily Free Time (hours):</label>
+                            <input type="number" id="exercise-time" min="1" max="24" value="4">
+
+                            <button onclick="calculateExerciseSpace()">Calculate Space</button>
+                            <div id="exercise-space-result" class="calculator-result"></div>
+                        </div>
+                    </div>
+
+                    <!-- Rabbit Cost Calculator -->
+                    <div class="widget calculator-widget">
+                        <h3>💰 Annual Cost Calculator</h3>
+                        <p>Estimate yearly expenses</p>
+                        <div class="calculator-form">
+                            <label for="cost-rabbits">Number of Rabbits:</label>
+                            <input type="number" id="cost-rabbits" min="1" max="10" value="1">
+
+                            <label for="cost-quality">Care Quality Level:</label>
+                            <select id="cost-quality">
+                                <option value="basic">Basic Care</option>
+                                <option value="standard">Standard Care</option>
+                                <option value="premium">Premium Care</option>
+                            </select>
+
+                            <label for="cost-health">Health Status:</label>
+                            <select id="cost-health">
+                                <option value="healthy">Healthy</option>
+                                <option value="some-issues">Some Health Issues</option>
+                                <option value="chronic">Chronic Conditions</option>
+                            </select>
+
+                            <button onclick="calculateRabbitCosts()">Calculate Costs</button>
+                            <div id="cost-result" class="calculator-result"></div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -125,3 +256,419 @@ animal: "rabbit"
         </div>
     </section>
 </div>
+
+<script>
+// Enhanced Rabbit Food Calculator
+function calculateRabbitFood() {
+    const weight = parseFloat(document.getElementById('rabbit-weight').value);
+    const age = document.getElementById('rabbit-age').value;
+    const activity = document.getElementById('rabbit-activity').value;
+    const resultDiv = document.getElementById('rabbit-food-result');
+    
+    if (!weight || !age || !activity) {
+        resultDiv.innerHTML = '<p style="color: #e74c3c;">Please fill in all fields.</p>';
+        return;
+    }
+    
+    // Daily food calculations for rabbits
+    let hayAmount = weight * 2; // 2oz hay per pound of body weight minimum
+    let pelletAmount;
+    
+    // Pellet amounts by age
+    switch(age) {
+        case 'baby':
+            pelletAmount = weight * 1; // 1 oz per lb
+            break;
+        case 'juvenile':
+            pelletAmount = weight * 0.5; // 0.5 oz per lb
+            break;
+        case 'adult':
+            pelletAmount = weight * 0.25; // 0.25 oz per lb (1/4 cup per 6lbs)
+            break;
+        case 'senior':
+            pelletAmount = weight * 0.5; // More for seniors who may have trouble maintaining weight
+            break;
+    }
+    
+    // Adjust for activity level
+    const activityMultiplier = {
+        'low': 0.9,
+        'moderate': 1.0,
+        'high': 1.2
+    };
+    
+    pelletAmount = Math.round(pelletAmount * activityMultiplier[activity]);
+    
+    // Vegetables (adult rabbits only)
+    const vegAmount = age === 'baby' ? 0 : Math.round(weight * 2); // 2 cups per 6lbs for adults
+    
+    // Treats
+    const treatAmount = Math.max(1, Math.round(weight * 0.5)); // 1 tbsp per 2lbs max
+    
+    resultDiv.innerHTML = `
+        <div class="result-content success">
+            <h4>Daily Food Portions</h4>
+            <div class="food-breakdown">
+                <div class="food-item">
+                    <strong>Timothy Hay:</strong> ${hayAmount} oz (unlimited)
+                </div>
+                <div class="food-item">
+                    <strong>Pellets:</strong> ${pelletAmount} oz (${Math.round(pelletAmount/8)} cups)
+                </div>
+                ${vegAmount > 0 ? `<div class="food-item"><strong>Vegetables:</strong> ${vegAmount} cups (leafy greens)</div>` : ''}
+                <div class="food-item">
+                    <strong>Treats:</strong> Max ${treatAmount} tbsp
+                </div>
+            </div>
+            <div class="feeding-tips">
+                <strong>Feeding Tips:</strong>
+                <ul>
+                    <li>Introduce new foods gradually</li>
+                    <li>Fresh water should always be available</li>
+                    ${age === 'baby' ? '<li>Babies need alfalfa hay and more pellets</li>' : ''}
+                    <li>Feed vegetables in the evening</li>
+                </ul>
+            </div>
+        </div>
+    `;
+}
+
+// Habitat Size Calculator
+function calculateHabitat() {
+    const rabbits = parseInt(document.getElementById('habitat-rabbits').value);
+    const size = document.getElementById('habitat-size').value;
+    const type = document.getElementById('habitat-type').value;
+    const resultDiv = document.getElementById('habitat-result');
+    
+    if (!rabbits || !size || !type) {
+        resultDiv.innerHTML = '<p style="color: #e74c3c;">Please fill in all fields.</p>';
+        return;
+    }
+    
+    // Base space requirements (sq ft) per rabbit
+    const baseSpace = {
+        'dwarf': 8,
+        'small': 12,
+        'medium': 16,
+        'large': 24,
+        'giant': 32
+    };
+    
+    let totalSpace = baseSpace[size] * rabbits;
+    
+    // Adjust for multiple rabbits (bonded pairs need less space per rabbit)
+    if (rabbits > 1) {
+        totalSpace = totalSpace * 0.85; // 15% reduction for multiple rabbits
+    }
+    
+    // Height requirements
+    const height = size === 'giant' ? 24 : size === 'large' ? 20 : 18;
+    
+    // Calculate dimensions for different shapes
+    const dimensions = {
+        rectangular: {
+            length: Math.round(Math.sqrt(totalSpace * 1.5)),
+            width: Math.round(totalSpace / Math.sqrt(totalSpace * 1.5))
+        },
+        square: {
+            side: Math.round(Math.sqrt(totalSpace))
+        }
+    };
+    
+    // Exercise space recommendations
+    let exerciseSpace = '';
+    switch(type) {
+        case 'indoor':
+            exerciseSpace = `Additional ${Math.round(totalSpace * 4)} sq ft exercise area needed for daily free time`;
+            break;
+        case 'outdoor':
+            exerciseSpace = `Minimum run space: ${Math.round(totalSpace * 2)} sq ft`;
+            break;
+        case 'combined':
+            exerciseSpace = `Indoor: ${Math.round(totalSpace * 0.5)} sq ft + Outdoor run: ${Math.round(totalSpace * 3)} sq ft`;
+            break;
+    }
+    
+    resultDiv.innerHTML = `
+        <div class="result-content success">
+            <div class="habitat-size">
+                <strong>Minimum Enclosure Size:</strong><br>
+                <span class="big-number">${Math.round(totalSpace)}</span> sq ft
+            </div>
+            <div class="habitat-dimensions">
+                <strong>Suggested Dimensions:</strong><br>
+                ${dimensions.rectangular.length}ft × ${dimensions.rectangular.width}ft × ${height}"H<br>
+                <em>or ${dimensions.square.side}ft × ${dimensions.square.side}ft (square)</em>
+            </div>
+            <div class="exercise-space">
+                <strong>Exercise Space:</strong><br>
+                ${exerciseSpace}
+            </div>
+            <div class="habitat-tips">
+                <strong>Important:</strong>
+                <ul>
+                    <li>Provide multiple levels when possible</li>
+                    <li>Include hiding spots and toys</li>
+                    <li>Ensure predator-proof if outdoor</li>
+                    <li>Good ventilation is essential</li>
+                </ul>
+            </div>
+        </div>
+    `;
+}
+
+// Grooming Schedule Calculator
+function calculateGrooming() {
+    const coatType = document.getElementById('coat-type').value;
+    const season = document.getElementById('shedding-season').value;
+    const temperament = document.getElementById('rabbit-temperament').value;
+    const resultDiv = document.getElementById('grooming-result');
+    
+    if (!coatType || !season || !temperament) {
+        resultDiv.innerHTML = '<p style="color: #e74c3c;">Please fill in all fields.</p>';
+        return;
+    }
+    
+    // Base grooming frequencies
+    const groomingSchedule = {
+        'short': {
+            brushing: 'Weekly',
+            nailTrim: 'Every 6-8 weeks',
+            toothCheck: 'Weekly',
+            special: []
+        },
+        'normal': {
+            brushing: '2-3 times per week',
+            nailTrim: 'Every 6-8 weeks', 
+            toothCheck: 'Weekly',
+            special: []
+        },
+        'long': {
+            brushing: 'Daily',
+            nailTrim: 'Every 4-6 weeks',
+            toothCheck: 'Weekly',
+            special: ['Daily mat prevention', 'Professional grooming every 2-3 months']
+        },
+        'dense': {
+            brushing: 'Daily during shedding, 3x/week otherwise',
+            nailTrim: 'Every 6-8 weeks',
+            toothCheck: 'Weekly',
+            special: ['Extra brushing during molting seasons']
+        }
+    };
+    
+    let schedule = { ...groomingSchedule[coatType] };
+    
+    // Adjust for shedding season
+    if (season === 'shedding') {
+        if (coatType === 'short') schedule.brushing = '2-3 times per week';
+        if (coatType === 'normal') schedule.brushing = 'Daily';
+        if (coatType === 'dense') schedule.brushing = 'Twice daily';
+        schedule.special.push('Increase brushing during heavy molts');
+    }
+    
+    // Adjust for temperament
+    let temperamentTips = [];
+    switch(temperament) {
+        case 'calm':
+            temperamentTips = ['Enjoy longer grooming sessions', 'Good time for bonding'];
+            break;
+        case 'nervous':
+            temperamentTips = ['Keep sessions short (5-10 minutes)', 'Offer treats during grooming', 'Gradual desensitization'];
+            break;
+        case 'aggressive':
+            temperamentTips = ['Consider professional grooming', 'Use restraint techniques', 'Start with very short sessions', 'May need sedation for nails'];
+            break;
+    }
+    
+    let html = `
+        <div class="result-content success">
+            <h4>Your Rabbit's Grooming Schedule</h4>
+            <div class="grooming-tasks">
+                <div class="task-item">
+                    <strong>Brushing:</strong> ${schedule.brushing}
+                </div>
+                <div class="task-item">
+                    <strong>Nail Trimming:</strong> ${schedule.nailTrim}
+                </div>
+                <div class="task-item">
+                    <strong>Tooth Check:</strong> ${schedule.toothCheck}
+                </div>`;
+    
+    if (schedule.special.length > 0) {
+        html += `<div class="task-item"><strong>Special Care:</strong><ul>`;
+        schedule.special.forEach(item => {
+            html += `<li>${item}</li>`;
+        });
+        html += `</ul></div>`;
+    }
+    
+    html += `</div><div class="temperament-tips">
+                <strong>Tips for ${temperament} rabbits:</strong>
+                <ul>`;
+    
+    temperamentTips.forEach(tip => {
+        html += `<li>${tip}</li>`;
+    });
+    
+    html += `</ul></div></div>`;
+    
+    resultDiv.innerHTML = html;
+}
+
+// Exercise Space Calculator
+function calculateExerciseSpace() {
+    const weight = parseFloat(document.getElementById('exercise-weight').value);
+    const energy = document.getElementById('exercise-energy').value;
+    const freeTime = parseInt(document.getElementById('exercise-time').value);
+    const resultDiv = document.getElementById('exercise-space-result');
+    
+    if (!weight || !energy || !freeTime) {
+        resultDiv.innerHTML = '<p style="color: #e74c3c;">Please fill in all fields.</p>';
+        return;
+    }
+    
+    // Base space requirements (sq ft per hour of exercise)
+    const energyMultiplier = {
+        'low': 8,
+        'moderate': 12,
+        'high': 18,
+        'very-high': 25
+    };
+    
+    // Calculate minimum exercise space
+    const minSpace = Math.max(32, weight * energyMultiplier[energy]);
+    
+    // Calculate ideal space based on free time
+    const idealSpace = minSpace + (freeTime - 2) * 8; // Additional 8 sq ft per hour over 2 hours
+    
+    // Vertical space recommendations
+    const levels = weight > 8 ? 1 : 2; // Larger rabbits might not jump as much
+    
+    resultDiv.innerHTML = `
+        <div class="result-content success">
+            <div class="space-requirements">
+                <div class="space-min">
+                    <strong>Minimum Exercise Space:</strong><br>
+                    <span class="big-number">${Math.round(minSpace)}</span> sq ft
+                </div>
+                <div class="space-ideal">
+                    <strong>Recommended Space:</strong><br>
+                    <span class="big-number">${Math.round(idealSpace)}</span> sq ft
+                </div>
+            </div>
+            <div class="space-layout">
+                <strong>Layout Suggestions:</strong>
+                <ul>
+                    <li>${levels > 1 ? 'Multi-level setup with ramps' : 'Single level with hiding spots'}</li>
+                    <li>Include tunnels and obstacles</li>
+                    <li>Digging box area (${Math.round(minSpace * 0.1)} sq ft)</li>
+                    <li>Multiple feeding stations if room allows</li>
+                </ul>
+            </div>
+            <div class="exercise-tips">
+                <strong>Exercise Tips:</strong>
+                <ul>
+                    <li>${freeTime < 4 ? 'Consider increasing daily free time' : 'Excellent daily exercise time!'}</li>
+                    <li>Rotate toys weekly to prevent boredom</li>
+                    <li>${energy === 'very-high' ? 'Provide puzzle feeders and agility equipment' : 'Include cozy resting areas'}</li>
+                    <li>Supervised outdoor time when possible</li>
+                </ul>
+            </div>
+        </div>
+    `;
+}
+
+// Rabbit Cost Calculator  
+function calculateRabbitCosts() {
+    const rabbits = parseInt(document.getElementById('cost-rabbits').value);
+    const quality = document.getElementById('cost-quality').value;
+    const health = document.getElementById('cost-health').value;
+    const resultDiv = document.getElementById('cost-result');
+    
+    if (!rabbits || !quality || !health) {
+        resultDiv.innerHTML = '<p style="color: #e74c3c;">Please fill in all fields.</p>';
+        return;
+    }
+    
+    // Annual cost breakdown per rabbit
+    const costs = {
+        'basic': {
+            food: 200,
+            bedding: 120,
+            vet: 150,
+            supplies: 100
+        },
+        'standard': {
+            food: 300,
+            bedding: 200,
+            vet: 300,
+            supplies: 200
+        },
+        'premium': {
+            food: 500,
+            bedding: 300,
+            vet: 500,
+            supplies: 400
+        }
+    };
+    
+    let baseCosts = costs[quality];
+    
+    // Health adjustments
+    const healthMultiplier = {
+        'healthy': 1.0,
+        'some-issues': 1.4,
+        'chronic': 2.0
+    };
+    
+    // Calculate total costs
+    const vetCost = Math.round(baseCosts.vet * healthMultiplier[health]);
+    const totalPerRabbit = baseCosts.food + baseCosts.bedding + vetCost + baseCosts.supplies;
+    const totalAllRabbits = totalPerRabbit * rabbits;
+    
+    // Multiple rabbit discount on some items
+    const discount = rabbits > 1 ? 0.15 : 0;
+    const finalTotal = Math.round(totalAllRabbits * (1 - discount));
+    
+    resultDiv.innerHTML = `
+        <div class="result-content success">
+            <h4>Annual Cost Estimate</h4>
+            <div class="cost-breakdown">
+                <div class="cost-item">
+                    <span>Food (${quality}):</span>
+                    <span>$${(baseCosts.food * rabbits).toLocaleString()}</span>
+                </div>
+                <div class="cost-item">
+                    <span>Bedding/Litter:</span>
+                    <span>$${(baseCosts.bedding * rabbits).toLocaleString()}</span>
+                </div>
+                <div class="cost-item">
+                    <span>Veterinary (${health}):</span>
+                    <span>$${(vetCost * rabbits).toLocaleString()}</span>
+                </div>
+                <div class="cost-item">
+                    <span>Supplies & Toys:</span>
+                    <span>$${(baseCosts.supplies * rabbits).toLocaleString()}</span>
+                </div>
+                ${discount > 0 ? `<div class="cost-discount">Multi-rabbit discount (15%): -$${Math.round(totalAllRabbits * discount).toLocaleString()}</div>` : ''}
+            </div>
+            <div class="cost-total">
+                <strong>Total Annual Cost: $${finalTotal.toLocaleString()}</strong>
+            </div>
+            <div class="cost-monthly">
+                <em>Monthly average: $${Math.round(finalTotal / 12).toLocaleString()}</em>
+            </div>
+            <div class="cost-notes">
+                <strong>Additional Considerations:</strong>
+                <ul>
+                    <li>Initial setup costs: $200-800</li>
+                    <li>Emergency fund: $500-1000</li>
+                    <li>Spay/neuter: $200-400 per rabbit</li>
+                    ${health === 'chronic' ? '<li>Specialized diet may add $200-500/year</li>' : ''}
+                </ul>
+            </div>
+        </div>
+    `;
+}
+</script>

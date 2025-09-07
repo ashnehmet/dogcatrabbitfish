@@ -1,17 +1,18 @@
 ---
 layout: layouts/base.njk
-title: "Cat Care & Wellness - Expert Cat Information"
+title: "Cat Care Guide - Complete Resource for Cat Owners"
 description: "Complete cat care guide with health tips, behavior advice, nutrition information, and answers to common cat questions."
 animal: "cat"
+permalink: "/cat/"
 ---
 
-<div class="animal-page cat-page">
+<div class="animal-page cat-page cat-overview-page">
     <!-- Hero Section -->
     <section class="hero">
         <div class="container">
             <div class="hero-content">
-                <h1 class="hero-title">Cat Care & Wellness</h1>
-                <p class="hero-subtitle">Everything you need to know about feline health and behavior</p>
+                <h1 class="hero-title">Complete Cat Care Guide</h1>
+                <p class="hero-subtitle">Everything you need to raise a happy, healthy cat</p>
                 
                 <!-- Search Box -->
                 <div class="search-container">
@@ -20,16 +21,11 @@ animal: "cat"
                             <input 
                                 type="search" 
                                 id="cat-search" 
-                                placeholder="Search cat questions: 'cat litter box problems'..."
+                                placeholder="Ask anything about cats: 'litter box problems', 'cat behavior'..."
                                 aria-label="Search cat questions and answers"
                                 autocomplete="off"
                             >
-                            <button type="submit" aria-label="Search">
-                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <circle cx="11" cy="11" r="8" stroke="currentColor" stroke-width="2"/>
-                                    <path d="21 21L16.65 16.65" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-                                </svg>
-                            </button>
+                            <button type="submit" aria-label="Search">🔍</button>
                         </div>
                     </form>
                     <div id="cat-search-results" class="search-results" aria-live="polite"></div>
@@ -38,73 +34,245 @@ animal: "cat"
         </div>
     </section>
 
+    <!-- Navigation Tabs -->
+    <section class="cat-navigation">
+        <div class="container">
+            <nav class="cat-nav-tabs">
+                <a href="/cat/" class="nav-tab active">Overview</a>
+                <a href="/cat/behavior/" class="nav-tab">Behavior</a>
+                <a href="/cat/health/" class="nav-tab">Health</a>
+                <a href="/cat/nutrition/" class="nav-tab">Nutrition</a>
+                <a href="/cat/breeds/" class="nav-tab">Breeds</a>
+            </nav>
+        </div>
+    </section>
+
     <!-- Main Content -->
     <section class="main-section">
         <div class="container">
             <div class="content-grid">
+                <!-- Main Content -->
                 <div class="main-content">
-                    <div class="articles-grid">
-                        <div class="article-card">
-                            <div class="article-image">
-                                <img src="https://images.pexels.com/photos/45201/kitty-cat-kitten-pet-45201.jpeg?auto=compress&cs=tinysrgb&w=300" alt="Beautiful cat portrait" loading="lazy">
-                            </div>
-                            <div class="article-content">
-                                <h3><a href="/cat/behavior/">Cat Behavior Guide</a></h3>
-                                <p>Decode your cat's body language and vocalizations for better communication.</p>
-                                <div class="article-meta">
-                                    <span class="read-time">9 min read</span>
+                    <!-- Featured Sections -->
+                    <div class="featured-sections">
+                        <div class="section-cards">
+                            <div class="section-card featured">
+                                <div class="card-image">
+                                    <img src="https://images.pexels.com/photos/1170986/pexels-photo-1170986.jpeg?auto=compress&cs=tinysrgb&w=400" alt="Cat with litter box and food bowls" loading="lazy">
+                                </div>
+                                <div class="card-content">
+                                    <span class="card-tag">Most Popular</span>
+                                    <h2><a href="/cat/behavior/">Cat Behavior & Communication</a></h2>
+                                    <p>Understand your cat's body language, vocalizations, and behavioral needs. From purring to scratching, decode what your cat is really telling you.</p>
+                                    <div class="card-stats">
+                                        <span>30,000+ behavior questions answered</span>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                        
-                        <div class="article-card">
-                            <div class="article-image">
-                                <img src="https://images.pexels.com/photos/1170986/pexels-photo-1170986.jpeg?auto=compress&cs=tinysrgb&w=300" alt="Cat with litter box" loading="lazy">
-                            </div>
-                            <div class="article-content">
-                                <h3><a href="/cat/litter-box/">Litter Box Solutions</a></h3>
-                                <p>Troubleshoot common litter box problems and maintain cleanliness effectively.</p>
-                                <div class="article-meta">
-                                    <span class="read-time">5 min read</span>
+                            
+                            <div class="section-card">
+                                <div class="card-image">
+                                    <img src="https://images.pexels.com/photos/1741205/pexels-photo-1741205.jpeg?auto=compress&cs=tinysrgb&w=300" alt="Cat eating healthy food" loading="lazy">
+                                </div>
+                                <div class="card-content">
+                                    <h3><a href="/cat/nutrition/">Nutrition & Feeding</a></h3>
+                                    <p>Complete feeding guide for cats of all ages, from kitten to senior care.</p>
+                                    <span class="read-time">Essential guide</span>
                                 </div>
                             </div>
-                        </div>
-                        
-                        <div class="article-card">
-                            <div class="article-image">
-                                <img src="https://images.pexels.com/photos/1741205/pexels-photo-1741205.jpeg?auto=compress&cs=tinysrgb&w=300" alt="Cat eating from bowl" loading="lazy">
-                            </div>
-                            <div class="article-content">
-                                <h3><a href="/cat/nutrition/">Cat Nutrition Guide</a></h3>
-                                <p>Balanced diet recommendations for cats of all ages and activity levels.</p>
-                                <div class="article-meta">
-                                    <span class="read-time">8 min read</span>
+                            
+                            <div class="section-card">
+                                <div class="card-image">
+                                    <img src="https://images.pexels.com/photos/2061057/pexels-photo-2061057.jpeg?auto=compress&cs=tinysrgb&w=300" alt="Cat at veterinary check" loading="lazy">
                                 </div>
-                            </div>
-                        </div>
-                        
-                        <div class="article-card">
-                            <div class="article-image">
-                                <img src="https://images.pexels.com/photos/2061057/pexels-photo-2061057.jpeg?auto=compress&cs=tinysrgb&w=300" alt="Cat playing with toy" loading="lazy">
-                            </div>
-                            <div class="article-content">
-                                <h3><a href="/cat/enrichment/">Cat Enrichment</a></h3>
-                                <p>Keep your indoor cat mentally stimulated and physically active with engaging activities.</p>
-                                <div class="article-meta">
-                                    <span class="read-time">6 min read</span>
+                                <div class="card-content">
+                                    <h3><a href="/cat/health/">Health & Wellness</a></h3>
+                                    <p>Preventive care, symptoms to watch, and when to see your veterinarian.</p>
+                                    <span class="read-time">Expert advice</span>
                                 </div>
                             </div>
                         </div>
                     </div>
+
+                    <!-- Quick Access Grid -->
+                    <div class="quick-access">
+                        <h2>Quick Access</h2>
+                        <div class="access-grid">
+                            <div class="access-card">
+                                <div class="access-icon">🐱</div>
+                                <h4>Litter Box Calculator</h4>
+                                <p>Find the right number and size of litter boxes</p>
+                                <a href="#litter-calculator" class="access-link">Calculate Now →</a>
+                            </div>
+                            
+                            <div class="access-card">
+                                <div class="access-icon">😸</div>
+                                <h4>Behavior Decoder</h4>
+                                <p>Understand what your cat's actions mean</p>
+                                <a href="/cat/behavior/" class="access-link">Decode Now →</a>
+                            </div>
+                            
+                            <div class="access-card">
+                                <div class="access-icon">🏥</div>
+                                <h4>Health Checker</h4>
+                                <p>Symptom guide and health recommendations</p>
+                                <a href="/cat/health/#symptoms" class="access-link">Check Symptoms →</a>
+                            </div>
+                            
+                            <div class="access-card">
+                                <div class="access-icon">🐈</div>
+                                <h4>Breed Finder</h4>
+                                <p>Find the perfect cat breed for your lifestyle</p>
+                                <a href="/cat/breeds/#quiz" class="access-link">Take Quiz →</a>
+                            </div>
+                            
+                            <div class="access-card">
+                                <div class="access-icon">📊</div>
+                                <h4>Age Calculator</h4>
+                                <p>Convert cat years to human years</p>
+                                <a href="#age-calculator" class="access-link">Calculate →</a>
+                            </div>
+                            
+                            <div class="access-card">
+                                <div class="access-icon">🍽️</div>
+                                <h4>Feeding Calculator</h4>
+                                <p>Get precise feeding amounts for your cat</p>
+                                <a href="#feeding-calculator" class="access-link">Calculate →</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Popular Questions -->
+                    <div class="popular-questions">
+                        <h2>Most Asked Questions</h2>
+                        <div class="questions-grid">
+                            <div class="question-card">
+                                <h4>Why is my cat not using the litter box?</h4>
+                                <p>Multiple factors can cause litter box avoidance, from cleanliness to medical issues.</p>
+                                <a href="#litter-issues" class="question-link">Read More →</a>
+                            </div>
+                            <div class="question-card">
+                                <h4>How often should I feed my cat?</h4>
+                                <p>Feeding frequency depends on your cat's age, health, and lifestyle.</p>
+                                <a href="#feeding-schedule" class="question-link">Read More →</a>
+                            </div>
+                            <div class="question-card">
+                                <h4>Is my cat's behavior normal?</h4>
+                                <p>Learn to distinguish between normal cat behaviors and concerning signs.</p>
+                                <a href="#normal-behavior" class="question-link">Read More →</a>
+                            </div>
+                            <div class="question-card">
+                                <h4>When should I spay or neuter my cat?</h4>
+                                <p>Timing and benefits of spaying/neutering for your cat's health.</p>
+                                <a href="#spay-neuter" class="question-link">Read More →</a>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                
-                <div class="calculator-widget">
-                    <h3>Cat Age Calculator</h3>
-                    <p>Find out your cat's age in human years</p>
-                    <div class="calculator-form">
-                        <input type="number" id="cat-age" placeholder="Cat's age in years" min="0" max="25">
-                        <button onclick="calculateCatAge()">Calculate</button>
-                        <div id="cat-age-result" class="calculator-result"></div>
+
+                <!-- Sidebar -->
+                <div class="sidebar">
+                    <!-- Cat Age Calculator -->
+                    <div class="widget age-calculator" id="age-calculator">
+                        <h3>Cat Age Calculator</h3>
+                        <p>Convert your cat's age to human years</p>
+                        <div class="calculator-form">
+                            <label for="cat-age">Cat's age (years):</label>
+                            <input type="number" id="cat-age" placeholder="Enter age" min="0" max="25">
+                            <label for="cat-life-stage">Life stage:</label>
+                            <select id="cat-life-stage">
+                                <option value="indoor">Indoor cat</option>
+                                <option value="outdoor">Outdoor cat</option>
+                                <option value="mixed">Indoor/outdoor</option>
+                            </select>
+                            <button onclick="calculateCatAge()">Calculate</button>
+                            <div id="cat-age-result" class="calculator-result"></div>
+                        </div>
+                    </div>
+
+                    <!-- Litter Box Calculator -->
+                    <div class="widget litter-calculator" id="litter-calculator">
+                        <h3>Litter Box Calculator</h3>
+                        <p>Find the right setup for your home</p>
+                        <div class="calculator-form">
+                            <label for="num-cats">Number of cats:</label>
+                            <input type="number" id="num-cats" placeholder="Enter number" min="1" max="20">
+                            <label for="home-floors">Floors in home:</label>
+                            <select id="home-floors">
+                                <option value="1">Single floor</option>
+                                <option value="2">2 floors</option>
+                                <option value="3">3+ floors</option>
+                            </select>
+                            <button onclick="calculateLitterBoxes()">Calculate</button>
+                            <div id="litter-result" class="calculator-result"></div>
+                        </div>
+                    </div>
+
+                    <!-- Feeding Calculator -->
+                    <div class="widget feeding-calculator" id="feeding-calculator">
+                        <h3>Cat Feeding Calculator</h3>
+                        <p>Determine optimal feeding amounts</p>
+                        <div class="calculator-form">
+                            <label for="cat-weight">Weight (lbs):</label>
+                            <input type="number" id="cat-weight" placeholder="Enter weight" min="1" max="30">
+                            <label for="cat-activity">Activity level:</label>
+                            <select id="cat-activity">
+                                <option value="low">Low - Senior/inactive</option>
+                                <option value="moderate">Moderate - Normal adult</option>
+                                <option value="high">High - Young/very active</option>
+                            </select>
+                            <label for="cat-type">Food type:</label>
+                            <select id="cat-type">
+                                <option value="dry">Dry food only</option>
+                                <option value="wet">Wet food only</option>
+                                <option value="mixed">Mixed diet</option>
+                            </select>
+                            <button onclick="calculateCatFeeding()">Calculate</button>
+                            <div id="feeding-result" class="calculator-result"></div>
+                        </div>
+                    </div>
+
+                    <!-- Emergency Info -->
+                    <div class="widget emergency-info">
+                        <h3>Emergency Information</h3>
+                        <div class="emergency-items">
+                            <div class="emergency-item">
+                                <strong>24/7 Pet Poison Helpline:</strong>
+                                <span>(855) 764-7661</span>
+                            </div>
+                            <div class="emergency-item">
+                                <strong>ASPCA Animal Poison Control:</strong>
+                                <span>(888) 426-4435</span>
+                            </div>
+                            <div class="emergency-item">
+                                <strong>Cat Emergency Signs:</strong>
+                                <span>Difficulty breathing, not eating 24+ hours, hiding</span>
+                            </div>
+                        </div>
+                        <a href="/cat/health/#emergency" class="emergency-link">Full Emergency Guide →</a>
+                    </div>
+
+                    <!-- Recent Articles -->
+                    <div class="widget recent-articles">
+                        <h3>Latest Cat Articles</h3>
+                        <div class="article-list">
+                            <article class="mini-article">
+                                <h4><a href="#">Indoor Cat Enrichment Ideas</a></h4>
+                                <span class="read-time">7 min read</span>
+                            </article>
+                            <article class="mini-article">
+                                <h4><a href="#">Litter Box Problems Solutions</a></h4>
+                                <span class="read-time">6 min read</span>
+                            </article>
+                            <article class="mini-article">
+                                <h4><a href="#">Senior Cat Care Guide</a></h4>
+                                <span class="read-time">9 min read</span>
+                            </article>
+                            <article class="mini-article">
+                                <h4><a href="#">Cat Grooming at Home</a></h4>
+                                <span class="read-time">5 min read</span>
+                            </article>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -115,16 +283,335 @@ animal: "cat"
     <section class="newsletter-section">
         <div class="container">
             <div class="newsletter-content">
-                <h2>Stay Informed</h2>
-                <p>Get weekly cat care tips delivered to your inbox</p>
-                <form class="newsletter-form" method="POST" action="#" data-newsletter-form>
+                <h2>Cat Care Weekly</h2>
+                <p>Get expert cat care tips, health alerts, and behavior advice delivered to your inbox</p>
+                <form class="newsletter-form">
                     <div class="form-group">
-                        <input type="email" name="email" placeholder="Enter your email address" required>
-                        <button type="submit">Subscribe</button>
+                        <input type="email" placeholder="Enter your email address" required>
+                        <button type="submit">Subscribe Free</button>
                     </div>
-                    <p class="privacy-note">We respect your privacy. Unsubscribe at any time.</p>
+                    <p class="privacy-note">Join 40,000+ cat owners. No spam, unsubscribe anytime.</p>
                 </form>
             </div>
         </div>
     </section>
 </div>
+
+<script>
+// Cat Age Calculator - More accurate than simple 7x multiplier
+function calculateCatAge() {
+    const age = document.getElementById('cat-age').value;
+    const lifeStage = document.getElementById('cat-life-stage').value;
+    const resultDiv = document.getElementById('cat-age-result');
+    
+    resultDiv.innerHTML = '';
+    
+    if (!age || age < 0 || age > 25) {
+        resultDiv.innerHTML = `
+            <div class="result-content error">
+                <strong>Please enter a valid age between 0 and 25 years</strong>
+            </div>
+        `;
+        return;
+    }
+    
+    const catAge = parseFloat(age);
+    let humanAge;
+    let stage = '';
+    
+    // More accurate cat age calculation
+    if (catAge < 1) {
+        humanAge = catAge * 15;
+        stage = 'Kitten';
+    } else if (catAge === 1) {
+        humanAge = 15;
+        stage = 'Young Adult';
+    } else if (catAge === 2) {
+        humanAge = 24;
+        stage = 'Adult';
+    } else {
+        // After 2 years, each cat year = 4 human years
+        humanAge = 24 + ((catAge - 2) * 4);
+        if (catAge < 7) stage = 'Adult';
+        else if (catAge < 11) stage = 'Mature Adult';
+        else if (catAge < 15) stage = 'Senior';
+        else stage = 'Geriatric';
+    }
+    
+    // Adjust for lifestyle (outdoor cats typically have shorter lifespans)
+    let lifestyleNote = '';
+    if (lifeStage === 'outdoor') {
+        humanAge = Math.round(humanAge * 1.1); // Slightly higher aging rate
+        lifestyleNote = 'Outdoor cats may age faster due to environmental stresses.';
+    } else if (lifeStage === 'mixed') {
+        humanAge = Math.round(humanAge * 1.05);
+        lifestyleNote = 'Indoor/outdoor cats have moderate aging patterns.';
+    } else {
+        lifestyleNote = 'Indoor cats typically live longer, healthier lives.';
+    }
+    
+    // Health recommendations
+    let recommendations = [];
+    if (catAge < 1) {
+        recommendations = ['Kitten vaccinations', 'Frequent vet visits', 'Spay/neuter at 4-6 months'];
+    } else if (catAge < 7) {
+        recommendations = ['Annual vet checkups', 'Dental care', 'Weight monitoring'];
+    } else if (catAge < 11) {
+        recommendations = ['Bi-annual vet visits', 'Blood work screening', 'Joint health monitoring'];
+    } else {
+        recommendations = ['Quarterly vet visits', 'Senior blood panels', 'Comfort care considerations'];
+    }
+    
+    resultDiv.innerHTML = `
+        <div class="result-content success">
+            <div class="age-result">
+                <strong>Human Age Equivalent:</strong><br>
+                <span class="age-number">${Math.round(humanAge)}</span> years old
+            </div>
+            <div class="life-stage">
+                <strong>Life Stage:</strong> ${stage}
+            </div>
+            <div class="lifestyle-note">
+                <strong>Lifestyle Impact:</strong><br>
+                <em>${lifestyleNote}</em>
+            </div>
+            <div class="recommendations">
+                <strong>Health Recommendations:</strong>
+                <ul>
+                    ${recommendations.map(rec => `<li>${rec}</li>`).join('')}
+                </ul>
+            </div>
+        </div>
+    `;
+}
+
+// Litter Box Calculator
+function calculateLitterBoxes() {
+    const numCats = document.getElementById('num-cats').value;
+    const floors = document.getElementById('home-floors').value;
+    const resultDiv = document.getElementById('litter-result');
+    
+    resultDiv.innerHTML = '';
+    
+    if (!numCats || numCats < 1 || numCats > 20) {
+        resultDiv.innerHTML = `
+            <div class="result-content error">
+                <strong>Please enter a valid number of cats (1-20)</strong>
+            </div>
+        `;
+        return;
+    }
+    
+    const cats = parseInt(numCats);
+    const numFloors = parseInt(floors);
+    
+    // Rule: Number of cats + 1, with at least one per floor
+    const baseBoxes = cats + 1;
+    const minPerFloor = numFloors > 1 ? numFloors : 1;
+    const recommendedBoxes = Math.max(baseBoxes, minPerFloor);
+    
+    // Box size recommendations
+    let boxSize = '';
+    if (cats === 1) {
+        boxSize = '18" x 24" minimum';
+    } else if (cats <= 3) {
+        boxSize = '20" x 30" recommended';
+    } else {
+        boxSize = 'Multiple large boxes (20" x 30" each)';
+    }
+    
+    // Placement tips
+    let placementTips = [
+        'Place boxes in quiet, accessible locations',
+        'Avoid high-traffic areas',
+        'Keep food and water away from litter boxes',
+        'Ensure easy access for all cats'
+    ];
+    
+    if (numFloors > 1) {
+        placementTips.push('Place at least one box per floor');
+    }
+    
+    // Maintenance schedule
+    let maintenanceSchedule = [];
+    if (cats === 1) {
+        maintenanceSchedule = ['Scoop daily', 'Complete change weekly', 'Deep clean monthly'];
+    } else if (cats <= 3) {
+        maintenanceSchedule = ['Scoop twice daily', 'Complete change every 3-4 days', 'Deep clean bi-weekly'];
+    } else {
+        maintenanceSchedule = ['Scoop multiple times daily', 'Complete change every 2-3 days', 'Deep clean weekly'];
+    }
+    
+    resultDiv.innerHTML = `
+        <div class="result-content success">
+            <div class="box-recommendation">
+                <strong>Recommended Litter Boxes:</strong><br>
+                <span class="box-number">${recommendedBoxes}</span> boxes
+            </div>
+            <div class="box-size">
+                <strong>Box Size:</strong> ${boxSize}
+            </div>
+            <div class="placement-tips">
+                <strong>Placement Tips:</strong>
+                <ul>
+                    ${placementTips.map(tip => `<li>${tip}</li>`).join('')}
+                </ul>
+            </div>
+            <div class="maintenance-schedule">
+                <strong>Maintenance Schedule:</strong>
+                <ul>
+                    ${maintenanceSchedule.map(task => `<li>${task}</li>`).join('')}
+                </ul>
+            </div>
+        </div>
+    `;
+}
+
+// Cat Feeding Calculator
+function calculateCatFeeding() {
+    const weight = document.getElementById('cat-weight').value;
+    const activity = document.getElementById('cat-activity').value;
+    const foodType = document.getElementById('cat-type').value;
+    const resultDiv = document.getElementById('feeding-result');
+    
+    resultDiv.innerHTML = '';
+    
+    if (!weight || weight < 1 || weight > 30) {
+        resultDiv.innerHTML = `
+            <div class="result-content error">
+                <strong>Please enter a valid weight between 1 and 30 pounds</strong>
+            </div>
+        `;
+        return;
+    }
+    
+    const catWeight = parseFloat(weight);
+    
+    // Base calorie calculation for cats: 70 * (body weight in kg)^0.75
+    const weightKg = catWeight / 2.2;
+    let baseCalories = Math.round(70 * Math.pow(weightKg, 0.75));
+    
+    // Activity multipliers for cats
+    let activityMultiplier;
+    let activityDescription;
+    switch(activity) {
+        case 'low':
+            activityMultiplier = 1.2;
+            activityDescription = 'Senior/inactive cats';
+            break;
+        case 'moderate':
+            activityMultiplier = 1.4;
+            activityDescription = 'Average adult cats';
+            break;
+        case 'high':
+            activityMultiplier = 1.6;
+            activityDescription = 'Young/very active cats';
+            break;
+        default:
+            activityMultiplier = 1.4;
+            activityDescription = 'Average adult cats';
+    }
+    
+    const dailyCalories = Math.round(baseCalories * activityMultiplier);
+    
+    // Food amount calculations
+    let foodRecommendations = {};
+    if (foodType === 'dry') {
+        const dryAmount = Math.round((dailyCalories / 300) * 10) / 10; // ~300 cal/cup dry food
+        foodRecommendations = {
+            primary: `${dryAmount} cups of dry food per day`,
+            schedule: '2-3 meals per day',
+            tips: ['Measure portions accurately', 'Use measuring cup, not just a scoop']
+        };
+    } else if (foodType === 'wet') {
+        const wetAmount = Math.round((dailyCalories / 80) * 10) / 10; // ~80 cal per 3oz can
+        foodRecommendations = {
+            primary: `${wetAmount} cans (3oz) of wet food per day`,
+            schedule: '2-3 meals per day',
+            tips: ['Refrigerate unused portions', 'Serve at room temperature']
+        };
+    } else { // mixed
+        const dryAmount = Math.round((dailyCalories * 0.4 / 300) * 10) / 10;
+        const wetAmount = Math.round((dailyCalories * 0.6 / 80) * 10) / 10;
+        foodRecommendations = {
+            primary: `${dryAmount} cups dry food + ${wetAmount} cans wet food per day`,
+            schedule: 'Wet food for meals, dry for snacking',
+            tips: ['Mix foods gradually when changing', 'Wet food provides extra hydration']
+        };
+    }
+    
+    // Weight category advice
+    let weightCategory, weightTips;
+    if (catWeight < 8) {
+        weightCategory = 'Small Cat';
+        weightTips = ['Monitor for weight loss', 'Small, frequent meals', 'High-calorie food if underweight'];
+    } else if (catWeight < 12) {
+        weightCategory = 'Average Cat';
+        weightTips = ['Maintain current weight', 'Regular exercise important', 'Monitor body condition'];
+    } else {
+        weightCategory = 'Large Cat';
+        weightTips = ['Weight management crucial', 'Increase exercise if possible', 'Consider weight management food'];
+    }
+    
+    resultDiv.innerHTML = `
+        <div class="result-content success">
+            <div class="calories-section">
+                <strong>Daily Caloric Needs:</strong><br>
+                <span class="calorie-number">${dailyCalories}</span> calories/day
+                <div class="activity-note">${activityDescription}</div>
+            </div>
+            
+            <div class="food-recommendation">
+                <strong>Feeding Recommendation:</strong><br>
+                ${foodRecommendations.primary}
+            </div>
+            
+            <div class="feeding-schedule">
+                <strong>Feeding Schedule:</strong> ${foodRecommendations.schedule}
+            </div>
+            
+            <div class="cat-info">
+                <strong>Cat Category:</strong> ${weightCategory}
+            </div>
+            
+            <div class="feeding-tips">
+                <strong>Feeding Tips:</strong>
+                <ul>
+                    ${foodRecommendations.tips.concat(weightTips).map(tip => `<li>${tip}</li>`).join('')}
+                </ul>
+            </div>
+            
+            <div class="disclaimer">
+                <em>Note: Adjust portions based on your cat's body condition. Consult your vet for specific dietary needs, especially for medical conditions.</em>
+            </div>
+        </div>
+    `;
+}
+
+// Add input validation
+document.addEventListener('DOMContentLoaded', function() {
+    // Cat age calculator enter key support
+    const catAgeInput = document.getElementById('cat-age');
+    if (catAgeInput) {
+        catAgeInput.addEventListener('keyup', function(e) {
+            if (e.key === 'Enter') calculateCatAge();
+        });
+    }
+    
+    // Litter box calculator enter key support
+    const numCatsInput = document.getElementById('num-cats');
+    if (numCatsInput) {
+        numCatsInput.addEventListener('keyup', function(e) {
+            if (e.key === 'Enter') calculateLitterBoxes();
+        });
+    }
+    
+    // Feeding calculator enter key support
+    const catWeightInput = document.getElementById('cat-weight');
+    if (catWeightInput) {
+        catWeightInput.addEventListener('keyup', function(e) {
+            if (e.key === 'Enter') calculateCatFeeding();
+        });
+    }
+});
+</script>

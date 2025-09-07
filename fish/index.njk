@@ -98,15 +98,187 @@ animal: "fish"
                     </div>
                 </div>
                 
-                <div class="calculator-widget">
-                    <h3>Tank Volume Calculator</h3>
-                    <p>Calculate your aquarium's water volume</p>
-                    <div class="calculator-form">
-                        <input type="number" id="tank-length" placeholder="Length (inches)" min="1">
-                        <input type="number" id="tank-width" placeholder="Width (inches)" min="1">
-                        <input type="number" id="tank-height" placeholder="Height (inches)" min="1">
-                        <button onclick="calculateTankVolume()">Calculate</button>
-                        <div id="tank-volume-result" class="calculator-result"></div>
+                <div class="sidebar">
+                    <!-- Enhanced Tank Volume Calculator -->
+                    <div class="widget calculator-widget">
+                        <h3>🐠 Tank Volume Calculator</h3>
+                        <p>Calculate aquarium water volume</p>
+                        <div class="calculator-form">
+                            <label for="tank-length">Length (inches):</label>
+                            <input type="number" id="tank-length" placeholder="Length" min="1">
+                            
+                            <label for="tank-width">Width (inches):</label>
+                            <input type="number" id="tank-width" placeholder="Width" min="1">
+                            
+                            <label for="tank-height">Height (inches):</label>
+                            <input type="number" id="tank-height" placeholder="Height" min="1">
+                            
+                            <label for="tank-shape">Tank Shape:</label>
+                            <select id="tank-shape">
+                                <option value="rectangular">Rectangular</option>
+                                <option value="bow-front">Bow Front</option>
+                                <option value="corner">Corner Tank</option>
+                                <option value="hexagon">Hexagonal</option>
+                                <option value="cylinder">Cylinder</option>
+                            </select>
+
+                            <button onclick="calculateTankVolume()">Calculate Volume</button>
+                            <div id="tank-volume-result" class="calculator-result"></div>
+                        </div>
+                    </div>
+
+                    <!-- Fish Stocking Calculator -->
+                    <div class="widget calculator-widget">
+                        <h3>🐟 Fish Stocking Calculator</h3>
+                        <p>Calculate safe fish capacity</p>
+                        <div class="calculator-form">
+                            <label for="stock-tank-size">Tank Size (gallons):</label>
+                            <input type="number" id="stock-tank-size" min="1" placeholder="Tank volume">
+
+                            <label for="fish-type">Primary Fish Type:</label>
+                            <select id="fish-type">
+                                <option value="tropical-community">Tropical Community</option>
+                                <option value="goldfish">Goldfish</option>
+                                <option value="cichlids">Cichlids</option>
+                                <option value="bettas">Bettas</option>
+                                <option value="marine">Marine/Saltwater</option>
+                            </select>
+
+                            <label for="fish-size">Average Adult Fish Size:</label>
+                            <select id="fish-size">
+                                <option value="small">Small (1-2 inches)</option>
+                                <option value="medium">Medium (2-4 inches)</option>
+                                <option value="large">Large (4-6 inches)</option>
+                                <option value="extra-large">Extra Large (6+ inches)</option>
+                            </select>
+
+                            <label for="experience-level">Experience Level:</label>
+                            <select id="experience-level">
+                                <option value="beginner">Beginner</option>
+                                <option value="intermediate">Intermediate</option>
+                                <option value="advanced">Advanced</option>
+                            </select>
+
+                            <button onclick="calculateStocking()">Calculate Stocking</button>
+                            <div id="stocking-result" class="calculator-result"></div>
+                        </div>
+                    </div>
+
+                    <!-- Water Parameter Calculator -->
+                    <div class="widget calculator-widget">
+                        <h3>💧 Water Parameter Guide</h3>
+                        <p>Check ideal water conditions</p>
+                        <div class="calculator-form">
+                            <label for="water-fish-type">Fish Type:</label>
+                            <select id="water-fish-type">
+                                <option value="tropical-freshwater">Tropical Freshwater</option>
+                                <option value="coldwater">Coldwater</option>
+                                <option value="african-cichlids">African Cichlids</option>
+                                <option value="amazon">Amazon Biotope</option>
+                                <option value="marine-reef">Marine Reef</option>
+                                <option value="marine-fowlr">Marine Fish Only</option>
+                            </select>
+
+                            <label for="current-ph">Current pH (optional):</label>
+                            <input type="number" id="current-ph" step="0.1" min="5" max="9" placeholder="e.g. 7.2">
+
+                            <label for="current-temp">Current Temperature (°F):</label>
+                            <input type="number" id="current-temp" min="60" max="90" placeholder="e.g. 78">
+
+                            <button onclick="calculateWaterParameters()">Check Parameters</button>
+                            <div id="water-result" class="calculator-result"></div>
+                        </div>
+                    </div>
+
+                    <!-- Feeding Calculator -->
+                    <div class="widget calculator-widget">
+                        <h3>🍽️ Fish Feeding Calculator</h3>
+                        <p>Calculate daily food amounts</p>
+                        <div class="calculator-form">
+                            <label for="feed-fish-count">Number of Fish:</label>
+                            <input type="number" id="feed-fish-count" min="1" placeholder="Fish count">
+
+                            <label for="feed-fish-size">Average Fish Size:</label>
+                            <select id="feed-fish-size">
+                                <option value="small">Small (0.5-1 inch)</option>
+                                <option value="medium">Medium (1-3 inches)</option>
+                                <option value="large">Large (3-5 inches)</option>
+                                <option value="extra-large">Extra Large (5+ inches)</option>
+                            </select>
+
+                            <label for="feed-type">Primary Food Type:</label>
+                            <select id="feed-type">
+                                <option value="flakes">Flakes</option>
+                                <option value="pellets">Pellets</option>
+                                <option value="frozen">Frozen Food</option>
+                                <option value="live">Live Food</option>
+                            </select>
+
+                            <label for="feeding-frequency">Feedings Per Day:</label>
+                            <select id="feeding-frequency">
+                                <option value="1">Once Daily</option>
+                                <option value="2">Twice Daily</option>
+                                <option value="3">Three Times Daily</option>
+                            </select>
+
+                            <button onclick="calculateFeeding()">Calculate Feeding</button>
+                            <div id="feeding-result" class="calculator-result"></div>
+                        </div>
+                    </div>
+
+                    <!-- Heater Size Calculator -->
+                    <div class="widget calculator-widget">
+                        <h3>🔥 Heater Size Calculator</h3>
+                        <p>Find the right heater wattage</p>
+                        <div class="calculator-form">
+                            <label for="heater-tank-size">Tank Size (gallons):</label>
+                            <input type="number" id="heater-tank-size" min="1" placeholder="Tank volume">
+
+                            <label for="room-temp">Room Temperature (°F):</label>
+                            <input type="number" id="room-temp" min="50" max="80" value="68" placeholder="Room temp">
+
+                            <label for="target-temp">Target Water Temperature (°F):</label>
+                            <input type="number" id="target-temp" min="70" max="85" value="76" placeholder="Target temp">
+
+                            <label for="tank-insulation">Tank Insulation:</label>
+                            <select id="tank-insulation">
+                                <option value="none">No Insulation</option>
+                                <option value="some">Some Insulation/Cover</option>
+                                <option value="well">Well Insulated</option>
+                            </select>
+
+                            <button onclick="calculateHeater()">Calculate Heater</button>
+                            <div id="heater-result" class="calculator-result"></div>
+                        </div>
+                    </div>
+
+                    <!-- Filter Flow Rate Calculator -->
+                    <div class="widget calculator-widget">
+                        <h3>🌊 Filter Flow Calculator</h3>
+                        <p>Calculate required filter capacity</p>
+                        <div class="calculator-form">
+                            <label for="filter-tank-size">Tank Size (gallons):</label>
+                            <input type="number" id="filter-tank-size" min="1" placeholder="Tank volume">
+
+                            <label for="fish-load">Fish Load Level:</label>
+                            <select id="fish-load">
+                                <option value="light">Light (few small fish)</option>
+                                <option value="moderate">Moderate (typical stocking)</option>
+                                <option value="heavy">Heavy (max capacity)</option>
+                                <option value="overstocked">Overstocked</option>
+                            </select>
+
+                            <label for="filter-type">Filter Type Preference:</label>
+                            <select id="filter-type">
+                                <option value="internal">Internal Filter</option>
+                                <option value="hob">Hang-on-Back (HOB)</option>
+                                <option value="canister">Canister Filter</option>
+                                <option value="sump">Sump System</option>
+                            </select>
+
+                            <button onclick="calculateFilter()">Calculate Filter</button>
+                            <div id="filter-result" class="calculator-result"></div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -130,3 +302,542 @@ animal: "fish"
         </div>
     </section>
 </div>
+
+<script>
+// Enhanced Tank Volume Calculator
+function calculateTankVolume() {
+    const length = parseFloat(document.getElementById('tank-length').value);
+    const width = parseFloat(document.getElementById('tank-width').value);
+    const height = parseFloat(document.getElementById('tank-height').value);
+    const shape = document.getElementById('tank-shape').value;
+    const resultDiv = document.getElementById('tank-volume-result');
+    
+    if (!length || !width || !height) {
+        resultDiv.innerHTML = '<p style="color: #e74c3c;">Please fill in all dimensions.</p>';
+        return;
+    }
+    
+    // Calculate volume based on shape
+    let volume;
+    let shapeMultiplier = {
+        'rectangular': 1.0,
+        'bow-front': 1.1,  // Bow front adds ~10% volume
+        'corner': 0.85,    // Corner tanks lose ~15% volume
+        'hexagon': 0.9,    // Hexagon ~10% less than rectangular
+        'cylinder': 0.785  // π/4 for circular cross-section
+    };
+    
+    // Base calculation: L × W × H ÷ 231 (cubic inches per gallon)
+    let baseVolume = (length * width * height) / 231;
+    volume = baseVolume * shapeMultiplier[shape];
+    
+    // Account for substrate and decorations (reduce by ~10%)
+    const actualVolume = volume * 0.9;
+    
+    // Convert to liters
+    const liters = volume * 3.78541;
+    
+    resultDiv.innerHTML = `
+        <div class="result-content success">
+            <div class="volume-display">
+                <strong>Tank Volume:</strong><br>
+                <span class="big-number">${Math.round(volume)}</span> gallons
+            </div>
+            <div class="volume-details">
+                <div class="volume-item">
+                    <span>Actual water volume:</span>
+                    <span>${Math.round(actualVolume)} gallons</span>
+                </div>
+                <div class="volume-item">
+                    <span>Metric equivalent:</span>
+                    <span>${Math.round(liters)} liters</span>
+                </div>
+                <div class="volume-item">
+                    <span>Shape factor:</span>
+                    <span>${shape.replace('-', ' ')} (×${shapeMultiplier[shape]})</span>
+                </div>
+            </div>
+            <div class="volume-tips">
+                <strong>Tips:</strong>
+                <ul>
+                    <li>Actual volume is ~10% less due to substrate/decorations</li>
+                    <li>Use actual volume for chemical dosing calculations</li>
+                    <li>Consider tank weight: ~8.3 lbs per gallon when full</li>
+                </ul>
+            </div>
+        </div>
+    `;
+}
+
+// Fish Stocking Calculator
+function calculateStocking() {
+    const tankSize = parseInt(document.getElementById('stock-tank-size').value);
+    const fishType = document.getElementById('fish-type').value;
+    const fishSize = document.getElementById('fish-size').value;
+    const experience = document.getElementById('experience-level').value;
+    const resultDiv = document.getElementById('stocking-result');
+    
+    if (!tankSize || !fishType || !fishSize || !experience) {
+        resultDiv.innerHTML = '<p style="color: #e74c3c;">Please fill in all fields.</p>';
+        return;
+    }
+    
+    // Base stocking rules (inches of fish per gallon)
+    const stockingRules = {
+        'tropical-community': { small: 1.0, medium: 0.5, large: 0.25, 'extra-large': 0.1 },
+        'goldfish': { small: 0.5, medium: 0.2, large: 0.1, 'extra-large': 0.05 },
+        'cichlids': { small: 0.5, medium: 0.25, large: 0.15, 'extra-large': 0.1 },
+        'bettas': { small: 1, medium: 1, large: 1, 'extra-large': 1 }, // Special case
+        'marine': { small: 0.5, medium: 0.25, large: 0.1, 'extra-large': 0.05 }
+    };
+    
+    // Fish size in inches (average)
+    const fishSizes = {
+        'small': 1.5,
+        'medium': 3,
+        'large': 5,
+        'extra-large': 8
+    };
+    
+    // Experience multipliers
+    const experienceMultiplier = {
+        'beginner': 0.7,
+        'intermediate': 0.85,
+        'advanced': 1.0
+    };
+    
+    let rule = stockingRules[fishType][fishSize];
+    rule *= experienceMultiplier[experience];
+    
+    // Special handling for bettas
+    if (fishType === 'bettas') {
+        const bettas = Math.floor(tankSize / 5); // 5 gallons per betta minimum
+        resultDiv.innerHTML = `
+            <div class="result-content success">
+                <div class="stocking-result">
+                    <strong>Recommended Stocking:</strong><br>
+                    <span class="big-number">${bettas}</span> Betta(s)
+                </div>
+                <div class="stocking-note">
+                    <strong>Important:</strong> Bettas should be kept alone or with very peaceful tankmates. 
+                    Male bettas cannot be housed together.
+                </div>
+            </div>
+        `;
+        return;
+    }
+    
+    // Calculate number of fish
+    const totalInches = tankSize * rule;
+    const numberOfFish = Math.floor(totalInches / fishSizes[fishSize]);
+    
+    resultDiv.innerHTML = `
+        <div class="result-content success">
+            <div class="stocking-result">
+                <strong>Recommended Stocking:</strong><br>
+                <span class="big-number">${numberOfFish}</span> fish
+            </div>
+            <div class="stocking-details">
+                <div class="stock-item">
+                    <span>Total fish inches:</span>
+                    <span>${Math.round(totalInches)}"</span>
+                </div>
+                <div class="stock-item">
+                    <span>Stocking density:</span>
+                    <span>${rule.toFixed(2)} inches per gallon</span>
+                </div>
+                <div class="stock-item">
+                    <span>Experience adjustment:</span>
+                    <span>${Math.round(experienceMultiplier[experience] * 100)}%</span>
+                </div>
+            </div>
+            <div class="stocking-warnings">
+                <strong>Important:</strong>
+                <ul>
+                    <li>Start with fewer fish and add gradually</li>
+                    <li>Consider adult size when buying juveniles</li>
+                    <li>Some species need more space regardless of size</li>
+                    <li>Aggressive fish need lower stocking densities</li>
+                </ul>
+            </div>
+        </div>
+    `;
+}
+
+// Water Parameter Calculator
+function calculateWaterParameters() {
+    const fishType = document.getElementById('water-fish-type').value;
+    const currentPH = parseFloat(document.getElementById('current-ph').value);
+    const currentTemp = parseInt(document.getElementById('current-temp').value);
+    const resultDiv = document.getElementById('water-result');
+    
+    if (!fishType) {
+        resultDiv.innerHTML = '<p style="color: #e74c3c;">Please select fish type.</p>';
+        return;
+    }
+    
+    // Ideal parameters for different fish types
+    const parameters = {
+        'tropical-freshwater': {
+            ph: [6.5, 7.5],
+            temp: [76, 80],
+            hardness: '5-15 dGH',
+            ammonia: '0 ppm',
+            nitrite: '0 ppm',
+            nitrate: '<20 ppm'
+        },
+        'coldwater': {
+            ph: [7.0, 8.0],
+            temp: [65, 72],
+            hardness: '8-20 dGH',
+            ammonia: '0 ppm',
+            nitrite: '0 ppm',
+            nitrate: '<20 ppm'
+        },
+        'african-cichlids': {
+            ph: [7.8, 8.6],
+            temp: [76, 82],
+            hardness: '10-20 dGH',
+            ammonia: '0 ppm',
+            nitrite: '0 ppm',
+            nitrate: '<30 ppm'
+        },
+        'amazon': {
+            ph: [6.0, 7.0],
+            temp: [78, 82],
+            hardness: '2-8 dGH',
+            ammonia: '0 ppm',
+            nitrite: '0 ppm',
+            nitrate: '<15 ppm'
+        },
+        'marine-reef': {
+            ph: [8.1, 8.4],
+            temp: [76, 80],
+            salinity: '1.025-1.026 sg',
+            ammonia: '0 ppm',
+            nitrite: '0 ppm',
+            nitrate: '<5 ppm',
+            calcium: '400-450 ppm',
+            alkalinity: '8-12 dKH'
+        },
+        'marine-fowlr': {
+            ph: [8.0, 8.4],
+            temp: [76, 80],
+            salinity: '1.020-1.025 sg',
+            ammonia: '0 ppm',
+            nitrite: '0 ppm',
+            nitrate: '<40 ppm'
+        }
+    };
+    
+    const params = parameters[fishType];
+    let html = `
+        <div class="result-content success">
+            <h4>Ideal Parameters for ${fishType.replace('-', ' ').replace(/\b\w/g, l => l.toUpperCase())}</h4>
+            <div class="parameters">
+                <div class="param-item">
+                    <span>pH Range:</span>
+                    <span>${params.ph[0]} - ${params.ph[1]}</span>
+                </div>
+                <div class="param-item">
+                    <span>Temperature:</span>
+                    <span>${params.temp[0]}°F - ${params.temp[1]}°F</span>
+                </div>
+                <div class="param-item">
+                    <span>Water Hardness:</span>
+                    <span>${params.hardness || 'N/A'}</span>
+                </div>`;
+    
+    if (params.salinity) {
+        html += `<div class="param-item"><span>Salinity:</span><span>${params.salinity}</span></div>`;
+    }
+    
+    html += `<div class="param-item"><span>Ammonia:</span><span>${params.ammonia}</span></div>
+                <div class="param-item"><span>Nitrite:</span><span>${params.nitrite}</span></div>
+                <div class="param-item"><span>Nitrate:</span><span>${params.nitrate}</span></div>`;
+    
+    if (params.calcium) {
+        html += `<div class="param-item"><span>Calcium:</span><span>${params.calcium}</span></div>`;
+    }
+    if (params.alkalinity) {
+        html += `<div class="param-item"><span>Alkalinity:</span><span>${params.alkalinity}</span></div>`;
+    }
+    
+    html += `</div>`;
+    
+    // Check current parameters if provided
+    let warnings = [];
+    if (currentPH) {
+        if (currentPH < params.ph[0] || currentPH > params.ph[1]) {
+            warnings.push(`pH is outside ideal range (${currentPH} vs ${params.ph[0]}-${params.ph[1]})`);
+        }
+    }
+    
+    if (currentTemp) {
+        if (currentTemp < params.temp[0] || currentTemp > params.temp[1]) {
+            warnings.push(`Temperature is outside ideal range (${currentTemp}°F vs ${params.temp[0]}-${params.temp[1]}°F)`);
+        }
+    }
+    
+    if (warnings.length > 0) {
+        html += `<div class="parameter-warnings">
+                    <strong>Current Parameter Issues:</strong>
+                    <ul>`;
+        warnings.forEach(warning => {
+            html += `<li>${warning}</li>`;
+        });
+        html += `</ul></div>`;
+    }
+    
+    html += `</div>`;
+    resultDiv.innerHTML = html;
+}
+
+// Fish Feeding Calculator
+function calculateFeeding() {
+    const fishCount = parseInt(document.getElementById('feed-fish-count').value);
+    const fishSize = document.getElementById('feed-fish-size').value;
+    const feedType = document.getElementById('feed-type').value;
+    const frequency = parseInt(document.getElementById('feeding-frequency').value);
+    const resultDiv = document.getElementById('feeding-result');
+    
+    if (!fishCount || !fishSize || !feedType || !frequency) {
+        resultDiv.innerHTML = '<p style="color: #e74c3c;">Please fill in all fields.</p>';
+        return;
+    }
+    
+    // Base feeding amounts per fish per feeding (in units appropriate for food type)
+    const feedingAmounts = {
+        'flakes': { small: 0.02, medium: 0.05, large: 0.1, 'extra-large': 0.2 }, // grams
+        'pellets': { small: 2, medium: 4, large: 8, 'extra-large': 15 }, // pellets
+        'frozen': { small: 0.05, medium: 0.1, large: 0.2, 'extra-large': 0.4 }, // grams
+        'live': { small: 0.05, medium: 0.1, large: 0.2, 'extra-large': 0.4 } // grams
+    };
+    
+    const baseAmount = feedingAmounts[feedType][fishSize];
+    const totalPerFeeding = baseAmount * fishCount;
+    const dailyTotal = totalPerFeeding * frequency;
+    
+    // Units for display
+    const units = {
+        'flakes': 'grams',
+        'pellets': 'pellets',
+        'frozen': 'grams',
+        'live': 'grams'
+    };
+    
+    let weeklyAmount = dailyTotal * 7;
+    
+    resultDiv.innerHTML = `
+        <div class="result-content success">
+            <h4>Daily Feeding Schedule</h4>
+            <div class="feeding-amounts">
+                <div class="feed-item">
+                    <span>Per feeding:</span>
+                    <span>${totalPerFeeding.toFixed(2)} ${units[feedType]}</span>
+                </div>
+                <div class="feed-item">
+                    <span>Daily total:</span>
+                    <span>${dailyTotal.toFixed(2)} ${units[feedType]}</span>
+                </div>
+                <div class="feed-item">
+                    <span>Weekly total:</span>
+                    <span>${weeklyAmount.toFixed(2)} ${units[feedType]}</span>
+                </div>
+            </div>
+            <div class="feeding-schedule">
+                <strong>Feeding Times (${frequency}x daily):</strong>
+                <ul>
+                    ${frequency >= 1 ? '<li>Morning: 8-9 AM</li>' : ''}
+                    ${frequency >= 2 ? '<li>Evening: 6-7 PM</li>' : ''}
+                    ${frequency >= 3 ? '<li>Midday: 12-1 PM</li>' : ''}
+                </ul>
+            </div>
+            <div class="feeding-tips">
+                <strong>Feeding Tips:</strong>
+                <ul>
+                    <li>Fish should consume all food within 2-3 minutes</li>
+                    <li>Remove uneaten food to prevent water quality issues</li>
+                    <li>Vary diet with different food types when possible</li>
+                    <li>Fast fish one day per week for digestive health</li>
+                    ${feedType === 'flakes' ? '<li>Pre-soak flakes for better digestion</li>' : ''}
+                    ${feedType === 'frozen' ? '<li>Thaw frozen food completely before feeding</li>' : ''}
+                </ul>
+            </div>
+        </div>
+    `;
+}
+
+// Heater Size Calculator
+function calculateHeater() {
+    const tankSize = parseInt(document.getElementById('heater-tank-size').value);
+    const roomTemp = parseInt(document.getElementById('room-temp').value);
+    const targetTemp = parseInt(document.getElementById('target-temp').value);
+    const insulation = document.getElementById('tank-insulation').value;
+    const resultDiv = document.getElementById('heater-result');
+    
+    if (!tankSize || !roomTemp || !targetTemp) {
+        resultDiv.innerHTML = '<p style="color: #e74c3c;">Please fill in all fields.</p>';
+        return;
+    }
+    
+    // Base calculation: 5 watts per gallon for 10°F rise
+    const tempRise = targetTemp - roomTemp;
+    let baseWatts = (tankSize * 5 * tempRise) / 10;
+    
+    // Adjust for insulation
+    const insulationMultiplier = {
+        'none': 1.2,
+        'some': 1.0,
+        'well': 0.8
+    };
+    
+    const requiredWatts = Math.round(baseWatts * insulationMultiplier[insulation]);
+    
+    // Standard heater sizes
+    const heaterSizes = [25, 50, 75, 100, 150, 200, 250, 300, 400, 500];
+    const recommendedSize = heaterSizes.find(size => size >= requiredWatts) || 500;
+    
+    // Backup heater recommendation for larger tanks
+    const needsBackup = tankSize > 40;
+    let backupSetup = '';
+    
+    if (needsBackup) {
+        const primaryWatts = Math.ceil(requiredWatts / 2);
+        const backupWatts = Math.floor(requiredWatts / 2);
+        const primarySize = heaterSizes.find(size => size >= primaryWatts) || 300;
+        const backupSize = heaterSizes.find(size => size >= backupWatts) || 300;
+        backupSetup = `<div class="backup-setup">
+                        <strong>Recommended Setup (Large Tank):</strong><br>
+                        Two heaters: ${primarySize}W + ${backupSize}W<br>
+                        <em>Redundancy prevents temperature crashes</em>
+                      </div>`;
+    }
+    
+    resultDiv.innerHTML = `
+        <div class="result-content success">
+            <div class="heater-size">
+                <strong>Required Heater Size:</strong><br>
+                <span class="big-number">${recommendedSize}</span> watts
+            </div>
+            <div class="heater-details">
+                <div class="heater-item">
+                    <span>Temperature rise needed:</span>
+                    <span>${tempRise}°F</span>
+                </div>
+                <div class="heater-item">
+                    <span>Base requirement:</span>
+                    <span>${Math.round(baseWatts)}W</span>
+                </div>
+                <div class="heater-item">
+                    <span>Insulation factor:</span>
+                    <span>${insulation} (×${insulationMultiplier[insulation]})</span>
+                </div>
+            </div>
+            ${backupSetup}
+            <div class="heater-tips">
+                <strong>Heater Tips:</strong>
+                <ul>
+                    <li>Use a heater controller for precise temperature</li>
+                    <li>Place heater near filter output for even distribution</li>
+                    <li>Allow 15 minutes between plugging in and turning on</li>
+                    ${tankSize > 20 ? '<li>Consider multiple smaller heaters vs one large</li>' : ''}
+                    <li>Keep backup heater for emergencies</li>
+                </ul>
+            </div>
+        </div>
+    `;
+}
+
+// Filter Flow Rate Calculator
+function calculateFilter() {
+    const tankSize = parseInt(document.getElementById('filter-tank-size').value);
+    const fishLoad = document.getElementById('fish-load').value;
+    const filterType = document.getElementById('filter-type').value;
+    const resultDiv = document.getElementById('filter-result');
+    
+    if (!tankSize || !fishLoad || !filterType) {
+        resultDiv.innerHTML = '<p style="color: #e74c3c;">Please fill in all fields.</p>';
+        return;
+    }
+    
+    // Base flow rate: 4-6x tank volume per hour
+    let baseFlow = tankSize * 5; // Middle ground: 5x turnover
+    
+    // Adjust for fish load
+    const loadMultiplier = {
+        'light': 0.8,
+        'moderate': 1.0,
+        'heavy': 1.3,
+        'overstocked': 1.6
+    };
+    
+    const requiredFlow = Math.round(baseFlow * loadMultiplier[fishLoad]);
+    
+    // Filter type considerations
+    const filterInfo = {
+        'internal': {
+            efficiency: 0.9,
+            notes: 'Good for smaller tanks, less media capacity'
+        },
+        'hob': {
+            efficiency: 1.0,
+            notes: 'Easy maintenance, good for most setups'
+        },
+        'canister': {
+            efficiency: 1.1,
+            notes: 'Best filtration, higher media capacity'
+        },
+        'sump': {
+            efficiency: 1.2,
+            notes: 'Maximum filtration and customization'
+        }
+    };
+    
+    const adjustedFlow = Math.round(requiredFlow / filterInfo[filterType].efficiency);
+    
+    // Turnover rate
+    const turnoverRate = (adjustedFlow / tankSize).toFixed(1);
+    
+    resultDiv.innerHTML = `
+        <div class="result-content success">
+            <div class="filter-flow">
+                <strong>Required Filter Flow:</strong><br>
+                <span class="big-number">${adjustedFlow}</span> GPH
+            </div>
+            <div class="filter-details">
+                <div class="filter-item">
+                    <span>Tank turnover rate:</span>
+                    <span>${turnoverRate}x per hour</span>
+                </div>
+                <div class="filter-item">
+                    <span>Base flow needed:</span>
+                    <span>${requiredFlow} GPH</span>
+                </div>
+                <div class="filter-item">
+                    <span>Load adjustment:</span>
+                    <span>${fishLoad} (×${loadMultiplier[fishLoad]})</span>
+                </div>
+                <div class="filter-item">
+                    <span>Filter efficiency:</span>
+                    <span>${filterType} (×${filterInfo[filterType].efficiency})</span>
+                </div>
+            </div>
+            <div class="filter-notes">
+                <strong>${filterType.replace('-', ' ').toUpperCase()} Notes:</strong><br>
+                ${filterInfo[filterType].notes}
+            </div>
+            <div class="filter-tips">
+                <strong>Filtration Tips:</strong>
+                <ul>
+                    <li>More flow is generally better than less</li>
+                    <li>Use baffles if flow is too strong for fish</li>
+                    <li>Clean/replace media regularly for optimal performance</li>
+                    <li>Consider multiple filters for redundancy</li>
+                    ${fishLoad === 'overstocked' ? '<li>Overstocked tanks need extra biological filtration</li>' : ''}
+                </ul>
+            </div>
+        </div>
+    `;
+}
+</script>

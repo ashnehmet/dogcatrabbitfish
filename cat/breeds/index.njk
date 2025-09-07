@@ -1,0 +1,997 @@
+---
+layout: layouts/base.njk
+title: "Cat Breeds - Complete Guide & Tools | DogCatRabbitFish"
+description: "Explore cat breeds with interactive tools, comparison charts, personality matching, and breed-specific calculators for grooming and care."
+---
+
+<div class="dog-container">
+    <div class="dog-header">
+        <h1>Cat Breeds & Selection</h1>
+        <p>Discover the perfect feline companion with our comprehensive breed database and interactive tools</p>
+    </div>
+
+    <nav class="cat-nav-tabs">
+        <a href="/cat/">Overview</a>
+        <a href="/cat/behavior/">Behavior</a>
+        <a href="/cat/health/">Health</a>
+        <a href="/cat/nutrition/">Nutrition</a>
+        <a href="/cat/breeds/" class="active">Breeds</a>
+    </nav>
+
+    <div class="dog-content">
+        <main class="dog-main">
+            <div class="hero-section">
+                <h2>Find Your Perfect Cat Breed</h2>
+                <p>From playful Bengals to calm Persians, discover the breed that matches your lifestyle perfectly.</p>
+            </div>
+
+            <div class="calculator-form breed-matcher">
+                <h3>🎯 Breed Personality Matcher</h3>
+                <div class="form-grid">
+                    <div class="form-group">
+                        <label>Living Space:</label>
+                        <select id="livingSpace">
+                            <option value="">Select...</option>
+                            <option value="apartment">Small Apartment</option>
+                            <option value="house">House</option>
+                            <option value="large">Large House/Yard</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Activity Preference:</label>
+                        <select id="activityLevel">
+                            <option value="">Select...</option>
+                            <option value="low">Calm & Relaxed</option>
+                            <option value="moderate">Moderately Active</option>
+                            <option value="high">Very Active & Playful</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Grooming Commitment:</label>
+                        <select id="groomingLevel">
+                            <option value="">Select...</option>
+                            <option value="low">Minimal (Weekly)</option>
+                            <option value="moderate">Regular (2-3x/week)</option>
+                            <option value="high">Daily Grooming</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Experience with Cats:</label>
+                        <select id="experience">
+                            <option value="">Select...</option>
+                            <option value="beginner">First-time Owner</option>
+                            <option value="some">Some Experience</option>
+                            <option value="expert">Very Experienced</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Family Type:</label>
+                        <select id="familyType">
+                            <option value="">Select...</option>
+                            <option value="single">Single Person</option>
+                            <option value="couple">Couple</option>
+                            <option value="kids">Family with Children</option>
+                            <option value="seniors">Senior Household</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Preferred Coat Type:</label>
+                        <select id="coatType">
+                            <option value="">No Preference</option>
+                            <option value="short">Short Hair</option>
+                            <option value="long">Long Hair</option>
+                            <option value="hairless">Hairless</option>
+                        </select>
+                    </div>
+                </div>
+
+                <button onclick="findMatchingBreeds()" class="btn-primary">Find My Perfect Breed</button>
+                <div id="breedMatches"></div>
+            </div>
+
+            <div class="breed-comparison">
+                <h3>🏆 Popular Cat Breeds Comparison</h3>
+                <div class="comparison-grid">
+                    <div class="breed-card">
+                        <h4>Maine Coon</h4>
+                        <div class="breed-stats">
+                            <div class="stat">
+                                <span>Size:</span>
+                                <div class="stat-bar">
+                                    <div class="stat-fill" style="width: 95%"></div>
+                                </div>
+                                <span>Large</span>
+                            </div>
+                            <div class="stat">
+                                <span>Energy:</span>
+                                <div class="stat-bar">
+                                    <div class="stat-fill" style="width: 70%"></div>
+                                </div>
+                                <span>Moderate</span>
+                            </div>
+                            <div class="stat">
+                                <span>Grooming:</span>
+                                <div class="stat-bar">
+                                    <div class="stat-fill" style="width: 80%"></div>
+                                </div>
+                                <span>High</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="breed-card">
+                        <h4>British Shorthair</h4>
+                        <div class="breed-stats">
+                            <div class="stat">
+                                <span>Size:</span>
+                                <div class="stat-bar">
+                                    <div class="stat-fill" style="width: 75%"></div>
+                                </div>
+                                <span>Medium-Large</span>
+                            </div>
+                            <div class="stat">
+                                <span>Energy:</span>
+                                <div class="stat-bar">
+                                    <div class="stat-fill" style="width: 45%"></div>
+                                </div>
+                                <span>Low</span>
+                            </div>
+                            <div class="stat">
+                                <span>Grooming:</span>
+                                <div class="stat-bar">
+                                    <div class="stat-fill" style="width: 30%"></div>
+                                </div>
+                                <span>Low</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="breed-card">
+                        <h4>Bengal</h4>
+                        <div class="breed-stats">
+                            <div class="stat">
+                                <span>Size:</span>
+                                <div class="stat-bar">
+                                    <div class="stat-fill" style="width: 70%"></div>
+                                </div>
+                                <span>Medium</span>
+                            </div>
+                            <div class="stat">
+                                <span>Energy:</span>
+                                <div class="stat-bar">
+                                    <div class="stat-fill" style="width: 95%"></div>
+                                </div>
+                                <span>Very High</span>
+                            </div>
+                            <div class="stat">
+                                <span>Grooming:</span>
+                                <div class="stat-bar">
+                                    <div class="stat-fill" style="width: 25%"></div>
+                                </div>
+                                <span>Low</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="breed-card">
+                        <h4>Persian</h4>
+                        <div class="breed-stats">
+                            <div class="stat">
+                                <span>Size:</span>
+                                <div class="stat-bar">
+                                    <div class="stat-fill" style="width: 65%"></div>
+                                </div>
+                                <span>Medium</span>
+                            </div>
+                            <div class="stat">
+                                <span>Energy:</span>
+                                <div class="stat-bar">
+                                    <div class="stat-fill" style="width: 35%"></div>
+                                </div>
+                                <span>Low</span>
+                            </div>
+                            <div class="stat">
+                                <span>Grooming:</span>
+                                <div class="stat-bar">
+                                    <div class="stat-fill" style="width: 100%"></div>
+                                </div>
+                                <span>Very High</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="breed-database">
+                <h3>📚 Complete Breed Database</h3>
+                <div class="search-filters">
+                    <input type="text" id="breedSearch" placeholder="Search breeds..." onkeyup="filterBreeds()">
+                    
+                    <div class="filter-buttons">
+                        <button onclick="filterBySize('small')" class="filter-btn">Small</button>
+                        <button onclick="filterBySize('medium')" class="filter-btn">Medium</button>
+                        <button onclick="filterBySize('large')" class="filter-btn">Large</button>
+                        <button onclick="filterBySize('all')" class="filter-btn active">All Sizes</button>
+                    </div>
+                </div>
+
+                <div id="breedDatabase" class="breed-grid">
+                    <!-- Breed cards will be populated by JavaScript -->
+                </div>
+            </div>
+        </main>
+
+        <aside class="dog-sidebar">
+            <div class="calculator-form">
+                <h3>🧮 Breed Cost Calculator</h3>
+                <div class="form-group">
+                    <label>Select Breed:</label>
+                    <select id="costBreed">
+                        <option value="">Choose breed...</option>
+                        <option value="persian">Persian</option>
+                        <option value="maine-coon">Maine Coon</option>
+                        <option value="british">British Shorthair</option>
+                        <option value="bengal">Bengal</option>
+                        <option value="siamese">Siamese</option>
+                        <option value="ragdoll">Ragdoll</option>
+                        <option value="domestic">Domestic Shorthair</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label>Initial Purchase:</label>
+                    <select id="purchaseType">
+                        <option value="breeder">Breeder ($500-3000)</option>
+                        <option value="rescue">Rescue/Shelter ($50-200)</option>
+                        <option value="free">Free/Found</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label>Years to Calculate:</label>
+                    <input type="number" id="yearsOwnership" min="1" max="20" value="10">
+                </div>
+
+                <button onclick="calculateBreedCosts()" class="btn-primary">Calculate Total Cost</button>
+                <div id="costBreakdown"></div>
+            </div>
+
+            <div class="calculator-form">
+                <h3>✂️ Grooming Schedule</h3>
+                <div class="form-group">
+                    <label>Cat's Coat Type:</label>
+                    <select id="groomingCoat">
+                        <option value="">Select coat...</option>
+                        <option value="short">Short Hair</option>
+                        <option value="medium">Medium Hair</option>
+                        <option value="long">Long Hair</option>
+                        <option value="curly">Curly/Rex</option>
+                        <option value="hairless">Hairless</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label>Shedding Level:</label>
+                    <select id="sheddingLevel">
+                        <option value="">Select level...</option>
+                        <option value="minimal">Minimal</option>
+                        <option value="moderate">Moderate</option>
+                        <option value="heavy">Heavy</option>
+                        <option value="extreme">Extreme</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label>Cat's Age:</label>
+                    <select id="groomingAge">
+                        <option value="kitten">Kitten (0-1 year)</option>
+                        <option value="adult">Adult (1-7 years)</option>
+                        <option value="senior">Senior (7+ years)</option>
+                    </select>
+                </div>
+
+                <button onclick="createGroomingSchedule()" class="btn-primary">Create Schedule</button>
+                <div id="groomingPlan"></div>
+            </div>
+
+            <div class="calculator-form">
+                <h3>🏠 Space Requirements</h3>
+                <div class="form-group">
+                    <label>Breed Activity Level:</label>
+                    <select id="breedActivity">
+                        <option value="">Select level...</option>
+                        <option value="low">Low Energy</option>
+                        <option value="moderate">Moderate Energy</option>
+                        <option value="high">High Energy</option>
+                        <option value="extreme">Extremely Active</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label>Number of Cats:</label>
+                    <input type="number" id="catCount" min="1" max="10" value="1">
+                </div>
+
+                <div class="form-group">
+                    <label>Current Space (sq ft):</label>
+                    <input type="number" id="currentSpace" min="200" max="5000" value="800">
+                </div>
+
+                <button onclick="assessSpaceNeeds()" class="btn-primary">Assess Space</button>
+                <div id="spaceAssessment"></div>
+            </div>
+        </aside>
+    </div>
+</div>
+
+<script>
+// Comprehensive cat breed database
+const catBreeds = [
+    { name: "Maine Coon", size: "large", energy: "moderate", grooming: "high", goodWith: ["families", "kids"], experience: "beginner", space: "house" },
+    { name: "Persian", size: "medium", energy: "low", grooming: "very-high", goodWith: ["singles", "seniors"], experience: "moderate", space: "apartment" },
+    { name: "British Shorthair", size: "large", energy: "low", grooming: "low", goodWith: ["families", "seniors"], experience: "beginner", space: "apartment" },
+    { name: "Bengal", size: "medium", energy: "very-high", grooming: "low", goodWith: ["experienced"], experience: "expert", space: "large" },
+    { name: "Siamese", size: "medium", energy: "high", grooming: "low", goodWith: ["families", "singles"], experience: "some", space: "house" },
+    { name: "Ragdoll", size: "large", energy: "low", grooming: "moderate", goodWith: ["families", "kids"], experience: "beginner", space: "house" },
+    { name: "Russian Blue", size: "medium", energy: "moderate", grooming: "low", goodWith: ["singles", "couples"], experience: "beginner", space: "apartment" },
+    { name: "Abyssinian", size: "medium", energy: "high", grooming: "low", goodWith: ["families", "experienced"], experience: "some", space: "house" },
+    { name: "Scottish Fold", size: "medium", energy: "moderate", grooming: "moderate", goodWith: ["families", "seniors"], experience: "beginner", space: "apartment" },
+    { name: "Sphynx", size: "medium", energy: "high", grooming: "special", goodWith: ["experienced"], experience: "some", space: "house" },
+    { name: "American Shorthair", size: "medium", energy: "moderate", grooming: "low", goodWith: ["families", "kids"], experience: "beginner", space: "apartment" },
+    { name: "Norwegian Forest Cat", size: "large", energy: "moderate", grooming: "high", goodWith: ["families"], experience: "some", space: "house" },
+    { name: "Birman", size: "medium", energy: "moderate", grooming: "moderate", goodWith: ["families", "seniors"], experience: "beginner", space: "apartment" },
+    { name: "Turkish Angora", size: "medium", energy: "high", grooming: "moderate", goodWith: ["experienced"], experience: "some", space: "house" },
+    { name: "Devon Rex", size: "small", energy: "high", grooming: "special", goodWith: ["families", "singles"], experience: "some", space: "apartment" }
+];
+
+function findMatchingBreeds() {
+    const livingSpace = document.getElementById('livingSpace').value;
+    const activityLevel = document.getElementById('activityLevel').value;
+    const groomingLevel = document.getElementById('groomingLevel').value;
+    const experience = document.getElementById('experience').value;
+    const familyType = document.getElementById('familyType').value;
+    
+    if (!livingSpace || !activityLevel || !groomingLevel || !experience || !familyType) {
+        document.getElementById('breedMatches').innerHTML = '<p style="color: #e74c3c;">Please fill in all fields to find your perfect match.</p>';
+        return;
+    }
+    
+    let matches = catBreeds.filter(breed => {
+        let score = 0;
+        
+        // Space matching
+        if ((livingSpace === 'apartment' && ['apartment'].includes(breed.space)) ||
+            (livingSpace === 'house' && ['apartment', 'house'].includes(breed.space)) ||
+            (livingSpace === 'large' && ['apartment', 'house', 'large'].includes(breed.space))) {
+            score += 2;
+        }
+        
+        // Activity matching
+        if ((activityLevel === 'low' && ['low'].includes(breed.energy)) ||
+            (activityLevel === 'moderate' && ['low', 'moderate'].includes(breed.energy)) ||
+            (activityLevel === 'high' && ['moderate', 'high', 'very-high'].includes(breed.energy))) {
+            score += 2;
+        }
+        
+        // Grooming matching
+        if ((groomingLevel === 'low' && ['low', 'special'].includes(breed.grooming)) ||
+            (groomingLevel === 'moderate' && ['low', 'moderate'].includes(breed.grooming)) ||
+            (groomingLevel === 'high' && ['moderate', 'high', 'very-high'].includes(breed.grooming))) {
+            score += 2;
+        }
+        
+        // Experience matching
+        if ((experience === 'beginner' && ['beginner'].includes(breed.experience)) ||
+            (experience === 'some' && ['beginner', 'some'].includes(breed.experience)) ||
+            (experience === 'expert' && ['beginner', 'some', 'expert'].includes(breed.experience))) {
+            score += 2;
+        }
+        
+        // Family type matching
+        const familyMap = {
+            'single': 'singles',
+            'couple': 'couples', 
+            'kids': 'kids',
+            'seniors': 'seniors'
+        };
+        
+        if (breed.goodWith.includes(familyMap[familyType]) || breed.goodWith.includes('families')) {
+            score += 1;
+        }
+        
+        return score >= 6; // Minimum threshold for good match
+    });
+    
+    matches.sort((a, b) => {
+        // Sort by how well they match criteria
+        let scoreA = calculateMatchScore(a, livingSpace, activityLevel, groomingLevel, experience, familyType);
+        let scoreB = calculateMatchScore(b, livingSpace, activityLevel, groomingLevel, experience, familyType);
+        return scoreB - scoreA;
+    });
+    
+    displayMatches(matches);
+}
+
+function calculateMatchScore(breed, livingSpace, activityLevel, groomingLevel, experience, familyType) {
+    let score = 0;
+    // Detailed scoring logic here
+    return score;
+}
+
+function displayMatches(matches) {
+    const container = document.getElementById('breedMatches');
+    
+    if (matches.length === 0) {
+        container.innerHTML = '<p style="color: #e67e22;">No perfect matches found. Consider adjusting your preferences or consulting with a local breeder.</p>';
+        return;
+    }
+    
+    let html = '<h4>🎯 Your Perfect Breed Matches:</h4><div class="match-results">';
+    
+    matches.slice(0, 5).forEach((breed, index) => {
+        const medal = index === 0 ? '🥇' : index === 1 ? '🥈' : index === 2 ? '🥉' : '⭐';
+        html += `
+            <div class="match-card">
+                <div class="match-header">
+                    <span class="match-rank">${medal}</span>
+                    <h5>${breed.name}</h5>
+                </div>
+                <div class="match-details">
+                    <span class="match-trait">Size: ${breed.size}</span>
+                    <span class="match-trait">Energy: ${breed.energy}</span>
+                    <span class="match-trait">Grooming: ${breed.grooming}</span>
+                </div>
+                <p class="match-reason">Great match for your ${document.getElementById('familyType').value.replace('_', ' ')} lifestyle!</p>
+            </div>
+        `;
+    });
+    
+    html += '</div>';
+    container.innerHTML = html;
+}
+
+// Initialize breed database display
+function initializeBreedDatabase() {
+    displayAllBreeds();
+}
+
+function displayAllBreeds() {
+    const container = document.getElementById('breedDatabase');
+    let html = '';
+    
+    catBreeds.forEach(breed => {
+        html += `
+            <div class="breed-info-card" data-size="${breed.size}" data-name="${breed.name.toLowerCase()}">
+                <h4>${breed.name}</h4>
+                <div class="breed-quick-info">
+                    <span class="info-tag size-${breed.size}">${breed.size.toUpperCase()}</span>
+                    <span class="info-tag energy-${breed.energy}">${breed.energy.toUpperCase()}</span>
+                </div>
+                <div class="breed-traits">
+                    <div class="trait">
+                        <span>Grooming:</span>
+                        <span>${breed.grooming}</span>
+                    </div>
+                    <div class="trait">
+                        <span>Experience:</span>
+                        <span>${breed.experience}</span>
+                    </div>
+                    <div class="trait">
+                        <span>Space:</span>
+                        <span>${breed.space}</span>
+                    </div>
+                </div>
+            </div>
+        `;
+    });
+    
+    container.innerHTML = html;
+}
+
+function filterBreeds() {
+    const searchTerm = document.getElementById('breedSearch').value.toLowerCase();
+    const cards = document.querySelectorAll('.breed-info-card');
+    
+    cards.forEach(card => {
+        const breedName = card.dataset.name;
+        if (breedName.includes(searchTerm)) {
+            card.style.display = 'block';
+        } else {
+            card.style.display = 'none';
+        }
+    });
+}
+
+function filterBySize(size) {
+    const cards = document.querySelectorAll('.breed-info-card');
+    const buttons = document.querySelectorAll('.filter-btn');
+    
+    buttons.forEach(btn => btn.classList.remove('active'));
+    event.target.classList.add('active');
+    
+    cards.forEach(card => {
+        if (size === 'all' || card.dataset.size === size) {
+            card.style.display = 'block';
+        } else {
+            card.style.display = 'none';
+        }
+    });
+}
+
+function calculateBreedCosts() {
+    const breed = document.getElementById('costBreed').value;
+    const purchaseType = document.getElementById('purchaseType').value;
+    const years = parseInt(document.getElementById('yearsOwnership').value);
+    
+    if (!breed || !purchaseType || !years) {
+        document.getElementById('costBreakdown').innerHTML = '<p style="color: #e74c3c;">Please fill in all fields.</p>';
+        return;
+    }
+    
+    // Cost data by breed
+    const breedCosts = {
+        'persian': { food: 600, vet: 800, grooming: 800, supplies: 200 },
+        'maine-coon': { food: 700, vet: 700, grooming: 400, supplies: 200 },
+        'british': { food: 550, vet: 600, grooming: 200, supplies: 180 },
+        'bengal': { food: 600, vet: 700, grooming: 150, supplies: 250 },
+        'siamese': { food: 500, vet: 650, grooming: 150, supplies: 180 },
+        'ragdoll': { food: 650, vet: 700, grooming: 300, supplies: 200 },
+        'domestic': { food: 450, vet: 500, grooming: 100, supplies: 150 }
+    };
+    
+    const purchaseCosts = {
+        'breeder': 1500,
+        'rescue': 125,
+        'free': 0
+    };
+    
+    const annual = breedCosts[breed];
+    const initialCost = purchaseCosts[purchaseType];
+    
+    const totalAnnual = annual.food + annual.vet + annual.grooming + annual.supplies;
+    const totalLifetime = initialCost + (totalAnnual * years);
+    
+    document.getElementById('costBreakdown').innerHTML = `
+        <div class="cost-summary">
+            <h4>💰 ${years}-Year Cost Breakdown</h4>
+            <div class="cost-item">
+                <span>Initial Cost:</span>
+                <span>$${initialCost.toLocaleString()}</span>
+            </div>
+            <div class="cost-item">
+                <span>Annual Food:</span>
+                <span>$${annual.food.toLocaleString()}</span>
+            </div>
+            <div class="cost-item">
+                <span>Annual Veterinary:</span>
+                <span>$${annual.vet.toLocaleString()}</span>
+            </div>
+            <div class="cost-item">
+                <span>Annual Grooming:</span>
+                <span>$${annual.grooming.toLocaleString()}</span>
+            </div>
+            <div class="cost-item">
+                <span>Annual Supplies:</span>
+                <span>$${annual.supplies.toLocaleString()}</span>
+            </div>
+            <div class="cost-total">
+                <strong>Total ${years}-Year Cost: $${totalLifetime.toLocaleString()}</strong>
+            </div>
+            <div class="cost-monthly">
+                <em>Monthly average: $${Math.round(totalLifetime / (years * 12)).toLocaleString()}</em>
+            </div>
+        </div>
+    `;
+}
+
+function createGroomingSchedule() {
+    const coatType = document.getElementById('groomingCoat').value;
+    const shedding = document.getElementById('sheddingLevel').value;
+    const age = document.getElementById('groomingAge').value;
+    
+    if (!coatType || !shedding || !age) {
+        document.getElementById('groomingPlan').innerHTML = '<p style="color: #e74c3c;">Please select all options.</p>';
+        return;
+    }
+    
+    const schedules = {
+        'short': {
+            brushing: shedding === 'minimal' ? '1-2 times/week' : shedding === 'moderate' ? '2-3 times/week' : 'Daily',
+            bathing: 'Every 6-8 weeks',
+            nails: 'Every 2-3 weeks',
+            ears: 'Weekly check',
+            teeth: '2-3 times/week'
+        },
+        'medium': {
+            brushing: shedding === 'minimal' ? '2-3 times/week' : shedding === 'moderate' ? 'Daily' : 'Daily + dematting',
+            bathing: 'Every 4-6 weeks',
+            nails: 'Every 2-3 weeks',
+            ears: 'Weekly check',
+            teeth: '2-3 times/week'
+        },
+        'long': {
+            brushing: 'Daily (minimum)',
+            bathing: 'Every 3-4 weeks',
+            nails: 'Every 2-3 weeks',
+            ears: 'Weekly check',
+            teeth: '2-3 times/week'
+        },
+        'curly': {
+            brushing: '2-3 times/week (gentle)',
+            bathing: 'Every 4-6 weeks',
+            nails: 'Every 2-3 weeks',
+            ears: 'Weekly check',
+            teeth: '2-3 times/week'
+        },
+        'hairless': {
+            bathing: 'Weekly (special cat shampoo)',
+            skincare: 'Daily moisturizing',
+            sunProtection: 'Indoor only/UV protection',
+            nails: 'Every 2-3 weeks',
+            ears: 'Daily check',
+            teeth: '2-3 times/week'
+        }
+    };
+    
+    const schedule = schedules[coatType];
+    let html = `<div class="grooming-schedule"><h4>🗓️ Your Cat's Grooming Schedule</h4>`;
+    
+    for (const [task, frequency] of Object.entries(schedule)) {
+        html += `
+            <div class="schedule-item">
+                <span class="task">${task.charAt(0).toUpperCase() + task.slice(1)}:</span>
+                <span class="frequency">${frequency}</span>
+            </div>
+        `;
+    }
+    
+    // Age-specific adjustments
+    if (age === 'kitten') {
+        html += '<div class="schedule-note">💡 <strong>Kitten Note:</strong> Start grooming routine early but keep sessions short (5-10 minutes)</div>';
+    } else if (age === 'senior') {
+        html += '<div class="schedule-note">💡 <strong>Senior Note:</strong> Be extra gentle and watch for arthritis - may need professional grooming help</div>';
+    }
+    
+    html += '</div>';
+    document.getElementById('groomingPlan').innerHTML = html;
+}
+
+function assessSpaceNeeds() {
+    const activity = document.getElementById('breedActivity').value;
+    const catCount = parseInt(document.getElementById('catCount').value);
+    const currentSpace = parseInt(document.getElementById('currentSpace').value);
+    
+    if (!activity || !catCount || !currentSpace) {
+        document.getElementById('spaceAssessment').innerHTML = '<p style="color: #e74c3c;">Please fill in all fields.</p>';
+        return;
+    }
+    
+    // Space requirements per cat by activity level (in sq ft)
+    const spaceNeeds = {
+        'low': 200,
+        'moderate': 300,
+        'high': 400,
+        'extreme': 500
+    };
+    
+    const requiredSpace = spaceNeeds[activity] * catCount;
+    const isAdequate = currentSpace >= requiredSpace;
+    
+    let html = `
+        <div class="space-results">
+            <h4>🏠 Space Assessment</h4>
+            <div class="space-comparison">
+                <div class="space-item">
+                    <span>Current Space:</span>
+                    <span>${currentSpace.toLocaleString()} sq ft</span>
+                </div>
+                <div class="space-item">
+                    <span>Recommended:</span>
+                    <span>${requiredSpace.toLocaleString()} sq ft</span>
+                </div>
+                <div class="space-verdict ${isAdequate ? 'adequate' : 'inadequate'}">
+                    ${isAdequate ? '✅ Space is adequate' : '⚠️ More space recommended'}
+                </div>
+            </div>
+    `;
+    
+    if (!isAdequate) {
+        html += `
+            <div class="space-suggestions">
+                <h5>💡 Space Enhancement Tips:</h5>
+                <ul>
+                    <li>Add vertical climbing trees and shelves</li>
+                    <li>Create dedicated play zones</li>
+                    <li>Consider puzzle feeders and interactive toys</li>
+                    <li>Provide window perches for stimulation</li>
+                </ul>
+            </div>
+        `;
+    }
+    
+    html += '</div>';
+    document.getElementById('spaceAssessment').innerHTML = html;
+}
+
+// Initialize when page loads
+document.addEventListener('DOMContentLoaded', function() {
+    initializeBreedDatabase();
+});
+</script>
+
+<style>
+.breed-matcher {
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+    border: 2px solid #6c5ce7;
+    margin-bottom: 2rem;
+}
+
+.form-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+.match-results {
+    margin-top: 1rem;
+}
+
+.match-card {
+    background: white;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 1rem;
+    margin-bottom: 1rem;
+}
+
+.match-header {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.match-rank {
+    font-size: 1.5rem;
+}
+
+.match-details {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 0.5rem;
+}
+
+.match-trait {
+    background: #f8f9fa;
+    padding: 0.25rem 0.5rem;
+    border-radius: 4px;
+    font-size: 0.875rem;
+}
+
+.breed-comparison {
+    margin: 2rem 0;
+}
+
+.comparison-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1rem;
+}
+
+.breed-card {
+    background: white;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 1rem;
+}
+
+.breed-stats {
+    margin-top: 1rem;
+}
+
+.stat {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.stat-bar {
+    flex: 1;
+    height: 6px;
+    background: #f0f0f0;
+    border-radius: 3px;
+    overflow: hidden;
+}
+
+.stat-fill {
+    height: 100%;
+    background: linear-gradient(90deg, #6c5ce7, #a29bfe);
+    transition: width 0.3s ease;
+}
+
+.search-filters {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 1rem;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.filter-buttons {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.filter-btn {
+    padding: 0.5rem 1rem;
+    border: 1px solid #ddd;
+    background: white;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.filter-btn:hover {
+    background: #f8f9fa;
+}
+
+.filter-btn.active {
+    background: #6c5ce7;
+    color: white;
+    border-color: #6c5ce7;
+}
+
+.breed-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 1rem;
+}
+
+.breed-info-card {
+    background: white;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 1rem;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.breed-info-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.breed-quick-info {
+    display: flex;
+    gap: 0.5rem;
+    margin: 0.5rem 0;
+}
+
+.info-tag {
+    padding: 0.25rem 0.5rem;
+    border-radius: 4px;
+    font-size: 0.75rem;
+    font-weight: bold;
+}
+
+.size-small { background: #ffeaa7; color: #2d3436; }
+.size-medium { background: #fab1a0; color: #2d3436; }
+.size-large { background: #fd79a8; color: white; }
+
+.energy-low { background: #74b9ff; color: white; }
+.energy-moderate { background: #0984e3; color: white; }
+.energy-high { background: #e84393; color: white; }
+.energy-very-high { background: #d63031; color: white; }
+
+.breed-traits {
+    margin-top: 1rem;
+}
+
+.trait {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 0.25rem;
+    font-size: 0.875rem;
+}
+
+.cost-summary {
+    margin-top: 1rem;
+}
+
+.cost-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 0.25rem 0;
+    border-bottom: 1px solid #eee;
+}
+
+.cost-total {
+    margin-top: 1rem;
+    padding: 0.5rem;
+    background: #6c5ce7;
+    color: white;
+    border-radius: 4px;
+    text-align: center;
+}
+
+.cost-monthly {
+    text-align: center;
+    margin-top: 0.5rem;
+    color: #666;
+}
+
+.grooming-schedule {
+    margin-top: 1rem;
+}
+
+.schedule-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 0.5rem 0;
+    border-bottom: 1px solid #eee;
+}
+
+.schedule-note {
+    margin-top: 1rem;
+    padding: 0.75rem;
+    background: #fff3cd;
+    border: 1px solid #ffeaa7;
+    border-radius: 4px;
+    font-size: 0.875rem;
+}
+
+.space-results {
+    margin-top: 1rem;
+}
+
+.space-comparison {
+    background: #f8f9fa;
+    padding: 1rem;
+    border-radius: 8px;
+    margin-bottom: 1rem;
+}
+
+.space-item {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 0.5rem;
+}
+
+.space-verdict {
+    text-align: center;
+    padding: 0.5rem;
+    border-radius: 4px;
+    font-weight: bold;
+}
+
+.space-verdict.adequate {
+    background: #d4edda;
+    color: #155724;
+}
+
+.space-verdict.inadequate {
+    background: #f8d7da;
+    color: #721c24;
+}
+
+.space-suggestions {
+    background: #e7f3ff;
+    padding: 1rem;
+    border-radius: 8px;
+    border-left: 4px solid #2196F3;
+}
+
+.space-suggestions ul {
+    margin: 0.5rem 0 0 1rem;
+}
+
+.space-suggestions li {
+    margin-bottom: 0.25rem;
+}
+</style>

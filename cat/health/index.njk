@@ -1,0 +1,655 @@
+---
+title: "Cat Health Guide - Symptoms, Care & Prevention"
+layout: "layouts/base.njk"
+permalink: "/cat/health/"
+animal: "cat"
+seo_description: "Complete cat health guide covering symptoms, preventive care, common diseases, and emergency situations. Expert veterinary advice for cat owners."
+---
+
+<div class="animal-page cat-page cat-health-page">
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1 class="hero-title">Cat Health & Wellness</h1>
+                <p class="hero-subtitle">Keep your feline friend healthy with expert veterinary guidance</p>
+                
+                <!-- Search Box -->
+                <div class="search-container">
+                    <form class="search-form" role="search">
+                        <div class="search-input-group">
+                            <input 
+                                type="search" 
+                                id="health-search" 
+                                placeholder="Search health topics: 'cat not eating', 'urinary issues'..."
+                                aria-label="Search cat health questions"
+                                autocomplete="off"
+                            >
+                            <button type="submit" aria-label="Search">🔍</button>
+                        </div>
+                    </form>
+                    <div id="health-search-results" class="search-results" aria-live="polite"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Navigation Tabs -->
+    <section class="cat-navigation">
+        <div class="container">
+            <nav class="cat-nav-tabs">
+                <a href="/cat/" class="nav-tab">Overview</a>
+                <a href="/cat/behavior/" class="nav-tab">Behavior</a>
+                <a href="/cat/health/" class="nav-tab active">Health</a>
+                <a href="/cat/nutrition/" class="nav-tab">Nutrition</a>
+                <a href="/cat/breeds/" class="nav-tab">Breeds</a>
+            </nav>
+        </div>
+    </section>
+
+    <!-- Emergency Alert -->
+    <section class="emergency-alert">
+        <div class="container">
+            <div class="alert-content">
+                <div class="alert-icon">🚨</div>
+                <div class="alert-text">
+                    <strong>Cat Emergency Signs:</strong> Not eating 24+ hours, difficulty breathing, hiding, repeated vomiting
+                    <a href="#emergency-guide" class="alert-link">View Emergency Guide →</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <section class="main-section">
+        <div class="container">
+            <div class="content-grid">
+                <!-- Main Content -->
+                <div class="main-content">
+                    <!-- Health Categories -->
+                    <div class="health-categories">
+                        <h2>Common Health Concerns</h2>
+                        <div class="categories-grid">
+                            <div class="health-category-card">
+                                <div class="category-header">
+                                    <div class="category-icon">🚽</div>
+                                    <h3>Urinary Issues</h3>
+                                </div>
+                                <div class="symptoms-list">
+                                    <h4>Watch for These Signs:</h4>
+                                    <ul>
+                                        <li>Straining to urinate</li>
+                                        <li>Blood in urine</li>
+                                        <li>Frequent trips to litter box</li>
+                                        <li>Urinating outside litter box</li>
+                                        <li>Crying when urinating</li>
+                                    </ul>
+                                    <div class="urgency-note emergency">
+                                        <strong>⚠️ Male cats: Urinary blockage is life-threatening - seek immediate vet care!</strong>
+                                    </div>
+                                </div>
+                                <a href="#urinary" class="category-link">Learn More →</a>
+                            </div>
+
+                            <div class="health-category-card">
+                                <div class="category-header">
+                                    <div class="category-icon">🦷</div>
+                                    <h3>Dental Problems</h3>
+                                </div>
+                                <div class="symptoms-list">
+                                    <h4>Common Signs:</h4>
+                                    <ul>
+                                        <li>Bad breath</li>
+                                        <li>Difficulty eating</li>
+                                        <li>Pawing at mouth</li>
+                                        <li>Drooling excessively</li>
+                                        <li>Red, swollen gums</li>
+                                    </ul>
+                                    <div class="prevention-tip">
+                                        <strong>💡 Prevention:</strong> Regular dental cleanings and dental treats help prevent issues.
+                                    </div>
+                                </div>
+                                <a href="#dental" class="category-link">Learn More →</a>
+                            </div>
+
+                            <div class="health-category-card">
+                                <div class="category-header">
+                                    <div class="category-icon">🤮</div>
+                                    <h3>Digestive Issues</h3>
+                                </div>
+                                <div class="symptoms-list">
+                                    <h4>Common Symptoms:</h4>
+                                    <ul>
+                                        <li>Vomiting (more than occasional hairballs)</li>
+                                        <li>Diarrhea or constipation</li>
+                                        <li>Loss of appetite</li>
+                                        <li>Weight loss</li>
+                                        <li>Lethargy</li>
+                                    </ul>
+                                    <div class="when-to-worry">
+                                        <strong>🕐 When to worry:</strong> Vomiting multiple times in 24 hours or not eating for 24+ hours.
+                                    </div>
+                                </div>
+                                <a href="#digestive" class="category-link">Learn More →</a>
+                            </div>
+
+                            <div class="health-category-card">
+                                <div class="category-header">
+                                    <div class="category-icon">🫁</div>
+                                    <h3>Respiratory Issues</h3>
+                                </div>
+                                <div class="symptoms-list">
+                                    <h4>Signs to Monitor:</h4>
+                                    <ul>
+                                        <li>Coughing or wheezing</li>
+                                        <li>Rapid or labored breathing</li>
+                                        <li>Nasal discharge</li>
+                                        <li>Open-mouth breathing</li>
+                                        <li>Reduced activity</li>
+                                    </ul>
+                                    <div class="emergency-note">
+                                        <strong>🚨 Emergency:</strong> Open-mouth breathing or severe difficulty breathing requires immediate vet care.
+                                    </div>
+                                </div>
+                                <a href="#respiratory" class="category-link">Learn More →</a>
+                            </div>
+
+                            <div class="health-category-card">
+                                <div class="category-header">
+                                    <div class="category-icon">🩺</div>
+                                    <h3>Skin Conditions</h3>
+                                </div>
+                                <div class="symptoms-list">
+                                    <h4>Common Issues:</h4>
+                                    <ul>
+                                        <li>Excessive scratching or licking</li>
+                                        <li>Hair loss or bald patches</li>
+                                        <li>Red, irritated skin</li>
+                                        <li>Bumps or lumps</li>
+                                        <li>Changes in coat texture</li>
+                                    </ul>
+                                    <div class="check-tip">
+                                        <strong>🔍 Regular checks:</strong> Weekly skin and coat inspections help catch issues early.
+                                    </div>
+                                </div>
+                                <a href="#skin" class="category-link">Learn More →</a>
+                            </div>
+
+                            <div class="health-category-card">
+                                <div class="category-header">
+                                    <div class="category-icon">⚖️</div>
+                                    <h3>Weight & Obesity</h3>
+                                </div>
+                                <div class="symptoms-list">
+                                    <h4>Health Risks:</h4>
+                                    <ul>
+                                        <li>Diabetes mellitus</li>
+                                        <li>Joint problems</li>
+                                        <li>Heart disease</li>
+                                        <li>Reduced lifespan</li>
+                                        <li>Difficulty grooming</li>
+                                    </ul>
+                                    <div class="body-condition-tip">
+                                        <strong>✋ Body condition check:</strong> You should be able to feel ribs with gentle pressure.
+                                    </div>
+                                </div>
+                                <a href="#weight" class="category-link">Learn More →</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Preventive Care Schedule -->
+                    <div class="preventive-care">
+                        <h2>Preventive Care Schedule</h2>
+                        <div class="care-schedule">
+                            <div class="schedule-card">
+                                <h3>Kitten (0-1 Year)</h3>
+                                <div class="schedule-items">
+                                    <div class="schedule-item">
+                                        <strong>6-8 weeks:</strong> First FVRCP vaccine, deworming, flea prevention
+                                    </div>
+                                    <div class="schedule-item">
+                                        <strong>10-12 weeks:</strong> Second FVRCP, FeLV test, continue parasite prevention
+                                    </div>
+                                    <div class="schedule-item">
+                                        <strong>14-16 weeks:</strong> Final kitten shots, rabies vaccine, microchip
+                                    </div>
+                                    <div class="schedule-item">
+                                        <strong>4-6 months:</strong> Spay/neuter surgery
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="schedule-card">
+                                <h3>Adult (1-7 Years)</h3>
+                                <div class="schedule-items">
+                                    <div class="schedule-item">
+                                        <strong>Annual:</strong> Wellness exam, vaccinations, dental check
+                                    </div>
+                                    <div class="schedule-item">
+                                        <strong>Every 3 years:</strong> Rabies booster (after initial annual)
+                                    </div>
+                                    <div class="schedule-item">
+                                        <strong>Monthly:</strong> Flea/tick prevention, heartworm prevention
+                                    </div>
+                                    <div class="schedule-item">
+                                        <strong>As needed:</strong> Dental cleanings, parasite treatments
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="schedule-card">
+                                <h3>Senior (7+ Years)</h3>
+                                <div class="schedule-items">
+                                    <div class="schedule-item">
+                                        <strong>Bi-annual:</strong> Wellness exams with senior bloodwork
+                                    </div>
+                                    <div class="schedule-item">
+                                        <strong>Regular monitoring:</strong> Kidney function, thyroid levels
+                                    </div>
+                                    <div class="schedule-item">
+                                        <strong>Increased attention:</strong> Weight, mobility, behavior changes
+                                    </div>
+                                    <div class="schedule-item">
+                                        <strong>Comfort care:</strong> Joint support, easy access to resources
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Common Senior Cat Issues -->
+                    <div class="senior-cat-health">
+                        <h2>Senior Cat Health (7+ Years)</h2>
+                        <div class="senior-issues-grid">
+                            <div class="senior-issue">
+                                <h4>🦴 Arthritis</h4>
+                                <p><strong>Signs:</strong> Reduced jumping, stiffness, reluctance to move</p>
+                                <p><strong>Management:</strong> Soft bedding, easy access to resources, pain management</p>
+                            </div>
+                            <div class="senior-issue">
+                                <h4>🧠 Cognitive Dysfunction</h4>
+                                <p><strong>Signs:</strong> Disorientation, changes in sleep patterns, increased vocalization</p>
+                                <p><strong>Management:</strong> Routine maintenance, mental stimulation, veterinary support</p>
+                            </div>
+                            <div class="senior-issue">
+                                <h4>💧 Kidney Disease</h4>
+                                <p><strong>Signs:</strong> Increased drinking/urinating, weight loss, poor appetite</p>
+                                <p><strong>Management:</strong> Special diet, increased water availability, medication</p>
+                            </div>
+                            <div class="senior-issue">
+                                <h4>🦋 Hyperthyroidism</h4>
+                                <p><strong>Signs:</strong> Weight loss with good appetite, hyperactivity, vomiting</p>
+                                <p><strong>Management:</strong> Medication, special diet, or radioiodine treatment</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Sidebar -->
+                <div class="sidebar">
+                    <!-- Health Assessment -->
+                    <div class="widget health-assessment">
+                        <h3>Quick Health Check</h3>
+                        <p>Monitor your cat's vital health indicators</p>
+                        <div class="assessment-form">
+                            <div class="health-checklist">
+                                <label class="checkbox-item">
+                                    <input type="checkbox" class="health-indicator"> Eating normally
+                                </label>
+                                <label class="checkbox-item">
+                                    <input type="checkbox" class="health-indicator"> Using litter box normally
+                                </label>
+                                <label class="checkbox-item">
+                                    <input type="checkbox" class="health-indicator"> Active and alert
+                                </label>
+                                <label class="checkbox-item">
+                                    <input type="checkbox" class="health-indicator"> Normal breathing
+                                </label>
+                                <label class="checkbox-item">
+                                    <input type="checkbox" class="health-indicator"> Good grooming habits
+                                </label>
+                                <label class="checkbox-item">
+                                    <input type="checkbox" class="health-indicator"> Normal temperature (nose should be cool/damp)
+                                </label>
+                            </div>
+                            <button onclick="assessHealth()">Assess Health</button>
+                            <div id="health-assessment-result" class="calculator-result"></div>
+                        </div>
+                    </div>
+
+                    <!-- Medication Reminder -->
+                    <div class="widget medication-tracker">
+                        <h3>Medication Tracker</h3>
+                        <div class="med-tracker">
+                            <label for="med-name">Medication name:</label>
+                            <input type="text" id="med-name" placeholder="e.g., Thyroid medication">
+                            
+                            <label for="med-frequency">How often:</label>
+                            <select id="med-frequency">
+                                <option value="daily">Daily</option>
+                                <option value="twice-daily">Twice daily</option>
+                                <option value="weekly">Weekly</option>
+                                <option value="as-needed">As needed</option>
+                            </select>
+                            
+                            <label for="last-given">Last given:</label>
+                            <input type="datetime-local" id="last-given">
+                            
+                            <button onclick="setMedReminder()">Set Reminder</button>
+                            <div id="med-reminder-result" class="calculator-result"></div>
+                        </div>
+                    </div>
+
+                    <!-- Body Condition Calculator -->
+                    <div class="widget body-condition">
+                        <h3>Body Condition Score</h3>
+                        <p>Assess your cat's ideal weight range</p>
+                        <div class="calculator-form">
+                            <label for="cat-breed">Breed/Size:</label>
+                            <select id="cat-breed">
+                                <option value="small">Small breed (6-9 lbs)</option>
+                                <option value="medium">Medium breed (9-12 lbs)</option>
+                                <option value="large">Large breed (12-16 lbs)</option>
+                                <option value="giant">Giant breed (16+ lbs)</option>
+                            </select>
+                            
+                            <label for="current-weight">Current weight (lbs):</label>
+                            <input type="number" id="current-weight" placeholder="Enter weight" min="1" max="40">
+                            
+                            <label for="body-assessment">Physical assessment:</label>
+                            <select id="body-assessment">
+                                <option value="underweight">Ribs easily felt, waist very obvious</option>
+                                <option value="ideal">Ribs felt with slight pressure, waist visible</option>
+                                <option value="overweight">Ribs hard to feel, waist barely visible</option>
+                                <option value="obese">Cannot feel ribs, no waist, round appearance</option>
+                            </select>
+                            
+                            <button onclick="calculateBodyCondition()">Assess Condition</button>
+                            <div id="body-condition-result" class="calculator-result"></div>
+                        </div>
+                    </div>
+
+                    <!-- Emergency Contacts -->
+                    <div class="widget emergency-contacts">
+                        <h3>Emergency Information</h3>
+                        <div class="emergency-items">
+                            <div class="emergency-item">
+                                <strong>24/7 Pet Poison Helpline:</strong>
+                                <span>(855) 764-7661</span>
+                            </div>
+                            <div class="emergency-item">
+                                <strong>ASPCA Animal Poison Control:</strong>
+                                <span>(888) 426-4435</span>
+                            </div>
+                            <div class="emergency-item">
+                                <strong>Cat Emergency Signs:</strong>
+                                <span>Difficulty breathing, not eating 24+ hours, hiding, seizures</span>
+                            </div>
+                        </div>
+                        <a href="#emergency-guide" class="emergency-link">Complete Emergency Guide →</a>
+                    </div>
+
+                    <!-- Health Articles -->
+                    <div class="widget health-articles">
+                        <h3>Recent Health Articles</h3>
+                        <div class="article-list">
+                            <article class="mini-article">
+                                <h4><a href="#">Understanding Feline Kidney Disease</a></h4>
+                                <span class="read-time">8 min read</span>
+                            </article>
+                            <article class="mini-article">
+                                <h4><a href="#">Home Dental Care for Cats</a></h4>
+                                <span class="read-time">6 min read</span>
+                            </article>
+                            <article class="mini-article">
+                                <h4><a href="#">Senior Cat Care Essentials</a></h4>
+                                <span class="read-time">10 min read</span>
+                            </article>
+                            <article class="mini-article">
+                                <h4><a href="#">Recognizing Pain in Cats</a></h4>
+                                <span class="read-time">7 min read</span>
+                            </article>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter Section -->
+    <section class="newsletter-section">
+        <div class="container">
+            <div class="newsletter-content">
+                <h2>Health & Wellness Updates</h2>
+                <p>Get veterinary-approved health tips and seasonal care reminders</p>
+                <form class="newsletter-form">
+                    <div class="form-group">
+                        <input type="email" placeholder="Enter your email address" required>
+                        <button type="submit">Subscribe</button>
+                    </div>
+                    <p class="privacy-note">Expert health advice from licensed veterinarians.</p>
+                </form>
+            </div>
+        </div>
+    </section>
+</div>
+
+<script>
+function assessHealth() {
+    const checkedItems = document.querySelectorAll('.health-indicator:checked').length;
+    const totalItems = document.querySelectorAll('.health-indicator').length;
+    const resultDiv = document.getElementById('health-assessment-result');
+    
+    const healthPercentage = Math.round((checkedItems / totalItems) * 100);
+    
+    let healthStatus = '';
+    let recommendations = [];
+    let urgency = '';
+    
+    if (healthPercentage >= 85) {
+        healthStatus = 'Excellent Health';
+        recommendations = ['Continue current care routine', 'Maintain regular vet checkups', 'Keep monitoring daily'];
+        urgency = 'success';
+    } else if (healthPercentage >= 70) {
+        healthStatus = 'Good Health';
+        recommendations = ['Monitor unchecked items closely', 'Consider vet consultation if issues persist', 'Maintain preventive care'];
+        urgency = 'success';
+    } else if (healthPercentage >= 50) {
+        healthStatus = 'Health Concerns';
+        recommendations = ['Schedule vet appointment soon', 'Monitor eating, drinking, and litter box usage', 'Note any behavior changes'];
+        urgency = 'warning';
+    } else {
+        healthStatus = 'Multiple Health Issues';
+        recommendations = ['Veterinary consultation recommended promptly', 'Monitor closely for emergency signs', 'Document all symptoms for vet visit'];
+        urgency = 'error';
+    }
+    
+    resultDiv.innerHTML = `
+        <div class="result-content ${urgency}">
+            <div class="health-status">
+                <strong>Health Status:</strong><br>
+                <span class="health-score">${healthPercentage}%</span> - ${healthStatus}
+            </div>
+            <div class="health-recommendations">
+                <strong>Recommendations:</strong>
+                <ul>
+                    ${recommendations.map(rec => `<li>${rec}</li>`).join('')}
+                </ul>
+            </div>
+            ${urgency === 'error' ? '<div class="urgent-note"><em>Consider prompt veterinary attention.</em></div>' : ''}
+        </div>
+    `;
+}
+
+function setMedReminder() {
+    const medName = document.getElementById('med-name').value;
+    const frequency = document.getElementById('med-frequency').value;
+    const lastGiven = document.getElementById('last-given').value;
+    const resultDiv = document.getElementById('med-reminder-result');
+    
+    if (!medName || !frequency || !lastGiven) {
+        resultDiv.innerHTML = '<div class="result-content error">Please fill in all fields.</div>';
+        return;
+    }
+    
+    const lastGivenDate = new Date(lastGiven);
+    const now = new Date();
+    const timeSinceLastDose = Math.floor((now - lastGivenDate) / (1000 * 60 * 60)); // hours
+    
+    let nextDueHours = 0;
+    let frequencyText = '';
+    
+    switch(frequency) {
+        case 'daily':
+            nextDueHours = 24;
+            frequencyText = 'every 24 hours';
+            break;
+        case 'twice-daily':
+            nextDueHours = 12;
+            frequencyText = 'every 12 hours';
+            break;
+        case 'weekly':
+            nextDueHours = 168; // 7 days
+            frequencyText = 'every 7 days';
+            break;
+        case 'as-needed':
+            frequencyText = 'as needed - follow vet instructions';
+            break;
+    }
+    
+    let status = '';
+    let nextDue = '';
+    
+    if (frequency !== 'as-needed') {
+        const hoursUntilNext = nextDueHours - timeSinceLastDose;
+        
+        if (hoursUntilNext <= 0) {
+            status = 'Due now or overdue';
+            nextDue = 'Give medication now';
+        } else if (hoursUntilNext <= 2) {
+            status = 'Due soon';
+            nextDue = `Next dose in ${hoursUntilNext} hour(s)`;
+        } else {
+            status = 'On schedule';
+            nextDue = `Next dose in ${hoursUntilNext} hour(s)`;
+        }
+    } else {
+        status = 'As needed medication';
+        nextDue = 'Follow veterinarian instructions';
+    }
+    
+    resultDiv.innerHTML = `
+        <div class="result-content success">
+            <div class="medication-status">
+                <strong>Medication:</strong> ${medName}<br>
+                <strong>Frequency:</strong> ${frequencyText}
+            </div>
+            <div class="next-dose">
+                <strong>Status:</strong> ${status}<br>
+                <strong>Next dose:</strong> ${nextDue}
+            </div>
+            <div class="reminder-note">
+                <em>Set phone reminders or alarms for consistent medication timing.</em>
+            </div>
+        </div>
+    `;
+}
+
+function calculateBodyCondition() {
+    const breed = document.getElementById('cat-breed').value;
+    const currentWeight = document.getElementById('current-weight').value;
+    const assessment = document.getElementById('body-assessment').value;
+    const resultDiv = document.getElementById('body-condition-result');
+    
+    if (!breed || !currentWeight || !assessment) {
+        resultDiv.innerHTML = '<div class="result-content error">Please fill in all fields.</div>';
+        return;
+    }
+    
+    const weight = parseFloat(currentWeight);
+    
+    // Ideal weight ranges
+    const weightRanges = {
+        'small': { min: 6, max: 9, ideal: 7.5 },
+        'medium': { min: 9, max: 12, ideal: 10.5 },
+        'large': { min: 12, max: 16, ideal: 14 },
+        'giant': { min: 16, max: 25, ideal: 20 }
+    };
+    
+    const range = weightRanges[breed];
+    const idealWeight = range.ideal;
+    
+    let bodyScore = 0;
+    let condition = '';
+    let recommendations = [];
+    
+    switch(assessment) {
+        case 'underweight':
+            bodyScore = weight < range.min ? 2 : 3;
+            condition = 'Underweight';
+            recommendations = [
+                'Increase food portions gradually',
+                'Consider high-calorie food',
+                'Rule out medical causes with vet',
+                'Monitor weight weekly'
+            ];
+            break;
+        case 'ideal':
+            bodyScore = 5;
+            condition = 'Ideal Weight';
+            recommendations = [
+                'Maintain current diet and exercise',
+                'Continue regular weight monitoring',
+                'Adjust portions if activity changes'
+            ];
+            break;
+        case 'overweight':
+            bodyScore = weight > range.max ? 7 : 6;
+            condition = 'Overweight';
+            recommendations = [
+                'Reduce daily food portions by 10-15%',
+                'Increase play and exercise',
+                'Consider weight management food',
+                'Monitor progress weekly'
+            ];
+            break;
+        case 'obese':
+            bodyScore = weight > range.max * 1.3 ? 9 : 8;
+            condition = 'Obese';
+            recommendations = [
+                'Veterinary weight loss plan recommended',
+                'Prescription weight management diet',
+                'Structured exercise program',
+                'Rule out medical causes (thyroid, etc.)'
+            ];
+            break;
+    }
+    
+    const weightDifference = weight - idealWeight;
+    const weightStatus = weightDifference > 0 ? `${weightDifference.toFixed(1)} lbs over ideal` : 
+                        weightDifference < 0 ? `${Math.abs(weightDifference).toFixed(1)} lbs under ideal` : 'At ideal weight';
+    
+    const urgencyClass = bodyScore <= 3 ? 'warning' : bodyScore >= 7 ? 'warning' : 'success';
+    
+    resultDiv.innerHTML = `
+        <div class="result-content ${urgencyClass}">
+            <div class="body-score">
+                <strong>Body Condition Score:</strong><br>
+                <span class="score-number">${bodyScore}</span>/9 - ${condition}
+            </div>
+            <div class="weight-analysis">
+                <strong>Weight Analysis:</strong><br>
+                Current: ${weight} lbs (${weightStatus})
+            </div>
+            <div class="body-recommendations">
+                <strong>Recommendations:</strong>
+                <ul>
+                    ${recommendations.map(rec => `<li>${rec}</li>`).join('')}
+                </ul>
+            </div>
+            ${urgencyClass === 'warning' ? '<div class="vet-note"><em>Consider veterinary consultation for weight management plan.</em></div>' : ''}
+        </div>
+    `;
+}
+</script>

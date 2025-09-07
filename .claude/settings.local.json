@@ -38,7 +38,9 @@
       "Bash(git config:*)",
       "Bash(git pull:*)",
       "Bash(git checkout:*)",
-      "Bash(start test-calculators.html)"
+      "Bash(start test-calculators.html)",
+      "Bash(git merge:*)",
+      "Bash(dir C:dogv2)"
     ],
     "deny": []
   }

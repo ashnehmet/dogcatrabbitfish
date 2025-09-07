@@ -1,0 +1,838 @@
+---
+title: "Cat Nutrition Guide - Feeding, Diet & Food Safety"
+layout: "layouts/base.njk"
+permalink: "/cat/nutrition/"
+animal: "cat"
+seo_description: "Complete cat nutrition guide covering feeding schedules, food safety, dietary needs, and what cats can and cannot eat safely."
+---
+
+<div class="animal-page cat-page cat-nutrition-page">
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1 class="hero-title">Cat Nutrition & Feeding</h1>
+                <p class="hero-subtitle">Feed your cat for optimal health and longevity</p>
+                
+                <!-- Search Box -->
+                <div class="search-container">
+                    <form class="search-form" role="search">
+                        <div class="search-input-group">
+                            <input 
+                                type="search" 
+                                id="nutrition-search" 
+                                placeholder="Search food topics: 'can cats eat tuna', 'kitten feeding'..."
+                                aria-label="Search cat nutrition questions"
+                                autocomplete="off"
+                            >
+                            <button type="submit" aria-label="Search">🔍</button>
+                        </div>
+                    </form>
+                    <div id="nutrition-search-results" class="search-results" aria-live="polite"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Navigation Tabs -->
+    <section class="cat-navigation">
+        <div class="container">
+            <nav class="cat-nav-tabs">
+                <a href="/cat/" class="nav-tab">Overview</a>
+                <a href="/cat/behavior/" class="nav-tab">Behavior</a>
+                <a href="/cat/health/" class="nav-tab">Health</a>
+                <a href="/cat/nutrition/" class="nav-tab active">Nutrition</a>
+                <a href="/cat/breeds/" class="nav-tab">Breeds</a>
+            </nav>
+        </div>
+    </section>
+
+    <!-- Quick Food Safety Alert -->
+    <section class="food-safety-alert">
+        <div class="container">
+            <div class="safety-cards">
+                <div class="safety-card toxic">
+                    <h3>🚫 Toxic to Cats</h3>
+                    <p>Never feed: Onions, garlic, grapes, chocolate, alcohol, xylitol</p>
+                    <a href="#toxic-foods">Full List →</a>
+                </div>
+                <div class="safety-card safe">
+                    <h3>✅ Cat-Safe Foods</h3>
+                    <p>Good options: Cooked chicken, small amounts of fish, cat grass</p>
+                    <a href="#safe-foods">Full List →</a>
+                </div>
+                <div class="safety-card warning">
+                    <h3>⚠️ Cats are Obligate Carnivores</h3>
+                    <p>Cats require meat-based diets with essential nutrients like taurine</p>
+                    <a href="#carnivore-needs">Learn More →</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <section class="main-section">
+        <div class="container">
+            <div class="content-grid">
+                <!-- Main Content -->
+                <div class="main-content">
+                    <!-- Featured Nutrition Guide -->
+                    <div class="featured-section">
+                        <div class="featured-card large">
+                            <div class="featured-image">
+                                <img src="https://images.pexels.com/photos/1741205/pexels-photo-1741205.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Cat eating from bowl" loading="lazy">
+                            </div>
+                            <div class="featured-content">
+                                <span class="featured-tag">Essential Guide</span>
+                                <h2>Complete Cat Feeding Guide by Life Stage</h2>
+                                <p>Cats are obligate carnivores with unique nutritional needs. Learn how to provide the perfect diet from kitten to senior, including portion sizes and feeding schedules.</p>
+                                <a href="#feeding-guide" class="read-more-btn">View Guide</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Cat-Specific Nutritional Needs -->
+                    <div class="nutritional-needs">
+                        <h2>Essential Cat Nutrients</h2>
+                        <div class="nutrients-grid">
+                            <div class="nutrient-card">
+                                <div class="nutrient-icon">🥩</div>
+                                <h4>Taurine</h4>
+                                <p><strong>Critical for cats!</strong> Essential amino acid cats cannot produce themselves. Deficiency causes heart disease and blindness.</p>
+                                <div class="sources">Sources: Meat, fish, commercial cat food</div>
+                            </div>
+                            
+                            <div class="nutrient-card">
+                                <div class="nutrient-icon">🐟</div>
+                                <h4>Arachidonic Acid</h4>
+                                <p>Essential fatty acid found only in animal tissues. Required for healthy skin and coat.</p>
+                                <div class="sources">Sources: Poultry fat, fish oil, meat</div>
+                            </div>
+                            
+                            <div class="nutrient-card">
+                                <div class="nutrient-icon">🍖</div>
+                                <h4>High-Quality Protein</h4>
+                                <p>Cats need 2-3x more protein than dogs. Minimum 26% dry matter for adults, 30% for kittens.</p>
+                                <div class="sources">Sources: Chicken, fish, turkey, beef</div>
+                            </div>
+                            
+                            <div class="nutrient-card">
+                                <div class="nutrient-icon">👁️</div>
+                                <h4>Vitamin A</h4>
+                                <p>Cats cannot convert beta-carotene to vitamin A like other animals. Must get pre-formed vitamin A.</p>
+                                <div class="sources">Sources: Liver, fish oil, egg yolk</div>
+                            </div>
+                            
+                            <div class="nutrient-card">
+                                <div class="nutrient-icon">🧬</div>
+                                <h4>Niacin (B3)</h4>
+                                <p>Cats cannot synthesize niacin from tryptophan. Must be provided in diet.</p>
+                                <div class="sources">Sources: Meat, fish, liver</div>
+                            </div>
+                            
+                            <div class="nutrient-card">
+                                <div class="nutrient-icon">💧</div>
+                                <h4>Water</h4>
+                                <p>Cats have low thirst drive. Get most water from food. Wet food helps prevent urinary issues.</p>
+                                <div class="sources">Sources: Wet food, fresh water, fountains</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Feeding Guidelines by Life Stage -->
+                    <div class="feeding-guidelines">
+                        <h2>Feeding Guidelines by Life Stage</h2>
+                        <div class="guidelines-tabs">
+                            <div class="tab-buttons">
+                                <button class="tab-button active" data-tab="kitten">Kitten (0-12 months)</button>
+                                <button class="tab-button" data-tab="adult">Adult (1-7 years)</button>
+                                <button class="tab-button" data-tab="senior">Senior (7+ years)</button>
+                            </div>
+                            
+                            <div class="tab-content active" id="kitten-tab">
+                                <div class="feeding-info">
+                                    <div class="age-breakdown">
+                                        <h4>Age-Specific Feeding:</h4>
+                                        <ul>
+                                            <li><strong>0-4 weeks:</strong> Mother's milk or kitten milk replacer</li>
+                                            <li><strong>4-8 weeks:</strong> Introduce wet kitten food mixed with milk replacer</li>
+                                            <li><strong>8-12 weeks:</strong> 3-4 meals of kitten food daily</li>
+                                            <li><strong>3-6 months:</strong> 3 meals daily</li>
+                                            <li><strong>6-12 months:</strong> 2-3 meals daily</li>
+                                        </ul>
+                                    </div>
+                                    <div class="special-needs">
+                                        <h4>Kitten Special Requirements:</h4>
+                                        <ul>
+                                            <li>Higher protein (30%+ dry matter)</li>
+                                            <li>Higher fat for brain development</li>
+                                            <li>Smaller kibble size if feeding dry food</li>
+                                            <li>Always available fresh water</li>
+                                            <li>Growth monitoring weekly</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="tab-content" id="adult-tab">
+                                <div class="feeding-info">
+                                    <div class="feeding-schedule">
+                                        <h4>Adult Cat Feeding:</h4>
+                                        <ul>
+                                            <li><strong>Meals per day:</strong> 2-3 smaller meals preferred</li>
+                                            <li><strong>Wet vs. dry:</strong> Combination diet ideal (70% wet, 30% dry)</li>
+                                            <li><strong>Portion control:</strong> Measure portions to prevent obesity</li>
+                                            <li><strong>Treat limit:</strong> Maximum 10% of daily calories</li>
+                                        </ul>
+                                    </div>
+                                    <div class="adult-considerations">
+                                        <h4>Adult Cat Considerations:</h4>
+                                        <ul>
+                                            <li>Maintain ideal body weight</li>
+                                            <li>Adjust portions based on activity level</li>
+                                            <li>Monitor for food allergies/sensitivities</li>
+                                            <li>Fresh water always available</li>
+                                            <li>Consistent meal times</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="tab-content" id="senior-tab">
+                                <div class="feeding-info">
+                                    <div class="senior-feeding">
+                                        <h4>Senior Cat Feeding:</h4>
+                                        <ul>
+                                            <li><strong>Frequency:</strong> 2-3 smaller, easily digestible meals</li>
+                                            <li><strong>Food texture:</strong> Softer foods if dental issues</li>
+                                            <li><strong>Special diets:</strong> Kidney support, joint health formulas</li>
+                                            <li><strong>Hydration:</strong> Increase wet food percentage</li>
+                                        </ul>
+                                    </div>
+                                    <div class="senior-needs">
+                                        <h4>Senior Health Considerations:</h4>
+                                        <ul>
+                                            <li>Lower calorie needs due to reduced activity</li>
+                                            <li>Higher quality protein for muscle maintenance</li>
+                                            <li>Joint support supplements (glucosamine)</li>
+                                            <li>Kidney function support</li>
+                                            <li>Easier access to food and water</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Food Safety for Cats -->
+                    <div class="cat-food-safety">
+                        <h2>Food Safety for Cats</h2>
+                        <div class="food-safety-grid">
+                            <!-- Toxic Foods -->
+                            <div class="food-category toxic-foods">
+                                <div class="category-header">
+                                    <div class="category-icon">🚫</div>
+                                    <h3>TOXIC - Never Feed</h3>
+                                    <span class="danger-level">Dangerous</span>
+                                </div>
+                                <div class="food-list">
+                                    <div class="toxic-item">
+                                        <strong>Onions & Garlic:</strong> Destroy red blood cells, cause anemia
+                                    </div>
+                                    <div class="toxic-item">
+                                        <strong>Chocolate:</strong> Contains theobromine, toxic to cats
+                                    </div>
+                                    <div class="toxic-item">
+                                        <strong>Grapes & Raisins:</strong> Can cause kidney failure
+                                    </div>
+                                    <div class="toxic-item">
+                                        <strong>Alcohol:</strong> Extremely dangerous, can cause coma/death
+                                    </div>
+                                    <div class="toxic-item">
+                                        <strong>Xylitol:</strong> Artificial sweetener causes hypoglycemia
+                                    </div>
+                                    <div class="toxic-item">
+                                        <strong>Raw Dough:</strong> Expands in stomach, alcohol production
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Problematic Foods -->
+                            <div class="food-category problem-foods">
+                                <div class="category-header">
+                                    <div class="category-icon">⚠️</div>
+                                    <h3>Avoid or Limit</h3>
+                                    <span class="caution-level">Caution</span>
+                                </div>
+                                <div class="food-list">
+                                    <div class="problem-item">
+                                        <strong>Tuna (human-grade):</strong> Can cause mercury poisoning, nutritional imbalances
+                                    </div>
+                                    <div class="problem-item">
+                                        <strong>Milk & Dairy:</strong> Most cats are lactose intolerant
+                                    </div>
+                                    <div class="problem-item">
+                                        <strong>Raw Fish:</strong> Risk of parasites, thiamine deficiency
+                                    </div>
+                                    <div class="problem-item">
+                                        <strong>Liver (large amounts):</strong> Vitamin A toxicity
+                                    </div>
+                                    <div class="problem-item">
+                                        <strong>Dog Food:</strong> Lacks essential nutrients cats need
+                                    </div>
+                                    <div class="problem-item">
+                                        <strong>Fat Trimmings:</strong> Can cause pancreatitis
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Safe Foods -->
+                            <div class="food-category safe-foods">
+                                <div class="category-header">
+                                    <div class="category-icon">✅</div>
+                                    <h3>Safe in Moderation</h3>
+                                    <span class="safe-level">Okay</span>
+                                </div>
+                                <div class="food-list">
+                                    <div class="safe-item">
+                                        <strong>Cooked Chicken:</strong> Remove bones, plain preparation
+                                    </div>
+                                    <div class="safe-item">
+                                        <strong>Cooked Fish:</strong> Remove bones, limit frequency
+                                    </div>
+                                    <div class="safe-item">
+                                        <strong>Cooked Eggs:</strong> Good protein source, avoid raw
+                                    </div>
+                                    <div class="safe-item">
+                                        <strong>Small amounts of rice:</strong> For digestive upset
+                                    </div>
+                                    <div class="safe-item">
+                                        <strong>Cat grass:</strong> Helps with digestion, hairballs
+                                    </div>
+                                    <div class="safe-item">
+                                        <strong>Pumpkin (plain):</strong> Good for digestion, fiber
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Sidebar -->
+                <div class="sidebar">
+                    <!-- Advanced Cat Feeding Calculator -->
+                    <div class="widget feeding-calculator">
+                        <h3>Precise Feeding Calculator</h3>
+                        <p>Calculate exact feeding amounts for your cat</p>
+                        <div class="calculator-form">
+                            <label for="cat-weight">Current weight (lbs):</label>
+                            <input type="number" id="cat-weight" placeholder="Enter weight" min="1" max="30">
+                            
+                            <label for="target-weight">Target weight (lbs):</label>
+                            <input type="number" id="target-weight" placeholder="Ideal weight" min="1" max="30">
+                            
+                            <label for="cat-age">Age:</label>
+                            <select id="cat-age">
+                                <option value="kitten">Kitten (under 1 year)</option>
+                                <option value="adult">Adult (1-7 years)</option>
+                                <option value="senior">Senior (7+ years)</option>
+                            </select>
+                            
+                            <label for="activity-level">Activity level:</label>
+                            <select id="activity-level">
+                                <option value="low">Low - Indoor, less active</option>
+                                <option value="moderate">Moderate - Normal activity</option>
+                                <option value="high">High - Very active/outdoor</option>
+                            </select>
+                            
+                            <label for="body-condition">Body condition:</label>
+                            <select id="body-condition">
+                                <option value="underweight">Underweight</option>
+                                <option value="ideal">Ideal weight</option>
+                                <option value="overweight">Overweight</option>
+                                <option value="obese">Obese</option>
+                            </select>
+                            
+                            <button onclick="calculateCatFeeding()">Calculate</button>
+                            <div id="feeding-result" class="calculator-result"></div>
+                        </div>
+                    </div>
+
+                    <!-- Treat Calculator -->
+                    <div class="widget treat-calculator">
+                        <h3>Treat Allowance Calculator</h3>
+                        <p>Calculate safe treat amounts</p>
+                        <div class="calculator-form">
+                            <label for="daily-calories">Daily calories:</label>
+                            <input type="number" id="daily-calories" placeholder="From feeding calculator above" min="50" max="800">
+                            
+                            <label for="treat-type">Treat type:</label>
+                            <select id="treat-type">
+                                <option value="commercial">Commercial cat treats</option>
+                                <option value="cooked-chicken">Cooked chicken</option>
+                                <option value="freeze-dried">Freeze-dried treats</option>
+                                <option value="catnip">Catnip/cat grass</option>
+                            </select>
+                            
+                            <button onclick="calculateTreats()">Calculate Treats</button>
+                            <div id="treat-result" class="calculator-result"></div>
+                        </div>
+                    </div>
+
+                    <!-- Water Intake Calculator -->
+                    <div class="widget water-calculator">
+                        <h3>Water Intake Monitor</h3>
+                        <p>Ensure proper hydration</p>
+                        <div class="calculator-form">
+                            <label for="cat-weight-water">Cat weight (lbs):</label>
+                            <input type="number" id="cat-weight-water" placeholder="Enter weight" min="1" max="30">
+                            
+                            <label for="wet-food-percent">Wet food % of diet:</label>
+                            <select id="wet-food-percent">
+                                <option value="0">0% - All dry food</option>
+                                <option value="25">25% - Mostly dry</option>
+                                <option value="50">50% - Mixed diet</option>
+                                <option value="75">75% - Mostly wet</option>
+                                <option value="100">100% - All wet food</option>
+                            </select>
+                            
+                            <button onclick="calculateWaterNeeds()">Calculate Water</button>
+                            <div id="water-result" class="calculator-result"></div>
+                        </div>
+                    </div>
+
+                    <!-- Quick Food Checker -->
+                    <div class="widget food-checker">
+                        <h3>Quick Food Safety Checker</h3>
+                        <div class="checker-form">
+                            <input type="text" id="food-input" placeholder="Enter food name...">
+                            <button onclick="checkCatFoodSafety()">Check Safety</button>
+                            <div id="food-safety-result" class="checker-result"></div>
+                        </div>
+                    </div>
+
+                    <!-- Feeding Tips -->
+                    <div class="widget feeding-tips">
+                        <h3>Essential Feeding Tips</h3>
+                        <div class="tips-list">
+                            <div class="tip-item">
+                                <strong>Gradual changes:</strong> Transition foods over 7-10 days
+                            </div>
+                            <div class="tip-item">
+                                <strong>Fresh water:</strong> Change daily, consider fountain
+                            </div>
+                            <div class="tip-item">
+                                <strong>Clean bowls:</strong> Wash food bowls after each meal
+                            </div>
+                            <div class="tip-item">
+                                <strong>Elevated bowls:</strong> May help with digestion and comfort
+                            </div>
+                            <div class="tip-item">
+                                <strong>Multiple cats:</strong> Feed separately to monitor intake
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter Section -->
+    <section class="newsletter-section">
+        <div class="container">
+            <div class="newsletter-content">
+                <h2>Nutrition Science Updates</h2>
+                <p>Get the latest feline nutrition research and feeding recommendations</p>
+                <form class="newsletter-form">
+                    <div class="form-group">
+                        <input type="email" placeholder="Enter your email address" required>
+                        <button type="submit">Subscribe</button>
+                    </div>
+                    <p class="privacy-note">Evidence-based nutrition advice from veterinary nutritionists.</p>
+                </form>
+            </div>
+        </div>
+    </section>
+</div>
+
+<script>
+function calculateCatFeeding() {
+    const currentWeight = document.getElementById('cat-weight').value;
+    const targetWeight = document.getElementById('target-weight').value;
+    const age = document.getElementById('cat-age').value;
+    const activity = document.getElementById('activity-level').value;
+    const bodyCondition = document.getElementById('body-condition').value;
+    const resultDiv = document.getElementById('feeding-result');
+    
+    if (!currentWeight || !targetWeight || !age || !activity || !bodyCondition) {
+        resultDiv.innerHTML = '<div class="result-content error">Please fill in all fields.</div>';
+        return;
+    }
+    
+    const current = parseFloat(currentWeight);
+    const target = parseFloat(targetWeight);
+    const weightKg = target / 2.2; // Use target weight for calculation
+    
+    // Base metabolic rate for cats: 70 * (body weight in kg)^0.75
+    let baseCalories = Math.round(70 * Math.pow(weightKg, 0.75));
+    
+    // Age multipliers
+    let ageMultiplier = 1.0;
+    switch(age) {
+        case 'kitten':
+            ageMultiplier = 2.5; // Growing kittens need much more energy
+            break;
+        case 'adult':
+            ageMultiplier = 1.4;
+            break;
+        case 'senior':
+            ageMultiplier = 1.1; // Lower metabolism
+            break;
+    }
+    
+    // Activity multipliers
+    let activityMultiplier = 1.0;
+    switch(activity) {
+        case 'low':
+            activityMultiplier = 0.8;
+            break;
+        case 'moderate':
+            activityMultiplier = 1.0;
+            break;
+        case 'high':
+            activityMultiplier = 1.2;
+            break;
+    }
+    
+    // Body condition adjustments
+    let conditionMultiplier = 1.0;
+    switch(bodyCondition) {
+        case 'underweight':
+            conditionMultiplier = 1.2; // Need more calories to gain weight
+            break;
+        case 'ideal':
+            conditionMultiplier = 1.0;
+            break;
+        case 'overweight':
+            conditionMultiplier = 0.8; // Reduce for weight loss
+            break;
+        case 'obese':
+            conditionMultiplier = 0.6; // Significant reduction for weight loss
+            break;
+    }
+    
+    const totalCalories = Math.round(baseCalories * ageMultiplier * activityMultiplier * conditionMultiplier);
+    
+    // Food amount calculations
+    const dryFoodCups = Math.round((totalCalories / 300) * 10) / 10; // ~300 cal/cup
+    const wetFoodCans = Math.round((totalCalories / 80) * 10) / 10; // ~80 cal per 3oz can
+    const mixedDry = Math.round((totalCalories * 0.3 / 300) * 10) / 10;
+    const mixedWet = Math.round((totalCalories * 0.7 / 80) * 10) / 10;
+    
+    // Weight management advice
+    let weightAdvice = '';
+    const weightDiff = current - target;
+    if (Math.abs(weightDiff) < 0.5) {
+        weightAdvice = 'Maintain current weight with regular monitoring.';
+    } else if (weightDiff > 0) {
+        const weeksToGoal = Math.ceil(weightDiff / 0.5); // Safe weight loss: 0.5 lb/week
+        weightAdvice = `Weight loss goal: ${weeksToGoal} weeks to lose ${weightDiff.toFixed(1)} lbs safely.`;
+    } else {
+        weightAdvice = `Weight gain needed: ${Math.abs(weightDiff).toFixed(1)} lbs. Monitor closely and consult vet.`;
+    }
+    
+    // Feeding recommendations
+    let feedingTips = [];
+    if (age === 'kitten') {
+        feedingTips = ['Feed 3-4 times daily', 'Use kitten-specific formula', 'Monitor growth weekly'];
+    } else if (bodyCondition === 'obese') {
+        feedingTips = ['Use weight management formula', 'Increase wet food percentage', 'Measure portions precisely', 'Consult vet for weight loss plan'];
+    } else {
+        feedingTips = ['Feed 2-3 times daily', 'Maintain consistent schedule', 'Monitor body condition monthly'];
+    }
+    
+    resultDiv.innerHTML = `
+        <div class="result-content success">
+            <div class="calories-section">
+                <strong>Daily Caloric Needs:</strong><br>
+                <span class="calorie-number">${totalCalories}</span> calories/day
+            </div>
+            
+            <div class="food-amounts">
+                <strong>Food Options:</strong>
+                <div class="food-type"><strong>Dry food only:</strong> ${dryFoodCups} cups/day</div>
+                <div class="food-type"><strong>Wet food only:</strong> ${wetFoodCans} cans (3oz)/day</div>
+                <div class="food-type"><strong>Mixed diet:</strong> ${mixedDry} cups dry + ${mixedWet} cans wet/day</div>
+            </div>
+            
+            <div class="weight-management">
+                <strong>Weight Management:</strong><br>
+                ${weightAdvice}
+            </div>
+            
+            <div class="feeding-tips">
+                <strong>Feeding Tips:</strong>
+                <ul>
+                    ${feedingTips.map(tip => `<li>${tip}</li>`).join('')}
+                </ul>
+            </div>
+            
+            <div class="disclaimer">
+                <em>Consult your veterinarian for specific dietary needs, especially for weight management or medical conditions.</em>
+            </div>
+        </div>
+    `;
+}
+
+function calculateTreats() {
+    const dailyCalories = document.getElementById('daily-calories').value;
+    const treatType = document.getElementById('treat-type').value;
+    const resultDiv = document.getElementById('treat-result');
+    
+    if (!dailyCalories || dailyCalories < 50) {
+        resultDiv.innerHTML = '<div class="result-content error">Please enter valid daily calories.</div>';
+        return;
+    }
+    
+    const calories = parseInt(dailyCalories);
+    const maxTreatCalories = Math.round(calories * 0.1); // 10% of daily calories
+    
+    let treatAmount = '';
+    let treatCalories = 0;
+    let treatAdvice = '';
+    
+    switch(treatType) {
+        case 'commercial':
+            treatCalories = 2; // Average per treat
+            treatAmount = Math.floor(maxTreatCalories / treatCalories);
+            treatAdvice = 'Choose high-quality, low-calorie cat treats. Read labels for calorie content.';
+            break;
+        case 'cooked-chicken':
+            treatCalories = 25; // Per small piece (~0.5 oz)
+            treatAmount = Math.floor(maxTreatCalories / treatCalories);
+            treatAdvice = 'Use plain, cooked chicken breast. Remove all bones and seasonings.';
+            break;
+        case 'freeze-dried':
+            treatCalories = 4; // Average per piece
+            treatAmount = Math.floor(maxTreatCalories / treatCalories);
+            treatAdvice = 'Freeze-dried treats are concentrated. Start with smaller amounts.';
+            break;
+        case 'catnip':
+            treatAmount = 'As desired';
+            treatAdvice = 'Catnip and cat grass are calorie-free and safe for most cats.';
+            break;
+    }
+    
+    resultDiv.innerHTML = `
+        <div class="result-content success">
+            <div class="treat-allowance">
+                <strong>Daily Treat Allowance:</strong><br>
+                <span class="treat-number">${maxTreatCalories}</span> calories maximum
+            </div>
+            
+            <div class="treat-amount">
+                <strong>Recommended Amount:</strong><br>
+                ${treatAmount} ${treatType === 'catnip' ? '' : treatType === 'cooked-chicken' ? 'small pieces' : 'treats'} per day
+            </div>
+            
+            <div class="treat-advice">
+                <strong>Advice:</strong><br>
+                ${treatAdvice}
+            </div>
+            
+            <div class="treat-tips">
+                <strong>Treat Tips:</strong>
+                <ul>
+                    <li>Use treats for training and bonding</li>
+                    <li>Never exceed 10% of daily calories</li>
+                    <li>Reduce meal portions if giving many treats</li>
+                </ul>
+            </div>
+        </div>
+    `;
+}
+
+function calculateWaterNeeds() {
+    const weight = document.getElementById('cat-weight-water').value;
+    const wetPercent = document.getElementById('wet-food-percent').value;
+    const resultDiv = document.getElementById('water-result');
+    
+    if (!weight || !wetPercent) {
+        resultDiv.innerHTML = '<div class="result-content error">Please fill in all fields.</div>';
+        return;
+    }
+    
+    const catWeight = parseFloat(weight);
+    const wetFoodPercent = parseInt(wetPercent);
+    
+    // Cats need approximately 3.5-4.5 oz of water per 5 lbs body weight per day
+    const baseWaterNeed = Math.round((catWeight / 5) * 4 * 10) / 10; // oz per day
+    
+    // Wet food provides significant water content (about 70-80% water)
+    const waterFromFood = Math.round(baseWaterNeed * (wetFoodPercent / 100) * 0.75 * 10) / 10;
+    const additionalWaterNeeded = Math.round((baseWaterNeed - waterFromFood) * 10) / 10;
+    
+    let hydrationAdvice = [];
+    if (wetFoodPercent < 50) {
+        hydrationAdvice.push('Consider increasing wet food percentage');
+        hydrationAdvice.push('Provide multiple water sources');
+        hydrationAdvice.push('Consider a water fountain');
+    } else {
+        hydrationAdvice.push('Good hydration from wet food');
+        hydrationAdvice.push('Continue providing fresh water daily');
+    }
+    
+    if (additionalWaterNeeded > 6) {
+        hydrationAdvice.push('Monitor for increased thirst (may indicate health issues)');
+    }
+    
+    resultDiv.innerHTML = `
+        <div class="result-content success">
+            <div class="water-needs">
+                <strong>Daily Water Needs:</strong><br>
+                <span class="water-number">${baseWaterNeed}</span> oz total per day
+            </div>
+            
+            <div class="water-sources">
+                <strong>Water Sources:</strong><br>
+                From food: ${waterFromFood} oz<br>
+                From drinking: ${additionalWaterNeeded} oz needed
+            </div>
+            
+            <div class="hydration-tips">
+                <strong>Hydration Tips:</strong>
+                <ul>
+                    ${hydrationAdvice.map(advice => `<li>${advice}</li>`).join('')}
+                </ul>
+            </div>
+            
+            <div class="water-note">
+                <em>Cats naturally have a low thirst drive. Wet food is crucial for proper hydration and urinary health.</em>
+            </div>
+        </div>
+    `;
+}
+
+function checkCatFoodSafety() {
+    const food = document.getElementById('food-input').value.toLowerCase().trim();
+    const resultDiv = document.getElementById('food-safety-result');
+    
+    if (!food) {
+        resultDiv.innerHTML = '<div class="result-content error">Please enter a food name.</div>';
+        return;
+    }
+    
+    const toxicFoods = {
+        'chocolate': 'TOXIC - Contains theobromine, can cause seizures and death',
+        'onion': 'TOXIC - Destroys red blood cells, causes anemia',
+        'onions': 'TOXIC - Destroys red blood cells, causes anemia',
+        'garlic': 'TOXIC - Destroys red blood cells, causes anemia',
+        'grape': 'TOXIC - Can cause kidney failure',
+        'grapes': 'TOXIC - Can cause kidney failure',
+        'raisin': 'TOXIC - Can cause kidney failure',
+        'raisins': 'TOXIC - Can cause kidney failure',
+        'alcohol': 'TOXIC - Extremely dangerous, can cause coma and death',
+        'xylitol': 'TOXIC - Causes severe hypoglycemia',
+        'raw dough': 'TOXIC - Expands in stomach, produces alcohol'
+    };
+    
+    const problematicFoods = {
+        'tuna': 'CAUTION - Can cause mercury poisoning and nutritional imbalances if fed regularly',
+        'milk': 'AVOID - Most cats are lactose intolerant',
+        'dairy': 'AVOID - Most cats are lactose intolerant', 
+        'cheese': 'AVOID - Most cats are lactose intolerant',
+        'raw fish': 'AVOID - Risk of parasites and thiamine deficiency',
+        'liver': 'LIMIT - Large amounts can cause vitamin A toxicity',
+        'dog food': 'AVOID - Lacks essential nutrients cats need (taurine, etc.)',
+        'fat': 'LIMIT - Can cause pancreatitis'
+    };
+    
+    const safefoods = {
+        'chicken': 'SAFE - Remove bones, plain cooked chicken is excellent',
+        'fish': 'SAFE - Cooked fish without bones, limit frequency',
+        'egg': 'SAFE - Cooked eggs only, good protein source',
+        'eggs': 'SAFE - Cooked eggs only, good protein source',
+        'rice': 'SAFE - Small amounts for digestive upset',
+        'pumpkin': 'SAFE - Plain pumpkin helps with digestion',
+        'cat grass': 'SAFE - Helps with digestion and hairballs'
+    };
+    
+    let result = '';
+    let resultClass = '';
+    
+    // Check for exact matches first
+    if (toxicFoods[food]) {
+        result = toxicFoods[food];
+        resultClass = 'toxic';
+    } else if (problematicFoods[food]) {
+        result = problematicFoods[food];
+        resultClass = 'warning';
+    } else if (safefoods[food]) {
+        result = safefoods[food];
+        resultClass = 'safe';
+    } else {
+        // Check for partial matches
+        for (let toxicFood in toxicFoods) {
+            if (food.includes(toxicFood)) {
+                result = toxicFoods[toxicFood];
+                resultClass = 'toxic';
+                break;
+            }
+        }
+        
+        if (!result) {
+            for (let problemFood in problematicFoods) {
+                if (food.includes(problemFood)) {
+                    result = problematicFoods[problemFood];
+                    resultClass = 'warning';
+                    break;
+                }
+            }
+        }
+        
+        if (!result) {
+            for (let safeFood in safefoods) {
+                if (food.includes(safeFood)) {
+                    result = safefoods[safeFood];
+                    resultClass = 'safe';
+                    break;
+                }
+            }
+        }
+        
+        if (!result) {
+            result = 'UNKNOWN - Consult your veterinarian or pet nutrition expert';
+            resultClass = 'unknown';
+        }
+    }
+    
+    const icons = {
+        'toxic': '🚫',
+        'warning': '⚠️',
+        'safe': '✅',
+        'unknown': '❓'
+    };
+    
+    resultDiv.innerHTML = `<div class="result ${resultClass}">${icons[resultClass]} ${result}</div>`;
+}
+
+// Tab functionality for feeding guidelines
+document.addEventListener('DOMContentLoaded', function() {
+    const tabButtons = document.querySelectorAll('.tab-button');
+    const tabContents = document.querySelectorAll('.tab-content');
+    
+    tabButtons.forEach(button => {
+        button.addEventListener('click', () => {
+            const tabName = button.getAttribute('data-tab');
+            
+            // Remove active class from all buttons and contents
+            tabButtons.forEach(btn => btn.classList.remove('active'));
+            tabContents.forEach(content => content.classList.remove('active'));
+            
+            // Add active class to clicked button and corresponding content
+            button.classList.add('active');
+            document.getElementById(tabName + '-tab').classList.add('active');
+        });
+    });
+});
+</script>

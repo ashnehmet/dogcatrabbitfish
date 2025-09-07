@@ -189,6 +189,84 @@ seo_description: "The complete resource for dog owners. Find answers to thousand
                         </div>
                     </div>
 
+                    <!-- Exercise Calculator -->
+                    <div class="widget exercise-calculator">
+                        <h3>Daily Exercise Calculator</h3>
+                        <p>Calculate your dog's exercise needs</p>
+                        <div class="calculator-form">
+                            <label for="exercise-breed">Breed Group:</label>
+                            <select id="exercise-breed">
+                                <option value="working">Working/Herding</option>
+                                <option value="sporting">Sporting</option>
+                                <option value="terrier">Terrier</option>
+                                <option value="hound">Hound</option>
+                                <option value="toy">Toy</option>
+                                <option value="non-sporting">Non-Sporting</option>
+                            </select>
+                            <label for="exercise-age">Age:</label>
+                            <select id="exercise-age">
+                                <option value="puppy">Puppy (0-1 year)</option>
+                                <option value="adult">Adult (1-7 years)</option>
+                                <option value="senior">Senior (7+ years)</option>
+                            </select>
+                            <label for="exercise-weight">Weight (lbs):</label>
+                            <input type="number" id="exercise-weight" min="5" max="200" placeholder="Weight">
+                            <button onclick="calculateExercise()">Calculate Exercise</button>
+                            <div id="exercise-result" class="calculator-result"></div>
+                        </div>
+                    </div>
+
+                    <!-- Ideal Weight Calculator -->
+                    <div class="widget weight-calculator">
+                        <h3>Ideal Weight Calculator</h3>
+                        <p>Check if your dog is at ideal weight</p>
+                        <div class="calculator-form">
+                            <label for="weight-breed">Breed:</label>
+                            <select id="weight-breed">
+                                <option value="chihuahua">Chihuahua</option>
+                                <option value="beagle">Beagle</option>
+                                <option value="labrador">Labrador</option>
+                                <option value="german-shepherd">German Shepherd</option>
+                                <option value="golden-retriever">Golden Retriever</option>
+                                <option value="bulldog">Bulldog</option>
+                                <option value="rottweiler">Rottweiler</option>
+                                <option value="great-dane">Great Dane</option>
+                                <option value="mixed">Mixed Breed</option>
+                            </select>
+                            <label for="current-weight">Current Weight (lbs):</label>
+                            <input type="number" id="current-weight" min="1" max="300" placeholder="Current weight">
+                            <label for="body-condition">Body Condition:</label>
+                            <select id="body-condition">
+                                <option value="underweight">Underweight</option>
+                                <option value="ideal">Ideal</option>
+                                <option value="overweight">Overweight</option>
+                                <option value="obese">Obese</option>
+                            </select>
+                            <button onclick="calculateIdealWeight()">Check Weight</button>
+                            <div id="weight-result" class="calculator-result"></div>
+                        </div>
+                    </div>
+
+                    <!-- Crate Size Calculator -->
+                    <div class="widget crate-calculator">
+                        <h3>Crate Size Calculator</h3>
+                        <p>Find the perfect crate size</p>
+                        <div class="calculator-form">
+                            <label for="dog-length">Dog Length (nose to tail, inches):</label>
+                            <input type="number" id="dog-length" min="8" max="60" placeholder="Length">
+                            <label for="dog-height">Dog Height (sitting, inches):</label>
+                            <input type="number" id="dog-height" min="6" max="40" placeholder="Height">
+                            <label for="crate-purpose">Purpose:</label>
+                            <select id="crate-purpose">
+                                <option value="home">Home Training</option>
+                                <option value="travel">Travel</option>
+                                <option value="comfort">Comfort Zone</option>
+                            </select>
+                            <button onclick="calculateCrateSize()">Find Crate Size</button>
+                            <div id="crate-result" class="calculator-result"></div>
+                        </div>
+                    </div>
+
                     <!-- Emergency Contacts -->
                     <div class="widget emergency-info">
                         <h3>Emergency Information</h3>
@@ -341,6 +419,199 @@ function calculateDogAge() {
                 <strong>Health Recommendations:</strong>
                 <ul>
                     ${recommendations.map(rec => `<li>${rec}</li>`).join('')}
+                </ul>
+            </div>
+        </div>
+    `;
+}
+
+// Exercise Calculator
+function calculateExercise() {
+    const breed = document.getElementById('exercise-breed').value;
+    const age = document.getElementById('exercise-age').value;
+    const weight = parseInt(document.getElementById('exercise-weight').value);
+    const resultDiv = document.getElementById('exercise-result');
+    
+    if (!breed || !age || !weight) {
+        resultDiv.innerHTML = '<p style="color: #e74c3c;">Please fill in all fields.</p>';
+        return;
+    }
+    
+    // Base exercise needs by breed group (minutes per day)
+    const breedExercise = {
+        'working': 120,
+        'sporting': 150,
+        'terrier': 90,
+        'hound': 90,
+        'toy': 30,
+        'non-sporting': 60
+    };
+    
+    let baseMinutes = breedExercise[breed];
+    
+    // Adjust for age
+    if (age === 'puppy') {
+        baseMinutes = Math.round(baseMinutes * 0.6); // 5 minutes per month of age rule
+    } else if (age === 'senior') {
+        baseMinutes = Math.round(baseMinutes * 0.7);
+    }
+    
+    // Adjust for weight (larger dogs need more exercise)
+    if (weight > 80) {
+        baseMinutes = Math.round(baseMinutes * 1.2);
+    } else if (weight < 15) {
+        baseMinutes = Math.round(baseMinutes * 0.8);
+    }
+    
+    const walks = Math.ceil(baseMinutes / 45); // Assume 45-minute walks
+    const playTime = Math.round(baseMinutes * 0.3);
+    
+    resultDiv.innerHTML = `
+        <div class="result-content success">
+            <div class="exercise-total">
+                <strong>Daily Exercise Need:</strong><br>
+                <span class="big-number">${baseMinutes}</span> minutes
+            </div>
+            <div class="exercise-breakdown">
+                <strong>Recommended Activities:</strong>
+                <ul>
+                    <li>${walks} walk(s) per day</li>
+                    <li>${playTime} minutes of play time</li>
+                    <li>Mental stimulation activities</li>
+                </ul>
+            </div>
+            ${age === 'puppy' ? '<p><em>Note: Puppies need shorter, more frequent sessions</em></p>' : ''}
+            ${age === 'senior' ? '<p><em>Note: Monitor for fatigue and joint stress</em></p>' : ''}
+        </div>
+    `;
+}
+
+// Ideal Weight Calculator
+function calculateIdealWeight() {
+    const breed = document.getElementById('weight-breed').value;
+    const currentWeight = parseInt(document.getElementById('current-weight').value);
+    const condition = document.getElementById('body-condition').value;
+    const resultDiv = document.getElementById('weight-result');
+    
+    if (!breed || !currentWeight || !condition) {
+        resultDiv.innerHTML = '<p style="color: #e74c3c;">Please fill in all fields.</p>';
+        return;
+    }
+    
+    // Ideal weight ranges by breed (in pounds)
+    const breedWeights = {
+        'chihuahua': [2, 6],
+        'beagle': [20, 30],
+        'labrador': [55, 80],
+        'german-shepherd': [50, 90],
+        'golden-retriever': [55, 75],
+        'bulldog': [40, 50],
+        'rottweiler': [80, 135],
+        'great-dane': [110, 175],
+        'mixed': [currentWeight * 0.85, currentWeight * 1.15] // Estimate based on current
+    };
+    
+    const [minWeight, maxWeight] = breedWeights[breed];
+    const avgIdeal = (minWeight + maxWeight) / 2;
+    
+    let status = '';
+    let recommendation = '';
+    let targetWeight = currentWeight;
+    
+    if (condition === 'underweight') {
+        status = 'Below ideal weight';
+        targetWeight = avgIdeal;
+        recommendation = 'Consult vet about nutrition plan to gain healthy weight';
+    } else if (condition === 'ideal') {
+        status = 'Perfect weight!';
+        recommendation = 'Maintain current diet and exercise routine';
+    } else if (condition === 'overweight') {
+        status = 'Above ideal weight';
+        targetWeight = avgIdeal;
+        recommendation = 'Reduce calories by 10-20% and increase exercise';
+    } else if (condition === 'obese') {
+        status = 'Significantly overweight';
+        targetWeight = avgIdeal;
+        recommendation = 'Immediate vet consultation for weight loss plan needed';
+    }
+    
+    resultDiv.innerHTML = `
+        <div class="result-content ${condition === 'ideal' ? 'success' : 'warning'}">
+            <div class="weight-status">
+                <strong>Status:</strong> ${status}
+            </div>
+            <div class="weight-ranges">
+                <strong>Ideal Range:</strong> ${minWeight}-${maxWeight} lbs<br>
+                <strong>Current Weight:</strong> ${currentWeight} lbs<br>
+                ${targetWeight !== currentWeight ? `<strong>Target Weight:</strong> ${Math.round(targetWeight)} lbs` : ''}
+            </div>
+            <div class="weight-recommendation">
+                <strong>Recommendation:</strong><br>
+                ${recommendation}
+            </div>
+        </div>
+    `;
+}
+
+// Crate Size Calculator
+function calculateCrateSize() {
+    const length = parseInt(document.getElementById('dog-length').value);
+    const height = parseInt(document.getElementById('dog-height').value);
+    const purpose = document.getElementById('crate-purpose').value;
+    const resultDiv = document.getElementById('crate-result');
+    
+    if (!length || !height || !purpose) {
+        resultDiv.innerHTML = '<p style="color: #e74c3c;">Please fill in all fields.</p>';
+        return;
+    }
+    
+    // Add space based on purpose
+    let lengthPadding = 4; // Standard 4 inches
+    let heightPadding = 4;
+    
+    if (purpose === 'travel') {
+        lengthPadding = 2; // Tighter for travel
+        heightPadding = 2;
+    } else if (purpose === 'comfort') {
+        lengthPadding = 6; // More space for comfort
+        heightPadding = 6;
+    }
+    
+    const crateLength = length + lengthPadding;
+    const crateHeight = height + heightPadding;
+    const crateWidth = Math.round(crateLength * 0.7); // Typical width ratio
+    
+    // Standard crate sizes
+    const standardSizes = [
+        { name: 'XS', length: 18, width: 12, height: 14 },
+        { name: 'S', length: 24, width: 18, height: 19 },
+        { name: 'M', length: 30, width: 21, height: 24 },
+        { name: 'L', length: 36, width: 24, height: 27 },
+        { name: 'XL', length: 42, width: 28, height: 30 },
+        { name: 'XXL', length: 48, width: 32, height: 35 }
+    ];
+    
+    let recommendedSize = standardSizes.find(size => 
+        size.length >= crateLength && size.height >= crateHeight
+    ) || standardSizes[standardSizes.length - 1];
+    
+    resultDiv.innerHTML = `
+        <div class="result-content success">
+            <div class="crate-size">
+                <strong>Recommended Size:</strong><br>
+                <span class="big-number">${recommendedSize.name}</span>
+            </div>
+            <div class="crate-dimensions">
+                <strong>Dimensions:</strong><br>
+                ${recommendedSize.length}"L × ${recommendedSize.width}"W × ${recommendedSize.height}"H
+            </div>
+            <div class="crate-tips">
+                <strong>Tips:</strong>
+                <ul>
+                    <li>Dog should stand and turn around comfortably</li>
+                    <li>Add comfortable bedding</li>
+                    ${purpose === 'travel' ? '<li>Check airline requirements if flying</li>' : ''}
+                    ${purpose === 'home' ? '<li>Place in quiet, family area</li>' : ''}
                 </ul>
             </div>
         </div>
