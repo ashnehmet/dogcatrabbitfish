@@ -43,7 +43,8 @@
       "Bash(dir C:dogv2)",
       "Bash(timeout 30 sleep 30)",
       "Bash(gh repo view:*)",
-      "Bash(git ls-tree:*)"
+      "Bash(git ls-tree:*)",
+      "Read(//c/old/**)"
     ],
     "deny": []
   }
