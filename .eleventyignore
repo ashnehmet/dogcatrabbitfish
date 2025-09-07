@@ -1,0 +1,13 @@
+README.md
+node_modules/
+_site/
+.git/
+.claude/
+__tests__/
+.env
+*.log
+coverage/
+.nyc_output/
+playwright-report/
+test-results/
+package-lock.json
