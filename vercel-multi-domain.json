@@ -1,0 +1,93 @@
+{
+  "version": 2,
+  "name": "petinfo-multi-domain",
+  "builds": [
+    {
+      "src": "package.json", 
+      "use": "@vercel/static-build",
+      "config": {
+        "distDir": "_site"
+      }
+    }
+  ],
+  "routes": [
+    {
+      "src": "/dog/(.*)",
+      "dest": "/dog/$1",
+      "headers": {
+        "X-Animal": "dog"
+      }
+    },
+    {
+      "src": "/cat/(.*)", 
+      "dest": "/cat/$1",
+      "headers": {
+        "X-Animal": "cat"
+      }
+    },
+    {
+      "src": "/rabbit/(.*)",
+      "dest": "/rabbit/$1", 
+      "headers": {
+        "X-Animal": "rabbit"
+      }
+    },
+    {
+      "src": "/fish/(.*)",
+      "dest": "/fish/$1",
+      "headers": {
+        "X-Animal": "fish"
+      }
+    },
+    {
+      "src": "/images/(.*)",
+      "dest": "/images/$1",
+      "headers": {
+        "Cache-Control": "public, max-age=31536000, immutable"
+      }
+    },
+    {
+      "src": "/src/assets/(.*)",
+      "dest": "/src/assets/$1", 
+      "headers": {
+        "Cache-Control": "public, max-age=31536000, immutable"
+      }
+    },
+    {
+      "src": "/(.*)",
+      "dest": "/$1"
+    }
+  ],
+  "headers": [
+    {
+      "source": "/(.*)",
+      "headers": [
+        {
+          "key": "X-Frame-Options",
+          "value": "DENY"
+        },
+        {
+          "key": "X-Content-Type-Options", 
+          "value": "nosniff"
+        },
+        {
+          "key": "Referrer-Policy",
+          "value": "strict-origin-when-cross-origin"
+        },
+        {
+          "key": "X-Robots-Tag",
+          "value": "index, follow"
+        }
+      ]
+    }
+  ],
+  "env": {
+    "NODE_ENV": "production",
+    "ELEVENTY_PRODUCTION": "true"
+  },
+  "build": {
+    "env": {
+      "ELEVENTY_PRODUCTION": "true"
+    }
+  }
+}
