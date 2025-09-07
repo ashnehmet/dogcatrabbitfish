@@ -8,8 +8,9 @@
     "test:watch": "jest --watch",
     "test:coverage": "jest --coverage",
     "test:e2e": "playwright test",
-    "build": "eleventy && npm run copy-assets",
-    "copy-assets": "mkdir -p _site/src/assets && cp -r src/assets/* _site/src/assets/ && cp robots.txt _site/",
+    "build": "eleventy && npm run copy-assets && echo 'Build completed successfully'",
+    "copy-assets": "node -e \"const fs=require('fs');const path=require('path');if(!fs.existsSync('_site/src/assets'))fs.mkdirSync('_site/src/assets',{recursive:true});if(fs.existsSync('src/assets'))fs.cpSync('src/assets','_site/src/assets',{recursive:true});if(fs.existsSync('robots.txt'))fs.cpSync('robots.txt','_site/robots.txt');console.log('Assets copied');\"",
+    "vercel-build": "ELEVENTY_PRODUCTION=true eleventy --output=_site && npm run copy-assets",
     "dev": "eleventy --serve",
     "start": "npm run dev"
   },

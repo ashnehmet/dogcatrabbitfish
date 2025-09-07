@@ -1,0 +1,14 @@
+node_modules/
+.git/
+.claude/
+__tests__/
+REFERENCE/
+*.csv
+*.py
+coverage/
+.nyc_output/
+playwright-report/
+test-results/
+deploy-full.js
+VERCEL_DEPLOYMENT.md
+vercel-multi-domain.json
